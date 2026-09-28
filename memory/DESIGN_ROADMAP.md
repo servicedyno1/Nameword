@@ -4,7 +4,7 @@ Goal (user): make the whole app — especially DARK MODE — look "colorful and 
 
 Token-first strategy: dark theme is driven from `frontend/src/index.css` (`html.dark` variable overrides + opt-in `nw-*` utilities). Frontend is a Vite PROD build → after edits run `sudo supervisorctl restart frontend` (~20s rebuild).
 
-Test creds: buyer@nameword.local / Buyer@12345 (data-rich), demo@nameword.local / Demo@12345. Theme via localStorage `theme`=dark|light. Pod URL: https://reseller-panel-9.preview.emergentagent.com
+Test creds: buyer@nameword.local / Buyer@12345 (data-rich), demo@nameword.local / Demo@12345. Theme via localStorage `theme`=dark|light. Pod URL: https://nameword-dev-9.preview.emergentagent.com
 
 ## ✅ DONE
 - **Phase 1 — Brilliant dark theme:** layered near-black surfaces (#09080d app / #14121c cards / translucent borders) via `html.dark` token overrides; ambient signature glow (`.nw-app-bg` on shell + `html.dark body`); glass utilities; gradient+glow primary buttons; card elevation; table row-hover; dark scrollbars; legible text fallbacks; legacy light-tint aliases → dark.

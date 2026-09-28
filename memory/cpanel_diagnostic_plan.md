@@ -127,7 +127,7 @@ Tone: neutral, reproducible — anyone can re-run the same calls and get the sam
 - App is set up & running: Node/Express backend (supervisor runs `node /app/backend/bin/www`; the
   supervisord.conf backend program was changed from uvicorn→node — if it resets on resume, re-apply),
   Vite/React frontend (dev via `yarn start`, HMR). MongoDB = user's real Railway instance (DB_URI).
-- Live preview URL: https://a926d404-dd4f-45fe-9903-b290d5925942.preview.emergentagent.com
+- Live preview URL: https://nameword-dev-9.preview.emergentagent.com
 - Creds & integration status: `/app/memory/test_credentials.md`.
 - Prior gap notes: `/app/memory/reseller_api_provisioning_gaps.md` (older server-side gaps; several
   now fixed). This session already completed & tested: cPanel Email mailbox proxy + Email UI tab,
