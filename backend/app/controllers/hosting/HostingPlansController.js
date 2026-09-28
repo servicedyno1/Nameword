@@ -1,7 +1,7 @@
 const domainProviderApiClient = require("../../utils/domainProviderApiClient");
 const { generatePaymentLink, ensureDynoWallet } = require("../../services/dynoPayService");
 const { fetchUserTransactionById } = require("../../helpers/dynoPayHelper");
-const { verifyDynoPaySignature, hasProcessed, markProcessed } = require("../../utils/dynoPayWebhook");
+const { verifyDynoPaySignature, verifyDynoPayWebhook, isDynoPaymentSuccessful, hasProcessed, markProcessed } = require("../../utils/dynoPayWebhook");
 const User = require("../../models/User");
 const CartItem = require("../../models/CartItem");
 const Transaction = require("../../models/Transaction");
@@ -1454,13 +1454,16 @@ class HostingPlansController {
 			return res.status(200).send("OK");
 		}
 		const webhookSecret = process.env.DYNO_PAY_WEBHOOK_SECRET;
-		const signature = req.headers["x-dynopay-signature"];
-		if (webhookSecret && signature) {
-			const payloadStr = typeof req.body === "object" && req.body !== null
-				? JSON.stringify(req.body)
-				: (typeof req.body === "string" ? req.body : JSON.stringify(req.query));
-			if (!verifyDynoPaySignature(payloadStr, signature, webhookSecret)) {
-				console.warn("[Payment] flow=hosting_purchase | invalid signature");
+		if (webhookSecret) {
+			const sig = verifyDynoPayWebhook({
+				headers: req.headers,
+				rawBody: req.rawBody,
+				parsedBody: req.body,
+				query: req.query,
+				secret: webhookSecret,
+			});
+			if (sig.provided && !sig.valid) {
+				console.warn("[Payment] flow=hosting_purchase | invalid signature (version:", sig.version, ")");
 				return res.status(401).send("Invalid signature");
 			}
 		}
@@ -1542,11 +1545,11 @@ class HostingPlansController {
 				console.warn('⚠️ Transaction data not found from Dynopay, using query params');
 			}
 
-			const isPaymentSuccessful =
-				eventType === "payment.confirmed" ||
-				status === "processing" ||
-				verifiedStatus === "successful" ||
-				status === "successful";
+			const isPaymentSuccessful = isDynoPaymentSuccessful({
+				eventType,
+				statuses: [status, verifiedStatus],
+				isPaid: source.is_paid ?? responseData?.data?.is_paid,
+			});
 			console.log("[Payment] flow=hosting_purchase | PAYMENT_CAPTURED:", isPaymentSuccessful, "| reference:", reference, "| event:", eventType, "| verifiedStatus:", verifiedStatus);
 
 			if (!isPaymentSuccessful) {
@@ -3754,13 +3757,16 @@ class HostingPlansController {
 			return res.status(200).send("OK");
 		}
 		const webhookSecret = process.env.DYNO_PAY_WEBHOOK_SECRET;
-		const signature = req.headers["x-dynopay-signature"];
-		if (webhookSecret && signature) {
-			const payloadStr = typeof req.body === "object" && req.body !== null
-				? JSON.stringify(req.body)
-				: (typeof req.body === "string" ? req.body : JSON.stringify(req.query));
-			if (!verifyDynoPaySignature(payloadStr, signature, webhookSecret)) {
-				console.warn("[Payment] flow=hosting_renewal | invalid signature");
+		if (webhookSecret) {
+			const sig = verifyDynoPayWebhook({
+				headers: req.headers,
+				rawBody: req.rawBody,
+				parsedBody: req.body,
+				query: req.query,
+				secret: webhookSecret,
+			});
+			if (sig.provided && !sig.valid) {
+				console.warn("[Payment] flow=hosting_renewal | invalid signature (version:", sig.version, ")");
 				return res.status(401).send("Invalid signature");
 			}
 		}
@@ -3838,11 +3844,11 @@ class HostingPlansController {
 				console.warn('⚠️ Transaction data not found from Dynopay, using query params');
 			}
 
-			const isPaymentSuccessful =
-				eventType === "payment.confirmed" ||
-				status === "processing" ||
-				verifiedStatus === "successful" ||
-				status === "successful";
+			const isPaymentSuccessful = isDynoPaymentSuccessful({
+				eventType,
+				statuses: [status, verifiedStatus],
+				isPaid: source.is_paid ?? responseData?.data?.is_paid,
+			});
 			console.log("[Payment] flow=hosting_renewal | PAYMENT_CAPTURED:", isPaymentSuccessful, "| reference:", reference, "| event:", eventType);
 
 			if (!isPaymentSuccessful) {

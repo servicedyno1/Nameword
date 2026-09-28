@@ -8,7 +8,7 @@ const moment = require("moment");
 const { ensureWallet, generateAddFundsLink, fetchUserTransactionById, createCryptoPayment, getSupportedCurrencies, getConfiguredCoins, getPaymentStatus } = require("../../helpers/dynoPayHelper");
 const CryptoTopup = require("../../models/CryptoTopup");
 const { createPaymentRecord, creditOverpaymentToWallet } = require("../../utils/paymentHelper");
-const { verifyDynoPaySignature, hasProcessed, markProcessed } = require("../../utils/dynoPayWebhook");
+const { verifyDynoPaySignature, verifyDynoPayWebhook, isDynoPaymentSuccessful, hasProcessed, markProcessed } = require("../../utils/dynoPayWebhook");
 const provider_config = require("../../utils/Domain/config");
 const createAxiosInstance = require("../../utils/Domain/axiosInstance");
 const env = require("../../../start/env");
@@ -536,15 +536,19 @@ const handleDynoPaymentWebhook = async (req, res) => {
                 return res.status(200).send("OK");
         }
 
-        // Optional signature verification when secret is configured
+        // Optional signature verification when a webhook secret is configured
+        // (prefers Dynopay's V2 signature over the raw body, falls back to V1).
         const webhookSecret = process.env.DYNO_PAY_WEBHOOK_SECRET;
-        const signature = req.headers["x-dynopay-signature"];
-        if (webhookSecret && signature) {
-                const payloadStr = typeof req.body === "object" && req.body !== null
-                        ? JSON.stringify(req.body)
-                        : (typeof req.body === "string" ? req.body : JSON.stringify(req.query));
-                if (!verifyDynoPaySignature(payloadStr, signature, webhookSecret)) {
-                        console.warn("[Wallet dynocheckout-webhook] invalid signature");
+        if (webhookSecret) {
+                const sig = verifyDynoPayWebhook({
+                        headers: req.headers,
+                        rawBody: req.rawBody,
+                        parsedBody: req.body,
+                        query: req.query,
+                        secret: webhookSecret,
+                });
+                if (sig.provided && !sig.valid) {
+                        console.warn("[Wallet dynocheckout-webhook] invalid signature (version:", sig.version, ")");
                         return res.status(401).send("Invalid signature");
                 }
         }
@@ -610,12 +614,11 @@ const handleDynoPaymentWebhook = async (req, res) => {
                 const amountFromProvider = responseData?.data ? Number(responseData.data.base_amount) : null;
                 const statusFromProvider = responseData?.data?.status;
                 const amount = Number(base_amount || merchant_amount || meta_data?.amount || amountFromProvider || amt || 0);
-                const isSuccess =
-                        eventType === "payment.confirmed" ||
-                        status === "processing" ||
-                        status === "successful" ||
-                        status === "success" ||
-                        statusFromProvider === "successful";
+                const isSuccess = isDynoPaymentSuccessful({
+                        eventType,
+                        statuses: [status, statusFromProvider],
+                        isPaid: source.is_paid ?? responseData?.data?.is_paid,
+                });
 
                 if (!amount || amount <= 0) {
                         console.warn("[Payment] flow=wallet_add_funds | PAYMENT_NOT_CAPTURED | reason=no valid amount (base_amount/amt/meta_data/provider)");

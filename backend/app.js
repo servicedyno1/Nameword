@@ -57,7 +57,14 @@ app.use(
 		credentials: true,
 	})
 );
-app.use(express.json({ limit: "25mb" }));
+app.use(express.json({
+	limit: "25mb",
+	// Capture the exact raw bytes so Dynopay's V2 webhook signature
+	// (HMAC over `${t}.${rawBody}`) can be verified against what was sent.
+	verify: (req, _res, buf) => {
+		req.rawBody = buf && buf.length ? buf.toString("utf8") : "";
+	},
+}));
 app.use(requestIp.mw());
 app.use(express.urlencoded({ extended: true, limit: "25mb" }));
 app.use(

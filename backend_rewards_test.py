@@ -16,7 +16,7 @@ import json
 from decimal import Decimal
 
 # Backend base URL
-BASE_URL = "https://nameword-dev-9.preview.emergentagent.com/api/v1"
+BASE_URL = "https://nameword-dev-10.preview.emergentagent.com/api/v1"
 TIMEOUT = 30
 
 # Config from backend/.env

@@ -5,8 +5,11 @@ const { DYNO_PAY_API_KEY, DYNO_PAY_BASE_URL, DYNO_PAY_USER_API_URL, DYNO_PAY_CRE
 
 /** Base URL for user-related Dynopay APIs (createUser, etc.); may differ from payment-link host. */
 const getUserApiBase = () => {
-  const base = (DYNO_PAY_USER_API_URL || DYNO_PAY_BASE_URL || "").trim().replace(/\/$/, "");
-  return base.endsWith("/api") ? base.slice(0, -4) : base;
+  // Dynopay merchant base is `https://dynopay.com/api`; createUser lives at
+  // `/user/createUser` under it. Do NOT strip `/api` (that produced a 404).
+  return (DYNO_PAY_USER_API_URL || DYNO_PAY_BASE_URL || "https://dynopay.com/api")
+    .trim()
+    .replace(/\/+$/, "");
 };
 /** Path for Dynopay createUser; set to /api/user/createUser if your server uses /api prefix. */
 const getCreateUserPath = () => {
