@@ -41,6 +41,8 @@ import FrontLayout from "../layouts/FrontLayout";
 import TwoFactorLogin from "../pages/auth/TwoFactorLogin";
 import { DomainProvider } from "../context/DomainContext";
 import HomePage from "../pages/HomePage";
+import ProductsIndex from "../pages/products/ProductsIndex";
+import ComingSoonPage from "../pages/products/ComingSoonPage";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 
@@ -126,6 +128,8 @@ function Router() {
       <Route path="/api" element={<Api />} />
       <Route path="/api-docs" element={<ApiDocs />} />
       <Route path="/pricing" element={<Pricing />} />
+      <Route path="/products" element={<ProductsIndex />} />
+      <Route path="/products/:slug" element={<ComingSoonPage />} />
 
       {/* Hostinger-style checkout funnel: search -> hosting -> account -> cart -> receipt */}
       <Route element={<CheckoutLayout />}>

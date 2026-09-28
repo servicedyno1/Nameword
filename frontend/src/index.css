@@ -25,25 +25,25 @@
   --color-line: #e2e8f0;
   --color-line-strong: #cbd5e1;
 
-  /* Accent — indigo */
-  --color-brand: #4f46e5;
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
+  /* Accent — electric cobalt blue (Hostman-grade) */
+  --color-brand: #2f6bff;
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dbe7ff;
+  --color-brand-200: #bcd3ff;
+  --color-brand-300: #8fb6ff;
+  --color-brand-400: #6a97ff;
+  --color-brand-500: #4b81ff;
+  --color-brand-600: #2f6bff;
+  --color-brand-700: #1e54e6;
+  --color-brand-800: #1a44be;
+  --color-brand-900: #193a95;
 
   /* Action colours (legacy aliases -> accent) */
-  --color-darkbtn: #4f46e5;
-  --color-darkbtn-hover: #4338ca;
-  --color-darkbtn-active: #3730a3;
-  --color-darkbtn-100: #eef2ff;
-  --color-darkbtn-200: #a5b4fc;
+  --color-darkbtn: #2f6bff;
+  --color-darkbtn-hover: #1e54e6;
+  --color-darkbtn-active: #1a44be;
+  --color-darkbtn-100: #eef4ff;
+  --color-darkbtn-200: #8fb6ff;
 
   /* Status */
   --color-success: #10b981;
@@ -71,16 +71,16 @@
   --color-gray-950: #0b0f19;
 
   /* Retire teal/violet/cyan remnants by pointing them at the accent scale */
-  --color-teal-300: #a5b4fc;
-  --color-teal-400: #818cf8;
-  --color-teal-500: #6366f1;
-  --color-teal-600: #4f46e5;
-  --color-teal-700: #4338ca;
-  --color-indigo-400: #818cf8;
-  --color-indigo-500: #6366f1;
-  --color-indigo-600: #4f46e5;
-  --color-indigo-800: #3730a3;
-  --color-violet-500: #6366f1;
+  --color-teal-300: #8fb6ff;
+  --color-teal-400: #6a97ff;
+  --color-teal-500: #4b81ff;
+  --color-teal-600: #2f6bff;
+  --color-teal-700: #1e54e6;
+  --color-indigo-400: #6a97ff;
+  --color-indigo-500: #4b81ff;
+  --color-indigo-600: #2f6bff;
+  --color-indigo-800: #1a44be;
+  --color-violet-500: #4b81ff;
   --color-cyan-500: #06b6d4;
 
   /* Legacy palette aliases (kept so untouched screens recolour in one shot) */
@@ -94,42 +94,42 @@
   --color-active: #64748b;
   --color-beige: #f8fafc;
   --color-beige-100: #f1f5f9;
-  --color-beige-200: #eef2ff;
+  --color-beige-200: #eef4ff;
   --color-beige-400: #cbd5e1;
   --color-active-border: #cbd5e1;
   --color-hover: #f8fafc;
-  --color-tealdark: #4f46e5;
-  --color-teallight: #eef2ff;
-  --color-teallight-50: #eef2ff;
+  --color-tealdark: #2f6bff;
+  --color-teallight: #eef4ff;
+  --color-teallight-50: #eef4ff;
   --color-teallight-400: #94a3b8;
   --color-teallight-500: #475569;
-  --color-teal-hover: #4338ca;
+  --color-teal-hover: #1e54e6;
   --color-stokecolor: #e2e8f0;
-  --color-save-badge: #e0e7ff;
-  --color-skydark: #4f46e5;
+  --color-save-badge: #dbe7ff;
+  --color-skydark: #2f6bff;
   --color-slatelight: #f8fafc;
   --color-nodata: #94a3b8;
   --color-disable: #a5b4fc;
   --color-disable-stoke: #cbd5e1;
   --color-menu-hover: #f1f5f9;
   --color-mutebg: #f8fafc;
-  --color-lightbeige: #eef2ff;
+  --color-lightbeige: #eef4ff;
   --color-golder: #475569;
   --color-golder-50: #f8fafc;
   --color-golder-100: #f1f5f9;
   --color-bodycolor: #f8fafc;
-  --color-light-purple: #e0e7ff;
+  --color-light-purple: #dbe7ff;
   --color-progressbar: #e2e8f0;
-  --color-purple-light: #4338ca;
+  --color-purple-light: #1e54e6;
   --color-bggray: #f8fafc;
   --color-gray-border: #e2e8f0;
   --color-light-green: #d1fae5;
   --color-btn-greenlight: #a7f3d0;
-  --color-btn-purplelight: #e0e7ff;
+  --color-btn-purplelight: #dbe7ff;
 
   --shadow-alert: 0px 7px 20px 0px #0000000a;
   --shadow-alert-white: 0px 7px 20px 0px #ffffff0a;
-  --shadow-glow: 0 0 0 1px rgba(79, 70, 229, 0.2), 0 12px 40px -12px rgba(79, 70, 229, 0.35);
+  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.22), 0 12px 40px -12px rgba(47, 107, 255, 0.38);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -152,24 +152,24 @@ html {
 html.dark {
   color-scheme: dark;
 
-  /* ---- Brilliant dark: layered, slightly-warm near-black surfaces ---- */
-  --color-gray-950: #09080d;   /* app background */
-  --color-gray-900: #14121c;   /* cards / panels / dropdowns */
-  --color-gray-800: #221d2e;   /* elevated surface / hairline border */
-  --color-gray-700: #2f2942;   /* stronger border / hover */
-  --color-gray-600: #3a3450;
+  /* ---- Hostman-grade dark: deep navy-black layered surfaces ---- */
+  --color-gray-950: #060a14;   /* app background */
+  --color-gray-900: #0d1526;   /* cards / panels / dropdowns */
+  --color-gray-800: #17203a;   /* elevated surface / hairline border */
+  --color-gray-700: #223052;   /* stronger border / hover */
+  --color-gray-600: #2c3a5e;
 
   /* Muted TEXT / number colour, LIFTED for dark-mode legibility.
      gray-500 is used almost exclusively as a text/icon colour (not as a
      surface or border), so raising it here makes dim numbers, amounts and
      secondary labels clearly readable across the whole app in dark mode —
      without affecting light mode (this override is scoped to html.dark). */
-  --color-gray-500: #9aa1b6;
+  --color-gray-500: #93a1c0;
 
   /* Surfaces + lines (also catch stray non-dark-variant utilities) */
-  --color-surface: #14121c;
-  --color-surface-2: #1b1826;
-  --color-surface-3: #221d2e;
+  --color-surface: #0d1526;
+  --color-surface-2: #131c31;
+  --color-surface-3: #17203a;
   --color-line: rgba(255, 255, 255, 0.08);
   --color-line-strong: rgba(255, 255, 255, 0.16);
   --color-stokecolor: rgba(255, 255, 255, 0.08);
@@ -182,34 +182,34 @@ html.dark {
   --color-secondary: #9aa0b5;
   --color-ink-muted: #8f95aa;
 
-  /* Stray light-tint blocks -> dark tints (legacy aliases recolour in one shot) */
-  --color-brand-50: #191331;
-  --color-brand-100: #221a44;
-  --color-beige: #14121c;
-  --color-beige-100: #1b1826;
-  --color-beige-200: #191331;
-  --color-teallight: #191331;
-  --color-teallight-50: #191331;
-  --color-mutebg: #14121c;
-  --color-bggray: #14121c;
-  --color-bodycolor: #09080d;
-  --color-slatelight: #1b1826;
-  --color-hover: #1b1826;
-  --color-menu-hover: #221d2e;
-  --color-lightbeige: #191331;
-  --color-light-purple: #221a44;
-  --color-save-badge: #221a44;
-  --color-progressbar: #2f2942;
+  /* Stray light-tint blocks -> dark navy tints (legacy aliases recolour in one shot) */
+  --color-brand-50: #0f1c3d;
+  --color-brand-100: #12245a;
+  --color-beige: #0d1526;
+  --color-beige-100: #131c31;
+  --color-beige-200: #0f1c3d;
+  --color-teallight: #0f1c3d;
+  --color-teallight-50: #0f1c3d;
+  --color-mutebg: #0d1526;
+  --color-bggray: #0d1526;
+  --color-bodycolor: #060a14;
+  --color-slatelight: #131c31;
+  --color-hover: #131c31;
+  --color-menu-hover: #17203a;
+  --color-lightbeige: #0f1c3d;
+  --color-light-purple: #12245a;
+  --color-save-badge: #12245a;
+  --color-progressbar: #223052;
 
   /* Legacy muted-text tokens that were left at their dark light-mode values
      (dim/invisible on dark). These are used only as TEXT (never as surfaces),
      so lift them to a legible muted tone for dark mode. */
-  --color-lightgray-500: #9aa1b6;
-  --color-lightgray-600: #9aa1b6;
-  --color-teallight-500: #9aa1b6;
+  --color-lightgray-500: #93a1c0;
+  --color-lightgray-600: #93a1c0;
+  --color-teallight-500: #93a1c0;
 
   /* Elevation + signature brand glow */
-  --shadow-glow: 0 0 0 1px rgba(124, 58, 237, 0.28), 0 22px 70px -22px rgba(124, 58, 237, 0.55);
+  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.32), 0 22px 70px -22px rgba(47, 107, 255, 0.5);
 }
 
 /* Dark-mode legibility safety net: any `hover:text-black` (e.g. modal close
@@ -240,18 +240,18 @@ body {
 
 /* Ambient signature glow behind everything (indigo -> fuchsia -> warm whisper) */
 html.dark body {
-  background-color: #09080d;
+  background-color: #060a14;
   background-image:
-    radial-gradient(72% 55% at 10% -6%, rgba(99, 102, 241, 0.18), transparent 60%),
-    radial-gradient(55% 45% at 102% -2%, rgba(217, 70, 239, 0.13), transparent 60%),
-    radial-gradient(50% 45% at 60% 110%, rgba(245, 158, 11, 0.07), transparent 60%);
+    radial-gradient(72% 55% at 10% -6%, rgba(47, 107, 255, 0.20), transparent 60%),
+    radial-gradient(55% 45% at 102% -2%, rgba(56, 189, 248, 0.12), transparent 60%),
+    radial-gradient(50% 45% at 60% 110%, rgba(47, 107, 255, 0.08), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 html:not(.dark) body {
   background-image:
-    radial-gradient(60% 50% at 100% -12%, rgba(99, 102, 241, 0.06), transparent 60%),
-    radial-gradient(50% 45% at 0% -8%, rgba(168, 85, 247, 0.04), transparent 60%);
+    radial-gradient(60% 50% at 100% -12%, rgba(47, 107, 255, 0.06), transparent 60%),
+    radial-gradient(50% 45% at 0% -8%, rgba(56, 189, 248, 0.045), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -262,7 +262,7 @@ h1, h2, h3, .nw-h2, .font-display {
 }
 
 ::selection {
-  background: rgba(79, 70, 229, 0.18);
+  background: rgba(47, 107, 255, 0.2);
 }
 
 /*------------------------ start css --------------------*/
@@ -1400,9 +1400,9 @@ input[type="checkbox"]:checked {
 .auth-brand-panel {
   background:
     radial-gradient(55% 55% at 18% 8%, rgba(255, 255, 255, 0.16), transparent 60%),
-    radial-gradient(55% 55% at 100% 100%, rgba(245, 158, 11, 0.28), transparent 60%),
-    radial-gradient(45% 45% at 90% 15%, rgba(236, 72, 153, 0.22), transparent 60%),
-    linear-gradient(150deg, #4f46e5 0%, #6d28d9 46%, #9333ea 100%);
+    radial-gradient(55% 55% at 100% 100%, rgba(34, 211, 238, 0.28), transparent 60%),
+    radial-gradient(45% 45% at 90% 15%, rgba(56, 189, 248, 0.22), transparent 60%),
+    linear-gradient(150deg, #1e54e6 0%, #2f6bff 46%, #0ea5e9 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1447,12 +1447,12 @@ input[type="checkbox"]:checked {
   }
 
   /* Gradient fills (opt-in) */
-  .nw-grad-brand { background-image: linear-gradient(135deg, #6366f1 0%, #7c3aed 55%, #a855f7 100%); }
+  .nw-grad-brand { background-image: linear-gradient(135deg, #2f6bff 0%, #3b82f6 45%, #22d3ee 100%); }
   .nw-grad-warm  { background-image: linear-gradient(135deg, #f59e0b 0%, #fb7185 55%, #e879f9 100%); }
 
   /* Gradient text (headline numbers) — readable in both modes */
   .nw-grad-text {
-    background-image: linear-gradient(135deg, #4f46e5, #9333ea);
+    background-image: linear-gradient(135deg, #2f6bff, #0ea5e9);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1469,7 +1469,7 @@ input[type="checkbox"]:checked {
   }
 }
 html.dark .nw-grad-text {
-  background-image: linear-gradient(135deg, #a5b4fc, #e879f9);
+  background-image: linear-gradient(135deg, #8fb6ff, #67e8f9);
 }
 html.dark .nw-grad-text-warm {
   background-image: linear-gradient(135deg, #fbbf24, #fb7185);
@@ -1480,16 +1480,16 @@ html.dark .nw-btn-primary,
 html.dark .btn-blue,
 html.dark .add-to-cart,
 html.dark .btn-sky {
-  background-image: linear-gradient(135deg, #6d5efc 0%, #7c3aed 55%, #a855f7 100%);
-  box-shadow: 0 10px 34px -12px rgba(124, 58, 237, 0.7);
+  background-image: linear-gradient(135deg, #2f6bff 0%, #3b82f6 55%, #4b9dff 100%);
+  box-shadow: 0 10px 34px -12px rgba(47, 107, 255, 0.7);
   border-color: transparent;
 }
 html.dark .nw-btn-primary:hover,
 html.dark .btn-blue:hover,
 html.dark .add-to-cart:hover,
 html.dark .btn-sky:hover {
-  background-image: linear-gradient(135deg, #7b6dff 0%, #8b47f0 55%, #b565f9 100%);
-  box-shadow: 0 16px 44px -10px rgba(124, 58, 237, 0.9);
+  background-image: linear-gradient(135deg, #4b81ff 0%, #2f6bff 55%, #38bdf8 100%);
+  box-shadow: 0 16px 44px -10px rgba(47, 107, 255, 0.9);
 }
 
 /* Base card gets subtle inner highlight + deep drop in dark */
@@ -1524,26 +1524,26 @@ html:not(.dark) .nw-app-bg {
     radial-gradient(46% 42% at 0% -6%, rgba(168, 85, 247, 0.05), transparent 60%);
 }
 html.dark .nw-app-bg {
-  background-color: #09080d;
+  background-color: #060a14;
   background-image:
-    radial-gradient(66% 55% at 6% -8%, rgba(99, 102, 241, 0.22), transparent 58%),
-    radial-gradient(58% 50% at 106% -6%, rgba(217, 70, 239, 0.16), transparent 58%),
-    radial-gradient(62% 55% at 52% 118%, rgba(245, 158, 11, 0.07), transparent 60%);
+    radial-gradient(66% 55% at 6% -8%, rgba(47, 107, 255, 0.22), transparent 58%),
+    radial-gradient(58% 50% at 106% -6%, rgba(56, 189, 248, 0.14), transparent 58%),
+    radial-gradient(62% 55% at 52% 118%, rgba(47, 107, 255, 0.08), transparent 60%);
 }
 
 /* Richer coloured glow on every marketing/product hero (Domains, DNS, VPS, RDP, Pricing, SSL) */
 html.dark .nw-hero {
-  background-color: #09080d;
+  background-color: #060a14;
   background-image:
-    radial-gradient(60% 92% at 88% -22%, rgba(124, 58, 237, 0.24), transparent 60%),
-    radial-gradient(48% 82% at -6% -4%, rgba(99, 102, 241, 0.17), transparent 60%),
-    radial-gradient(42% 72% at 62% 122%, rgba(245, 158, 11, 0.07), transparent 62%);
+    radial-gradient(60% 92% at 88% -22%, rgba(47, 107, 255, 0.26), transparent 60%),
+    radial-gradient(48% 82% at -6% -4%, rgba(56, 189, 248, 0.16), transparent 60%),
+    radial-gradient(42% 72% at 62% 122%, rgba(47, 107, 255, 0.09), transparent 62%);
 }
 html.dark .nw-hero-glow {
-  background-color: rgba(124, 58, 237, 0.18);
+  background-color: rgba(47, 107, 255, 0.2);
 }
 html:not(.dark) .nw-hero-glow {
-  background-color: rgba(165, 180, 252, 0.55);
+  background-color: rgba(147, 182, 255, 0.55);
 }
 
 /* =====================================================================
@@ -1556,36 +1556,36 @@ html:not(.dark) .nw-hero-glow {
 html:not(.dark) .nw-app-bg {
   background-color: #f7f8fc;
   background-image:
-    radial-gradient(60% 52% at 100% -10%, rgba(99, 102, 241, 0.10), transparent 60%),
-    radial-gradient(48% 44% at 0% -6%, rgba(168, 85, 247, 0.07), transparent 60%),
-    radial-gradient(52% 46% at 52% 116%, rgba(245, 158, 11, 0.045), transparent 62%);
+    radial-gradient(60% 52% at 100% -10%, rgba(47, 107, 255, 0.10), transparent 60%),
+    radial-gradient(48% 44% at 0% -6%, rgba(56, 189, 248, 0.07), transparent 60%),
+    radial-gradient(52% 46% at 52% 116%, rgba(47, 107, 255, 0.045), transparent 62%);
 }
 
 /* Public body gets the same gentle wash so marketing pages feel premium too */
 html:not(.dark) body {
   background-image:
-    radial-gradient(60% 50% at 100% -12%, rgba(99, 102, 241, 0.08), transparent 60%),
-    radial-gradient(50% 45% at 0% -8%, rgba(168, 85, 247, 0.055), transparent 60%),
-    radial-gradient(46% 42% at 55% 118%, rgba(245, 158, 11, 0.04), transparent 62%);
+    radial-gradient(60% 50% at 100% -12%, rgba(47, 107, 255, 0.08), transparent 60%),
+    radial-gradient(50% 45% at 0% -8%, rgba(56, 189, 248, 0.05), transparent 60%),
+    radial-gradient(46% 42% at 55% 118%, rgba(47, 107, 255, 0.04), transparent 62%);
 }
 
 /* Marketing / product heroes get a soft indigo -> violet -> warm bloom */
 html:not(.dark) .nw-hero {
   background-color: #ffffff;
   background-image:
-    radial-gradient(58% 90% at 86% -20%, rgba(124, 58, 237, 0.10), transparent 60%),
-    radial-gradient(48% 80% at -4% -6%, rgba(99, 102, 241, 0.09), transparent 60%),
-    radial-gradient(44% 74% at 60% 122%, rgba(245, 158, 11, 0.05), transparent 62%),
-    linear-gradient(to bottom, rgba(238, 242, 255, 0.62), #ffffff 44%);
+    radial-gradient(58% 90% at 86% -20%, rgba(47, 107, 255, 0.10), transparent 60%),
+    radial-gradient(48% 80% at -4% -6%, rgba(56, 189, 248, 0.09), transparent 60%),
+    radial-gradient(44% 74% at 60% 122%, rgba(47, 107, 255, 0.05), transparent 62%),
+    linear-gradient(to bottom, rgba(238, 244, 255, 0.66), #ffffff 44%);
 }
 
 /* Hero stat cards: subtle gradient tint + soft brand-tinted elevation */
 html:not(.dark) .nw-stat {
-  background-image: linear-gradient(160deg, #ffffff 0%, #f5f6ff 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -18px rgba(79, 70, 229, 0.30);
+  background-image: linear-gradient(160deg, #ffffff 0%, #f2f6ff 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -18px rgba(47, 107, 255, 0.30);
 }
 html:not(.dark) .nw-stat:hover {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 20px 46px -18px rgba(79, 70, 229, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 20px 46px -18px rgba(47, 107, 255, 0.42);
 }
 /* Soften the coloured corner bloom on white so it reads as a tasteful tint */
 html:not(.dark) .nw-stat-glow::after {
@@ -1600,21 +1600,21 @@ html:not(.dark) .nw-btn-primary,
 html:not(.dark) .btn-blue,
 html:not(.dark) .add-to-cart,
 html:not(.dark) .btn-sky {
-  background-image: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #9333ea 100%);
-  box-shadow: 0 10px 26px -12px rgba(79, 70, 229, 0.55);
+  background-image: linear-gradient(135deg, #2f6bff 0%, #2f6bff 55%, #3b82f6 100%);
+  box-shadow: 0 10px 26px -12px rgba(47, 107, 255, 0.55);
   border-color: transparent;
 }
 html:not(.dark) .nw-btn-primary:hover,
 html:not(.dark) .btn-blue:hover,
 html:not(.dark) .add-to-cart:hover,
 html:not(.dark) .btn-sky:hover {
-  background-image: linear-gradient(135deg, #4338ca 0%, #6d28d9 55%, #7e22ce 100%);
-  box-shadow: 0 16px 38px -12px rgba(79, 70, 229, 0.72);
+  background-image: linear-gradient(135deg, #1e54e6 0%, #2f6bff 55%, #3b82f6 100%);
+  box-shadow: 0 16px 38px -12px rgba(47, 107, 255, 0.72);
 }
 
 /* Card hover: a hint of brand glow in light */
 html:not(.dark) .nw-card-hover:hover {
-  box-shadow: 0 20px 46px -24px rgba(79, 70, 229, 0.34);
+  box-shadow: 0 20px 46px -24px rgba(47, 107, 255, 0.34);
 }
 
 /* Gentle float for illustrated empty-state icons (reduced-motion aware) */

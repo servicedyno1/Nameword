@@ -1780,3 +1780,55 @@ agent_communication:
   - agent: "main"
     message: "Frontend test approved by user. Please test the NEW cPanel 'Email' tab (READ-ONLY, non-mutating only — the Nomadly provider is LIVE). Steps: sign in moxxcompany@gmail.com / Onlygod123@ (owns live cPanel account namea3a5 / domain namewords.sbs). Go to the hosting area, find that hosting account and open its Manage modal, switch to 'Advanced cPanel' (data-testid manage-tab-advanced), then click the 'Email' tab (data-testid cpanel-tabbtn-email). Verify: (1) the Email tab content (cpanel-tab-email) renders with no white screen / no console errors; (2) the Mailboxes section loads a list OR an empty state OR a calm provider-sync note (any is fine — don't fail on which); (3) the create form inputs exist (email-local-input, email-domain-input, email-pass-input, email-quota-input) and the Create button (email-create-btn) is DISABLED until mailbox+password+domain are filled; (4) the 'Send a test email' box exists (email-testfrom-input, email-testto-input, email-test-btn) and Send is DISABLED until from+to are filled. CRITICAL: DO NOT click/submit Create mailbox, Delete, Save password, or Send test — they hit a LIVE cPanel and would create/delete a real mailbox or send a real email. Only verify rendering + disabled-state gating. Use the external preview URL (same origin serves /api). If you cannot reach a Manage modal for a hosting account, report exactly what you saw on the hosting page."
 
+
+
+#====================================================================================================
+# NEW WORK (this session) — Hostman-grade reskin + Cloud product expansion (Phase 1)
+#====================================================================================================
+backend:
+  - task: "Waitlist / notify-me endpoint for 'coming soon' cloud products"
+    implemented: true
+    working: true
+    file: "/app/backend/routes/api/waitlist.js, /app/backend/app/models/Waitlist.js, /app/backend/routes/api/index.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "NEW public endpoint for real interest capture on the new 'coming soon' cloud products (Bare Metal, AI Agents, App Platform, Managed Kubernetes, Managed Databases, Object Storage, Block Storage, Load Balancers). POST /api/v1/waitlist { email, product, productName?, note? } -> validates email (express-validator), upserts into the `waitlist` Mongo collection keyed by (email, product) so it is IDEMPOTENT (re-submitting returns 201, not a dup error), and fires a best-effort Brevo confirmation email (wrapped in try/catch so a misconfigured sender never fails the request). GET /api/v1/waitlist/count?product=slug -> { success, data:{ product, count } }. Mounted in routes/api/index.js. No auth required (public marketing capture). Main-agent smoke test passed: valid POST -> 201, repeat -> 201 (count stays 1), invalid email -> 400 with message, count -> 200. Please retest: (1) POST valid returns 201 {success:true,message,data:{email,product}}; (2) POST same email+product twice is idempotent (still 201, GET count does not double); (3) POST invalid email -> 400 success:false; (4) POST missing product -> 400; (5) GET /waitlist/count?product=block-storage returns a numeric count. Writes go to the REAL Railway Mongo `waitlist` collection — this is a NEW collection, safe to write test rows."
+      - working: true
+        agent: "testing"
+        comment: "✅ WAITLIST ENDPOINT TEST - ALL 6 CASES PASSED (21/21 assertions, 100% SUCCESS RATE). Tested NEW public waitlist endpoint against external preview URL https://d47598bf-9d5f-4172-933f-ebee3baf7b01.preview.emergentagent.com/api/v1. No authentication required. RESULTS: ✅ TEST 1 (POST valid data): POST /api/v1/waitlist with {email:'qa+waitlist@example.com', product:'block-storage', productName:'Block Storage'} returned HTTP 201 with body {success:true, message:'You're on the waitlist. We'll be in touch!', data:{email:'qa+waitlist@example.com', product:'block-storage'}}. All fields correct. ✅ TEST 2 (GET count initial): GET /api/v1/waitlist/count?product=block-storage returned HTTP 200 with body {success:true, data:{product:'block-storage', count:1}}. Count captured as 1. ✅ TEST 3 (POST duplicate - idempotency): POST same data again returned HTTP 201 (NOT 500 duplicate-key error). Idempotent upsert working correctly. Response body identical to TEST 1. ✅ TEST 4 (GET count verify idempotency): GET /api/v1/waitlist/count?product=block-storage returned HTTP 200 with count UNCHANGED at 1 (NOT 2). Idempotency verified - duplicate POST did not create new record. ✅ TEST 5 (POST invalid email): POST /api/v1/waitlist with {email:'not-an-email', product:'bare-metal'} returned HTTP 400 with body {success:false, message:'A valid email is required', errors:[...]}. Validation working correctly. ✅ TEST 6 (POST missing product): POST /api/v1/waitlist with {email:'valid@example.com'} (no product field) returned HTTP 400 with body {success:false, message:'Invalid value', errors:[...]}. Validation working correctly. CRITICAL VERIFICATION: (1) Routes are registered and mounted correctly (POST /waitlist and GET /waitlist/count both return expected status codes, NOT 404). (2) Idempotent upsert is working - duplicate POST returns 201 and does NOT create duplicate records (count stays at 1). (3) Email validation is working - invalid email returns 400 with correct error message. (4) Product validation is working - missing product returns 400 with error. (5) Response bodies match expected format with success, message, and data fields. (6) Writes go to REAL Railway Mongo waitlist collection (new collection, safe for test data). NO ISSUES FOUND. Waitlist endpoint is FULLY WORKING and production-ready."
+
+frontend:
+  - task: "Hostman-grade reskin (cobalt/navy design tokens) + Cloud product catalog (mega-menu, /products, /products/:slug coming-soon pages, home CloudCatalog)"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/index.css, /app/frontend/src/components/layout/Navbar.jsx, /app/frontend/src/data/productCatalog.js, /app/frontend/src/pages/products/ProductsIndex.jsx, /app/frontend/src/pages/products/ComingSoonPage.jsx, /app/frontend/src/components/marketing/WaitlistForm.jsx, /app/frontend/src/components/home/landing/CloudCatalog.jsx, /app/frontend/src/components/home/HomeRedesign.jsx, /app/frontend/src/routes/Router.jsx, /app/frontend/src/api/waitlist.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "PHASE 1 (design + product expansion). (A) RESKIN: retuned the token-driven design system in index.css from indigo/obsidian to Hostman-grade ELECTRIC COBALT BLUE (--color-brand #2f6bff scale) on a NAVY-BLACK dark canvas (gray-950 #060a14, gray-900 #0d1526). Because every component references these tokens, the whole app (marketing + dashboard + auth + checkout, light + dark) recolours in one shot. Also retuned all gradients/glows (body, hero, app-bg, buttons, auth panel, nw-grad-*) to cobalt + sky/cyan. No component markup changed by the reskin. (B) PRODUCT EXPANSION: new src/data/productCatalog.js is the single source of truth — 4 Hostman-style groups (Compute, App Platform, Data & Storage, Orchestration & Network) folding in the LIVE products (Cloud Servers=/vps, Windows RDP=/rdp, cPanel Hosting=/hosting, Domains=/domains, DNS=/dns-manager, Developer API=/api) and adding 8 COMING-SOON products (Bare Metal, AI Agents, App Platform, Managed Kubernetes, Managed Databases, Object Storage, Block Storage, Load Balancers). Navbar 'Products' is now a grouped mega-menu (desktop + mobile) with Live/Soon badges. New /products index (grouped grid) and /products/:slug generic Coming-Soon page (hero + Coming-soon badge + WaitlistForm + 'What to expect' features). Home gets a new CloudCatalog section (after CpanelHosting). WaitlistForm posts to /api/v1/waitlist. Verified by main agent via screenshots: home light mode cobalt, /products grouped grid, /products/managed-databases coming-soon + form. Lint clean on all changed files. NOT yet run through the frontend testing agent (awaiting user go-ahead)."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.5"
+  test_sequence: 8
+  run_ui: false
+
+test_plan:
+  current_focus: []
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Backend test needed for the NEW waitlist endpoint only. Base URL: same-origin /api (external preview). Tests: (1) POST /api/v1/waitlist with body {\"email\":\"qa+waitlist@example.com\",\"product\":\"block-storage\",\"productName\":\"Block Storage\"} -> expect 201 {success:true, message, data:{email,product}}. (2) POST the SAME body again -> still 201 (idempotent upsert, NOT a duplicate-key 500). (3) GET /api/v1/waitlist/count?product=block-storage -> 200 {success:true,data:{product:'block-storage',count:N}} and confirm N did NOT increase between the two identical POSTs. (4) POST invalid email {\"email\":\"nope\",\"product\":\"x\"} -> 400 {success:false,message}. (5) POST missing product {\"email\":\"a@b.com\"} -> 400. No auth required. Writes go to the REAL Railway Mongo `waitlist` collection (new collection; test rows are fine). Do NOT touch other collections."
+  - agent: "testing"
+    message: "✅ WAITLIST ENDPOINT TESTING COMPLETE - ALL 6 TEST CASES PASSED (100% success rate). Created comprehensive test script /app/backend_waitlist_test.py that tests all required scenarios against the external preview URL. RESULTS: (1) POST valid data -> 201 with correct response body ✅. (2) GET count -> 200 with count=1 ✅. (3) POST duplicate data -> 201 (idempotent, NOT 500) ✅. (4) GET count again -> count UNCHANGED at 1 (idempotency verified) ✅. (5) POST invalid email -> 400 with 'A valid email is required' ✅. (6) POST missing product -> 400 with error ✅. The waitlist endpoint is FULLY WORKING and production-ready. Routes are properly registered, idempotent upsert is working correctly, validation is working, and writes go to the REAL Railway Mongo waitlist collection. NO ISSUES FOUND. Updated test_result.md with detailed findings and set needs_retesting=false."
+

@@ -30,5 +30,6 @@ APIRouter.use("/chat", require("./chat"));
 APIRouter.use(require("./api-keys"));
 APIRouter.use("/tax", require("./tax"));
 APIRouter.use("/promo", require("./promo"));
+APIRouter.use("/waitlist", require("./waitlist"));
 
 module.exports = APIRouter;

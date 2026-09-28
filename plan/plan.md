@@ -1,47 +1,58 @@
-# cPanel Advanced-Function Diagnostic — Reseller Provider Gap Report
+# Nameword — Hostman-Grade Redesign + Cloud Product Expansion
 
-An exhaustive, live functional test of every advanced cPanel capability the reseller API exposes, run against the real namewords.sbs / namea3a5 account. It produces one written report that marks each function PASS / FAIL / NEEDS-PROVIDER-FIX with the exact request and response, ready to hand to the reseller API provider.
+A full-platform visual and experience redesign of Nameword that adopts Hostman's cloud-grade color palette, layout and polish — while keeping Nameword's offshore, privacy-first, DMCA-ignored, crypto / no-KYC identity in the words.
+Alongside the reskin, the product catalog expands to mirror a modern cloud host: live where a real provider exists today, and "Coming soon" (with a notify/waitlist) where it doesn't yet.
 
 ## Who it's for
-- The Nameword team, to know precisely which panel features actually work today versus which only appear to.
-- The reseller API provider, to receive a reproducible, function-by-function list of what to fix on their end (starting with the Security "application not found" errors).
+- Privacy-conscious founders, developers and agencies who want offshore / DMCA-ignored hosting but expect a modern, premium, "real cloud" experience.
+- Crypto-native buyers who value no-KYC signup and a prepaid crypto wallet.
+- Existing Nameword customers managing domains, DNS, cPanel hosting, VPS and RDP who get a cleaner, faster interface.
 
 ## Core features and experience
-Every advanced-panel function is exercised for real and given a verdict. Coverage:
-
-- **Account / lifecycle**: account details, site-status, suspend, unsuspend, upgrade, credentials/login.
-- **Domains**: list, add addon domain, delete addon, set-primary (promote addon to primary), document root + docroot modes, nameserver status.
-- **Subdomains**: list, create, delete, bulk-create — including verifying a created subdomain actually appears/resolves, not just that the call returned success.
-- **MySQL**: create/list/delete database, create/delete user, set password, grant/revoke privileges, remote hosts, phpMyAdmin link, rename/repair/check.
-- **Email mailboxes**: list, create, change password, delete, and a real test-send.
-- **SSL**: certificate status and AutoSSL issuance.
-- **Files**: list, read, write/save, mkdir, rename, copy, move, compress, extract/unzip, delete, upload.
-- **Security**: status, Anti-Red deploy + status, Anti-Bot + rules, Safe-Browsing, Blacklist, Visitor-CAPTCHA, JS-Challenge (these are where "application not found" currently appears).
-- **Geo & Analytics & Stats**: geo controls, analytics, usage stats.
-
-For each function the report records: the exact request, the exact response (and timing), a verdict badge — **PASS** (works end to end), **FAIL** (errors / "application not found"), or **NEEDS-PROVIDER-FIX** (returns success but the change doesn't actually take effect) — a plain-language note, and a suggested action for the provider. Where a function creates something, a create → verify → clean-up cycle is run so the outcome is confirmed rather than assumed. Side-effecting actions (change-primary-domain, AutoSSL issuance, real test-send email) are included per the agreed decision, even where not fully reversible.
-
-The report opens with a one-glance summary matrix (function × verdict) and an executive summary that groups systemic gaps — for example, if all Security apps return "application not found", that is flagged as a single likely root cause (the security-app suite not provisioned for this plan/account) rather than as many unrelated failures.
+- **Reskinned marketing site** — home, product pages, pricing, API/developer pages and legal pages rebuilt in the Hostman look (dark hero, product-card grids, verifiable trust strip, mega-menu navigation), with copy that stays in Nameword's privacy/offshore voice.
+- **Expanded product catalog** presented as a Hostman-style grouped grid (e.g. Compute, App Platform, Data & Storage, Orchestration & Network):
+  - Live today: Domains, DNS, cPanel Hosting, VPS, Windows RDP, crypto Wallet, API.
+  - New "Coming soon" categories added to match a full cloud host: Cloud Servers, Bare Metal, App Platform (one-click app deploy), Managed Databases, Managed Kubernetes, Object/Block Storage, Load Balancers, AI Agents. Each gets a real product page with a "Notify me / join waitlist" capture — no fake provisioning or fabricated data.
+- **Reskinned logged-in dashboard** — the entire account area (domains, DNS manager, hosting/cPanel, VPS/RDP, wallet & billing, orders, renewals, API keys, account settings & 2FA, help/support) rebuilt on the new design system with a refreshed sidebar and command palette. All current functionality preserved.
+- **Reskinned auth + checkout** — sign in / sign up (incl. Google & Telegram), password/OTP/2FA screens, cart, crypto checkout and order success, all in the new style.
+- **Trust & proof strip** styled like Hostman's (uptime, support, guarantees) but stating Nameword's genuine offshore/privacy/crypto promises — not copied certifications.
+- **Dark + light themes** tuned to the new palette.
 
 ## User flow
-1. Target is fixed to namewords.sbs (cPanel user namea3a5).
-2. The sweep runs function families in a safe order: read-only checks first, then create → verify → clean-up cycles, then the irreversible/side-effecting actions last.
-3. Each call's request, response and timing are captured verbatim.
-4. Verdicts are assigned and systemic patterns grouped.
-5. A single report document is produced: the team reads the matrix; the provider-facing detail section can be sent to the reseller API provider as-is.
+- A visitor lands on the redesigned home → browses the grouped product grid → runs a domain search or opens a product page → sees pricing → creates an account (email, Google or Telegram) → adds to cart → pays by crypto or wallet → lands in the redesigned dashboard to manage the service.
+- On a "Coming soon" product → the visitor can join a waitlist / ask to be notified.
+- A returning customer → signs in → arrives at the redesigned dashboard.
 
 ## UI/UX feel
-A clean, skimmable technical report (Markdown). Top: a summary matrix with verdict badges. Then one section per function family, each showing the request, the response, the verdict, and the recommended provider fix. Neutral and reproducible in tone — anyone can re-run the same calls and get the same evidence. No app screens or UI are added.
+- **Palette & mood:** Hostman's actual look — deep near-black/navy canvas, crisp white surfaces, an electric/cobalt-blue primary accent, cool neutral grays, soft gradient/mesh glow behind the hero, thin subtle borders, rounded product cards with imagery.
+- **Type & spacing:** clean geometric sans, large confident hero headline, strong hierarchy, generous whitespace.
+- **Structure:** sticky top nav with a product mega-menu, grouped/tabbed product cards, a "verify our standards" trust band, consistent section rhythm across every page.
+- **Motion:** restrained reveal-on-scroll and hover lifts; nothing noisy.
+- **Voice:** visually Hostman, verbally Nameword — privacy, offshore jurisdictions, DMCA-ignored, no-KYC, pay-with-crypto stay front and center.
 
 ## Implementation phases
-- **Phase 1 — MVP (built now):** Run the full live sweep against namea3a5, including the side-effecting actions, and deliver the written gap report (summary matrix + per-function request/response/verdict + provider recommendations).
-- **Phase 2 — Re-test / delta report (later):** After the provider ships fixes, re-run the identical sweep and produce a delta report showing what changed (fixed / still broken / newly broken).
-- **Phase 3 — Reusable diagnostics tool (later):** The optional in-app Admin "cPanel Diagnostics" runner that executes the sweep on demand against any account/plan and keeps a history — deferred here since the current deliverable is a report only.
+
+### Phase 1 — built now (the full platform, one pass)
+Re-skin the entire platform to the new Hostman-grade design system in a single pass:
+- New global design system (palette, theme, typography, shared components, nav, footer) in both dark and light.
+- All marketing pages redesigned.
+- All product pages redesigned; existing products stay fully functional; new cloud categories added as polished "Coming soon" pages with a working notify/waitlist.
+- Auth, cart and crypto checkout redesigned.
+- The complete logged-in dashboard redesigned, with all current features intact.
+No new real infrastructure is added in Phase 1 — the new product categories are presentational + waitlist only.
+
+### Phase 2 — later
+Turn the single highest-priority "Coming soon" product into a real, working product (provisioning, pricing, wallet/crypto billing, and dashboard management), using a real provider integration.
+
+### Phase 3 — later
+Bring the remaining new products online, plus Hostman-style enterprise extras (public status page, referrals/credits program, deeper developer/API surface).
 
 ## Assumptions
-- **Target account:** namewords.sbs / namea3a5, which is on the premium-weekly plan. If the weekly plan gates certain functions (e.g. MySQL has previously required a Gold/monthly plan), those are reported as "plan-gated — cannot verify on this account" rather than FAIL, with a note that a Gold account would be needed to fully verify them.
-- **Account state:** If namea3a5 is currently suspended, most cPanel-session functions will return a session/auth failure. The sweep will attempt unsuspend first (itself one of the tested functions); if it cannot be made active, the report will state that a live/active account is required for meaningful per-function coverage.
-- **"Include everything" = real, possibly permanent changes.** Clean-up will be attempted for created resources (subdomains, databases, mailboxes, files), but change-primary-domain and AutoSSL issuance may not be fully reversible; this is accepted.
-- **Test-send recipient:** since no external recipient was given, the real test email will be sent to a mailbox on the account's own domain (created during the email test) or to the account owner's address on file (moxxcompany@gmail.com), to avoid emailing an uninvolved third party.
-- **Deliverable is a document only** — no application feature, endpoint, or UI is built in Phase 1.
-- **Results reflect the provider's behavior for this account at test time**, exercised through the reseller API exactly as the app integrates it today.
+- **Visual match, not a clone:** we adopt Hostman's palette, layout and polish, but keep Nameword's own name, logo and privacy/offshore copy. We do not copy Hostman's text, screenshots or trademarks. Exact color/type tokens are matched closely to the live site, not pixel-perfect.
+- **No fabricated credentials:** the trust strip states Nameword's real guarantees (privacy, crypto, offshore, uptime). We do not display copied ISO/GDPR certifications Nameword doesn't hold.
+- **Existing products stay live and unchanged in function** — this is a redesign, not a rebuild; domains, DNS, hosting, VPS, RDP, wallet and checkout keep working as they do today.
+- **New product taxonomy** mirrors Hostman's catalog (Cloud Servers, Bare Metal, App Platform, Managed Databases, Managed Kubernetes, Object/Block Storage, Load Balancers, AI Agents). Where a new category overlaps something Nameword already sells (e.g. VPS ≈ Cloud Servers), the existing live product is folded into the new taxonomy rather than duplicated.
+- **"Coming soon" = real interest capture**, not fake dashboards: a notify/waitlist form (email via the already-connected Brevo) with no simulated resources.
+- **Both dark and light themes** are kept.
+- **Placeholder integrations remain inert** (Telegram login, WHM, Plesk, Cloudflare, Telnyx, cloud storage, SMTP) until real keys are supplied; they are not faked.
+- The redesign spans the whole app in one pass per the stated preference; this is a large Phase 1, accepted as the chosen scope.

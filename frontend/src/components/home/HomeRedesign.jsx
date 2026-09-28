@@ -7,6 +7,7 @@ import ProductsGlance from "./landing/ProductsGlance";
 import CloudVps from "./landing/CloudVps";
 import WindowsRdp from "./landing/WindowsRdp";
 import CpanelHosting from "./landing/CpanelHosting";
+import CloudCatalog from "./landing/CloudCatalog";
 import WhyNameword from "./landing/WhyNameword";
 import Testimonials from "./landing/Testimonials";
 import RewardsBand from "./landing/RewardsBand";
@@ -29,6 +30,7 @@ const HomeRedesign = () => {
       <CloudVps />
       <WindowsRdp />
       <CpanelHosting />
+      <CloudCatalog />
       <WhyNameword />
       <Testimonials />
       <RewardsBand />

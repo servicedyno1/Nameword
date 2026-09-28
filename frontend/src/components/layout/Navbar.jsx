@@ -7,21 +7,14 @@ import { useAuth } from "../../hooks/useAuth";
 import { NavLink, useNavigate } from "react-router";
 import { IoChevronDown, IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { LuGlobe, LuNetwork, LuServer, LuCloud, LuMonitor, LuCode, LuShieldCheck } from "react-icons/lu";
+import { LuShieldCheck, LuClock, LuArrowRight } from "react-icons/lu";
+import { PRODUCT_GROUPS } from "../../data/productCatalog";
 import ThemeToggleButton from "../common/ThemeToggleButton";
 import UserDropdownMenu from "../common/UserDropdownMenu";
 import CartNavButton from "../checkout/CartNavButton";
 import { useLanguage } from "../../hooks/useLanguage";
 
-// Kept product surface: Domains · DNS · cPanel Hosting · VPS · RDP · API
-const PRODUCT_KEYS = [
-  { key: "domains", to: "/domains", icon: LuGlobe },
-  { key: "dns", to: "/dns-manager", icon: LuNetwork },
-  { key: "hosting", to: "/hosting", icon: LuServer },
-  { key: "vps", to: "/vps", icon: LuCloud },
-  { key: "rdp", to: "/rdp", icon: LuMonitor },
-  { key: "api", to: "/api", icon: LuCode },
-];
+// Product taxonomy lives in ../../data/productCatalog (single source of truth).
 
 const Navbar = () => {
   const languageDropDown = useDropdown();
@@ -43,10 +36,6 @@ const Navbar = () => {
     setMobileOpen(false);
     navigate("/pricing");
   };
-
-  // Product links go straight to their storefront/manager pages.
-  const productTo = (p) => p.to;
-  const rememberPath = () => {};
 
   const deskLink =
     "rounded-lg px-3 py-2 text-15 font-medium text-primary hover:bg-surface-2 dark:text-gray-200 dark:hover:bg-white/[0.06] dark:hover:text-white transition-colors";
@@ -73,28 +62,38 @@ const Navbar = () => {
               <IoChevronDown className={`transition-transform ${productsDropDown.isOpen ? "rotate-180" : ""}`} />
             </button>
             {productsDropDown.isOpen && (
-              <div className="absolute left-0 mt-2 w-[36rem] rounded-2xl border border-line bg-white p-3 shadow-2xl dark:border-white/[0.08] dark:bg-gray-900 dark:shadow-black/60">
-                <div className="grid grid-cols-2 gap-1">
-                  {PRODUCT_KEYS.map((p) => (
-                    <NavLink
-                      key={p.key}
-                      to={productTo(p)}
-                      onClick={() => { rememberPath(p); productsDropDown.close(); }}
-                      className="flex items-start gap-3 rounded-xl p-3 hover:bg-surface-2 dark:hover:bg-white/[0.05] transition-colors"
-                    >
-                      <span className="nw-icon h-10 w-10">
-                        <p.icon className="h-5 w-5" />
-                      </span>
-                      <span>
-                        <span className="block text-sm font-semibold text-primary dark:text-white">{s.nav.items[p.key].title}</span>
-                        <span className="block text-13 text-ink-soft dark:text-gray-400">{s.nav.items[p.key].desc}</span>
-                      </span>
-                    </NavLink>
+              <div className="absolute left-0 mt-2 w-[60rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-line bg-white p-4 shadow-2xl dark:border-white/[0.08] dark:bg-gray-900 dark:shadow-black/60">
+                <div className="grid grid-cols-4 gap-x-4 gap-y-1">
+                  {PRODUCT_GROUPS.map((group) => (
+                    <div key={group.key}>
+                      <p className="px-2 pb-1.5 pt-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted dark:text-gray-500">{group.label}</p>
+                      {group.items.map((it) => (
+                        <NavLink
+                          key={it.slug}
+                          to={it.to}
+                          onClick={() => productsDropDown.close()}
+                          className="flex items-start gap-2.5 rounded-xl p-2.5 hover:bg-surface-2 dark:hover:bg-white/[0.05] transition-colors"
+                        >
+                          <span className="nw-icon h-8 w-8 shrink-0"><it.icon className="h-4 w-4" /></span>
+                          <span className="min-w-0">
+                            <span className="flex items-center gap-1.5">
+                              <span className="text-13 font-semibold text-primary dark:text-white">{it.name}</span>
+                              {it.status === "soon" && (
+                                <span className="inline-flex items-center gap-0.5 rounded-full bg-accent-50 px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">
+                                  <LuClock className="h-2.5 w-2.5" />Soon
+                                </span>
+                              )}
+                            </span>
+                            <span className="mt-0.5 block truncate text-[11px] text-ink-soft dark:text-gray-400">{it.blurb}</span>
+                          </span>
+                        </NavLink>
+                      ))}
+                    </div>
                   ))}
                 </div>
-                <div className="mt-2 flex items-center gap-2 rounded-xl border border-brand/15 bg-brand-50/70 px-3 py-2 text-13 text-brand-800 dark:border-brand/20 dark:bg-brand/10 dark:text-brand-200">
-                  <LuShieldCheck className="h-4 w-4 shrink-0" />
-                  {s.home.heroChips.join(" · ")}
+                <div className="mt-3 flex items-center justify-between gap-2 rounded-xl border border-brand/15 bg-brand-50/70 px-3 py-2 text-13 text-brand-800 dark:border-brand/20 dark:bg-brand/10 dark:text-brand-200">
+                  <span className="flex items-center gap-2"><LuShieldCheck className="h-4 w-4 shrink-0" />{s.home.heroChips.join(" · ")}</span>
+                  <NavLink to="/products" onClick={() => productsDropDown.close()} className="inline-flex shrink-0 items-center gap-1 font-semibold hover:underline">All products <LuArrowRight className="h-3.5 w-3.5" /></NavLink>
                 </div>
               </div>
             )}
@@ -163,18 +162,27 @@ const Navbar = () => {
             </div>
 
             <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wider text-ink-soft dark:text-gray-500">{s.nav.products}</p>
-            <div className="flex flex-col gap-1">
-              {PRODUCT_KEYS.map((p) => (
-                <NavLink key={p.key} to={productTo(p)} onClick={() => { rememberPath(p); setMobileOpen(false); }} className="flex items-center gap-3 rounded-xl p-2.5 hover:bg-surface-2 dark:hover:bg-white/[0.05]">
-                  <span className="nw-icon h-9 w-9">
-                    <p.icon className="h-5 w-5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm font-semibold text-primary dark:text-white">{s.nav.items[p.key].title}</span>
-                    <span className="block text-xs text-ink-soft dark:text-gray-400">{s.nav.items[p.key].desc}</span>
-                  </span>
-                </NavLink>
+            <div className="flex flex-col gap-4">
+              {PRODUCT_GROUPS.map((group) => (
+                <div key={group.key}>
+                  <p className="px-1 pb-1 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted dark:text-gray-500">{group.label}</p>
+                  <div className="flex flex-col gap-0.5">
+                    {group.items.map((it) => (
+                      <NavLink key={it.slug} to={it.to} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 rounded-xl p-2.5 hover:bg-surface-2 dark:hover:bg-white/[0.05]">
+                        <span className="nw-icon h-9 w-9 shrink-0"><it.icon className="h-5 w-5" /></span>
+                        <span className="min-w-0">
+                          <span className="flex items-center gap-1.5">
+                            <span className="text-sm font-semibold text-primary dark:text-white">{it.name}</span>
+                            {it.status === "soon" && <span className="rounded-full bg-accent-50 px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">Soon</span>}
+                          </span>
+                          <span className="block truncate text-xs text-ink-soft dark:text-gray-400">{it.blurb}</span>
+                        </span>
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
               ))}
+              <NavLink to="/products" onClick={() => setMobileOpen(false)} className="mt-1 inline-flex items-center gap-1 px-1 text-13 font-semibold text-brand-700 dark:text-brand-300">All products <LuArrowRight className="h-3.5 w-3.5" /></NavLink>
             </div>
 
             <div className="my-4 border-t border-line dark:border-white/[0.06]" />
