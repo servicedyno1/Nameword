@@ -13,7 +13,9 @@ export function DecisionsProvider({ children }) {
   });
 
   useEffect(() => {
-    localStorage.setItem(KEY, JSON.stringify(picks));
+    const empty = Object.values(picks).every((v) => v === null);
+    if (empty) localStorage.removeItem(KEY);
+    else localStorage.setItem(KEY, JSON.stringify(picks));
   }, [picks]);
 
   const pick = (kind, id) => setPicks((p) => ({ ...p, [kind]: p[kind] === id ? null : id }));

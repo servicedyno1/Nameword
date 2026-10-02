@@ -1,5 +1,30 @@
 # Nameword Platform — Setup & Credential Audit (PRD / Handoff)
 
+## ✅ SESSION (2026-06, fork) — REBRAND Phase 1: private hosta.sh brand guide at /brand (testing_agent iteration_22 = 100%)
+Rebrand plan Nameword → **hosta.sh** in 3 phases. Phase 1 (brand discovery + identity) DONE as a PRIVATE, UNLINKED, ADMIN-ONLY page. No live-app
+branding/colours/logos changed (that is Phase 2 — DO NOT start until the user approves picks).
+- User choices: customer snapshot = hand-written MOCK numbers (labelled illustrative); route `/brand` ADMIN-ONLY; logos = inline SVG + 1 AI mockup each;
+  hex values + font pairings proposed by agent.
+- **Backend:** `routes/api/brand.js` → `GET /api/v1/brand/access` (currentUser+requireAuth) → `{success,data:{allowed}}` from env allowlist
+  `BRAND_ADMIN_EMAILS` (comma list; declared in `start/env.js` default ""). `.env` currently = `moxxcompany@gmail.com,connect@ssh.com,demo@nameword.local`.
+  ⚠️ Pod resets wipe `.env` → re-add this key or /brand shows 403 for everyone.
+- **Frontend:** `src/pages/brand/` — `BrandGuide.jsx` (shell: sticky header, `tree ./brand` sidebar w/ IntersectionObserver, injects Google Fonts link for
+  Geist/Geist Mono/IBM Plex/Space Grotesk ONLY on this page), `brand.css` (scoped `.hb` terminal theme: scanlines, blink cursor, `.hb-win` windows,
+  `.pv-*` palette preview vars, `.hb .grid{grid-auto-columns:minmax(0,1fr)}` mobile-overflow guard), `brandData.js` (ALL content), `brandUtils.js`
+  (WCAG contrast), `decisionsCtx.js`/`DecisionsContext.jsx`/`useDecisions.js` (picks persisted in localStorage `hosta_brand_decisions`),
+  `components/`: BrandGate (403 terminal panel), Sidebar, Readme, Snapshot, MarketScan (positioning map), Personas (4 tabs), Personality (name story,
+  archetype sliders, values, voice do/don't, 4 taglines), ColourDirections+PalettePreview (Phosphor #3CFF73 / Amber Shell #FFB000 / Neon Prompt
+  #22E6FF+#FF3DCB; dark/light toggle; contrast ratios), Typography (Geist Mono+Geist / IBM Plex Mono+Sans / JetBrains Mono+Space Grotesk; specimen),
+  LogoConcepts + `logos/Marks.jsx` (PromptMark `>_`, CursorMark pixel-h+cursor, ShebangMark `#!`; recolour by palette; 16/24/32 favicon row),
+  Decisions (decisions.json + copy/reset; status ready_for_phase_2 when 3 picks made), NextSteps. Route in `Router.jsx`: `/brand` inside ProtectedRoute.
+- Mockups: `/app/frontend/public/brand/mockup-{prompt,cursor,shebang}.jpg` (AI-generated, illustrative).
+- Testids: brand-guide, brand-gate-denied/-home, brand-nav-<id>, snapshot-stats, market-map, market-player-*, persona-tab-*/persona-panel-*,
+  palette-<id>, palette-<id>-dark/-light, palette-preview-<id>-<mode>, type-tab-<id>, type-specimen-<id>, logo-<id>, logo-mockup-<id>,
+  logo-palette-<id>, pick-{palette|type|logo}-<id>, decisions-json/-copy/-reset/-status, brand-exit.
+- Frontend is a Vite PROD build → `sudo supervisorctl restart frontend` after edits (~30s).
+- NEXT: user reviews /brand and picks 1 colour + 1 type + 1 logo (decisions.json) → then Phase 2 (apply brand app-wide: rename, tokens, logo set,
+  emails, EN/ES/FR) → Phase 3 (hosta.sh domain cut-over, OAuth redirects, Brevo sender, launch kit).
+
 ## ✅ SESSION (2026-10-02, pod 1c7231fa) — Re-setup from user creds + Nomadly host moved to 2.speechcue.com
 - Fresh pod: both `.env` missing, backend `node_modules` empty, supervisor on default uvicorn template. Ran `yarn install` (backend, 59s);
   wrote `/app/backend/.env` + `/app/frontend/.env`; supervisor backend → `/bin/bash /app/backend/start.sh`, frontend → `/bin/bash /app/frontend/start.sh`

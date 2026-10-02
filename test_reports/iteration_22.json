@@ -1,0 +1,21 @@
+{
+  "summary": "End-to-end testing of the private /brand (hosta.sh brand guide) feature. Verified backend allowlist endpoint and full frontend flows (gate, sections, colour/typography/logo pickers, decisions persistence, responsive layout, and live-app regression). All acceptance criteria pass. No bugs found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/test_reports/iteration_22.json"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Decisions reset() stores {palette:null, type:null, logo:null} in localStorage rather than removing the key. Harmless (UI correctly shows status: pending) but slightly leaky; consider localStorage.removeItem('hosta_brand_decisions') on reset.",
+    "The DOM response envelope on /api/v1/brand/access is {success,data:{allowed}} not {allowed} as described in the request; frontend already unwraps it in src/api/brand.js. OK."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "demo@nameword.local / Demo@12345 (admin on BRAND_ADMIN_EMAILS allowlist); buyer@nameword.local / Buyer@12345 (non-admin)",
+  "seed_data_creation": "None. Read-only use of two existing test accounts.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Verified results, all data-testids present and functioning:\n- Backend GET /api/v1/brand/access: 401 anon, {allowed:true} demo, {allowed:false} buyer.\n- Mockup images /brand/mockup-{prompt,cursor,shebang}.jpg all 200 OK, naturalWidth=1264.\n- /brand admin gate: anon -> redirects to /sign-in; buyer -> brand-gate-denied panel + brand-gate-home link; demo -> brand-guide renders.\n- Title '# hosta.sh' matches. brand-status-tags present. Sidebar has 10 entries (readme, snapshot, market, personas, brand, colors, typography, logos, decisions, next) — note the 5th nav id is 'brand' (file brand.md) NOT 'personality'; the spec's wording 'personality' section is served under nav id 'brand'.\n- snapshot-stats: 6 cards. market-map: 10 player chips including market-player-hosta-sh. market-takeaways: 4. persona-tab-{operator,builder,nomad,reseller} switch persona-panel-* correctly. brand-sliders + voice-rules present. taglines container has 4 children. next-steps: 3 columns.\n- Colour directions: palette-{phosphor,amber,neon} cards, light/dark toggle switches palette-preview-<id>-<mode>, contrast lines show ratios like 'text/bg 16.7:1 · AAA / accent/bg 3.9:1 · AA-large / on-accent 4.2:1 · AA-large'. No readability issues observed.\n- Typography: type-tab-{geist,plex,jb} switch active specimen (only the active specimen is rendered; its testid changes). Computed font-family on children does change: plex -> 'IBM Plex Sans', jb -> 'Space Grotesk'. No console errors during font load.\n- Logos: SVG lockups + logo-mockup-{prompt,cursor,shebang} load (naturalWidth 1264, naturalHeight 848). Clicking logo-palette-amber recolours logo-prompt SVG fills (rgb(215,245,223) -> rgb(246,231,207)).\n- Decisions: picking palette+type+logo updates decisions-json with palette 'Amber Shell', typography 'IBM Plex Mono + IBM Plex Sans', logo 'Block Cursor' and decisions-status 'status: ready_for_phase_2'. localStorage key hosta_brand_decisions persists across reload. decisions-copy present. decisions-reset returns status to pending.\n- When a palette is picked and no manual override, logos section shows the 'following your preferred palette' tag.\n- Navigation: sidebar links smooth-scroll; clicking brand-nav-colors scrolled to y~5019. brand-exit href='/dashboard'.\n- Mobile 390x844: document.documentElement.scrollWidth == 390 (no horizontal overflow).\n- Regression: landing / renders with Nameword branding; /dashboard loads clean for demo. No pageerror events.\n\nTip: pick-type-<id> only exists for the currently active typography tab (PickButton is rendered inside the active specimen Window). To pick a non-default pair, click type-tab-<id> first.\n",
+  "rca of the issue": "N/A — no issues observed."
+}
