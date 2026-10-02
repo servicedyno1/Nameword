@@ -10,7 +10,7 @@ import sys
 import json
 
 # Base URL from frontend/.env
-BASE_URL = "https://nameword-staging-3.preview.emergentagent.com"
+BASE_URL = "https://nameword-preview-3.preview.emergentagent.com"
 API_BASE = f"{BASE_URL}/api/v1"
 
 # Test accounts (seeded via scripts/seed_c1_test.js)

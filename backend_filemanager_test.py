@@ -13,7 +13,7 @@ import string
 import time
 
 # Configuration
-BASE_URL = "https://nameword-staging-3.preview.emergentagent.com"
+BASE_URL = "https://nameword-preview-3.preview.emergentagent.com"
 API_BASE = f"{BASE_URL}/api/v1"
 TIMEOUT = 30  # Provider calls go to external API (1.speechcue.com), so use 30s timeout
 

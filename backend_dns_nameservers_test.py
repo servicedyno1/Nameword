@@ -16,7 +16,7 @@ import time
 import sys
 
 # Configuration
-BASE_URL = "https://nameword-staging-3.preview.emergentagent.com/api/v1"
+BASE_URL = "https://nameword-preview-3.preview.emergentagent.com/api/v1"
 EMAIL = "filemanager.tester@nameword.local"
 PASSWORD = "FileMgr!Test123"
 DOMAIN = "namewords.sbs"
