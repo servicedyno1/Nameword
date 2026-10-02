@@ -676,7 +676,7 @@ const listHostingAddons = (req, res) =>
     })
   );
 // Attach an addon domain to a live hosting plan, then — for domains the buyer
-// registered with Nameword — automatically point that domain's nameservers at
+// registered with hosta.sh — automatically point that domain's nameservers at
 // the hosting account's zone so the connected site actually resolves (mirrors
 // the bundled domain+hosting reconciliation in CheckoutController). External
 // (not-owned) domains still attach fine; we simply return the hosting
@@ -722,7 +722,7 @@ const addHostingAddon = (req, res) =>
       }
       hostNs = Array.isArray(hostNs) ? hostNs.filter(Boolean) : [];
 
-      // 3. Is the domain registered with Nameword (and owned by this buyer)?
+      // 3. Is the domain registered with hosta.sh (and owned by this buyer)?
       let owned = false;
       try {
         owned = !!(domain && (await ownership.findOwnedDomain(userId(req), domain)));

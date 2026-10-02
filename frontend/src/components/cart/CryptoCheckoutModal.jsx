@@ -214,7 +214,7 @@ export default function CryptoCheckoutModal({ orderPayload, payable, summary, on
           ) : !pay ? (
             <>
               {summary && Array.isArray(summary.lines) && summary.lines.length > 0 && (
-                <div className="mb-4 rounded-xl border border-line bg-surface-2/60 p-4 shadow-[0_12px_34px_-20px_rgba(124,58,237,0.45)] dark:border-white/[0.06] dark:bg-white/[0.04]" data-testid="crypto-order-summary">
+                <div className="mb-4 rounded-xl border border-line bg-surface-2/60 p-4 shadow-[0_12px_34px_-20px_rgba(8,145,178,0.4)] dark:border-white/[0.06] dark:bg-white/[0.04]" data-testid="crypto-order-summary">
                   <p className="mb-2.5 text-xs font-semibold uppercase tracking-wide text-ink-soft dark:text-gray-400">{tr("orderSummary", "Order summary")}</p>
                   <div className="space-y-2">
                     {summary.lines.map((l) => (

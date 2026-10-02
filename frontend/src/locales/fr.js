@@ -8,8 +8,8 @@ export const fr = {
     faq: "FAQ",
     signIn: "Se connecter",
     createAccount: "Créer un compte",
-    logoAlt: "Logo NameWord",
-    logoTitle: "Logo NameWord",
+    logoAlt: "Logo hosta.sh",
+    logoTitle: "Logo hosta.sh",
     helpSupport: "Aide et Support"
   },
   // Domain Search
@@ -60,13 +60,13 @@ export const fr = {
     noDowntimes: "Aucun Temps d'Arrêt",
     quote: "Le nom de votre domaine est la {foundation} de votre identité en ligne. Élevez la visibilité et la crédibilité de votre marque avec le bon.",
     foundation: "fondation",
-    quoteAuthor: "– PDG de NameWord, John Smith"
+    quoteAuthor: "– PDG de hosta.sh, John Smith"
   },
   // Home / Landing
   home: {
     hero: {
       heading: "Vous cherchez le domaine parfait ?",
-      subheading: "Nameword est plébiscité par les entreprises et marques qui valorisent la crédibilité en ligne",
+      subheading: "hosta.sh est plébiscité par les entreprises et marques qui valorisent la crédibilité en ligne",
       tabs: {
         search: "Rechercher",
         transfer: "Transférer"
@@ -101,7 +101,7 @@ export const fr = {
       unbeatablePricingPlans: "Tarifs et forfaits imbattables",
       domainHeader: "Domaine",
       competitorsHeader: "Concurrents",
-      namewordHeader: "NameWord",
+      namewordHeader: "hosta.sh",
       ctaTitle: "Commencez avec des prix honnêtes",
       placeholder: "Domaine, Nom de l'entreprise, Mot-clé...",
       button: "Rechercher",
@@ -120,7 +120,7 @@ export const fr = {
         "Conçu pour débutants et experts",
         "Grandissez en toute confiance"
       ],
-      testimonial: "Avec NameWord, lancer ma marque a été un jeu d'enfant !",
+      testimonial: "Avec hosta.sh, lancer ma marque a été un jeu d'enfant !",
       testimonialAuthor: "– John Smith, Fondateur d’Acme"
     },
     security: {
@@ -200,7 +200,7 @@ export const fr = {
     },
     claim: {
       title: "Réservez votre espace en ligne",
-      description: "Du domaine à la mise en ligne : NameWord rend le tout rapide, sécurisé et sans tracas.",
+      description: "Du domaine à la mise en ligne : hosta.sh rend le tout rapide, sécurisé et sans tracas.",
       highlight: "Pas de ventes forcées. Pas de frais cachés.",
       placeholder: "Domaine, Nom de l'entreprise, Mot-clé...",
       button: "Rechercher",
@@ -919,9 +919,9 @@ export const fr = {
     dnsRecordDeletedSuccess: "Enregistrement DNS supprimé avec succès",
     failedToDeleteDnsRecord: "Échec de la suppression de l'enregistrement DNS",
     failedToFetchDnsRecords: "Échec de la récupération des enregistrements DNS",
-    nameserversDescription: "Les serveurs de noms gèrent les requêtes Internet pour votre domaine. Vous pouvez utiliser les serveurs de noms NameWord ou utiliser des serveurs de noms personnalisés pour pointer vers un autre fournisseur d'hébergement.",
+    nameserversDescription: "Les serveurs de noms gèrent les requêtes Internet pour votre domaine. Vous pouvez utiliser les serveurs de noms hosta.sh ou utiliser des serveurs de noms personnalisés pour pointer vers un autre fournisseur d'hébergement.",
     loadingNameservers: "Chargement des serveurs de noms...",
-    useNameWordNameservers: "Utiliser les serveurs de noms NameWord (recommandé)",
+    useNameWordNameservers: "Utiliser les serveurs de noms hosta.sh (recommandé)",
     changeNameservers: "Changer les serveurs de noms",
     nameserver1: "Serveur de noms 1 *",
     nameserver2: "Serveur de noms 2 *",
@@ -932,7 +932,7 @@ export const fr = {
     failedToFetchNameservers: "Échec de la récupération des serveurs de noms",
     nameserver1And2Required: "Le serveur de noms 1 et le serveur de noms 2 sont requis",
     changeNameserversTitle: "Changer les Serveurs de Noms",
-    chooseNameserversDescription: "Choisissez si vous souhaitez définir les serveurs de noms par défaut de NameWord ou entrer des serveurs différents",
+    chooseNameserversDescription: "Choisissez si vous souhaitez définir les serveurs de noms par défaut de hosta.sh ou entrer des serveurs différents",
     useDifferentNameservers: "Utiliser des serveurs de noms différents",
     continue: "Continuer",
     noDomainsSelected: "Aucun domaine sélectionné",
@@ -1159,7 +1159,7 @@ export const fr = {
     twoFactorAuthenticationEnabled: "Authentification à deux facteurs activée.",
     twoFactorAuthenticationDisabled: "Authentification à deux facteurs désactivée.",
     failedToUpdate2FA: "Échec de la mise à jour de l'authentification à deux facteurs",
-    mobileAppDescription: "Assurez-vous que votre application d'authentification mobile fonctionne correctement avec votre compte NameWord. Pour une sécurité optimale, nous recommandons fortement d'utiliser l'une des applications d'authentification suivantes:",
+    mobileAppDescription: "Assurez-vous que votre application d'authentification mobile fonctionne correctement avec votre compte hosta.sh. Pour une sécurité optimale, nous recommandons fortement d'utiliser l'une des applications d'authentification suivantes:",
     googleAuthenticator: "Google Authenticator",
     emailAuthenticationEnabled: "Authentification par e-mail activée.",
     emailAuthenticationDisabled: "Authentification par e-mail désactivée.",
@@ -1172,7 +1172,7 @@ export const fr = {
     nameservers: "Serveurs de noms",
     currentNameserver1: "Serveur de noms actuel 1:",
     currentNameserver2: "Serveur de noms actuel 2:",
-    namewordNameservers: "Serveurs de noms NameWord:",
+    namewordNameservers: "Serveurs de noms hosta.sh:",
     hostingDetails: "Détails de l'hébergement",
     renew: "Renouveler",
     upgrade: "Mettre à niveau",
@@ -1282,7 +1282,7 @@ export const fr = {
     deleteApiKeyDescription: "La suppression de ce jeton API cassera tous les scripts ou services qui en dépendent. Cette action est permanente et ne peut pas être annulée.",
     // Change Password Modal
     changePassword: "Changer le mot de passe",
-    changePasswordDescription: "Cela ne mettra à jour que votre mot de passe de connexion NameWord. Si vous souhaitez changer le mot de passe de votre compte d'hébergement, veuillez suivre les instructions fournies ici.",
+    changePasswordDescription: "Cela ne mettra à jour que votre mot de passe de connexion hosta.sh. Si vous souhaitez changer le mot de passe de votre compte d'hébergement, veuillez suivre les instructions fournies ici.",
     currentPassword: "Mot de Passe Actuel *",
     newPassword: "Nouveau Mot de Passe *",
     newPasswordAgain: "Nouveau Mot de Passe à Nouveau *",
@@ -1702,7 +1702,7 @@ export const fr = {
   // Privacy Policy
   privacy: {
     title: "Politique de Confidentialité",
-    intro: "Nameword est conçu pour fonctionner avec le moins possible de vos données personnelles. Nous opérons depuis une juridiction offshore qui privilégie la confidentialité, conservons des journaux d'activité minimaux et ne vendons jamais vos données. Cette politique explique ce que nous collectons pour opérer vos domaines, DNS, hébergement, serveurs et e-mail, pourquoi nous en avons besoin et comment vous gardez le contrôle.",
+    intro: "hosta.sh est conçu pour fonctionner avec le moins possible de vos données personnelles. Nous opérons depuis une juridiction offshore qui privilégie la confidentialité, conservons des journaux d'activité minimaux et ne vendons jamais vos données. Cette politique explique ce que nous collectons pour opérer vos domaines, DNS, hébergement, serveurs et e-mail, pourquoi nous en avons besoin et comment vous gardez le contrôle.",
     infoWeCollect: "1. Informations que Nous Collectons",
     infoWeCollectText: "Nous ne collectons que ce qui est nécessaire pour fournir vos services : une adresse e-mail et un mot de passe pour votre compte, les coordonnées exigées par les registres de domaines et les données techniques nécessaires pour opérer DNS, hébergement et serveurs. Les paiements se font en cryptomonnaie ; nous ne stockons donc ni numéro de carte ni coordonnées bancaires, seulement la référence sur la chaîne de votre recharge. La confidentialité WHOIS est appliquée par défaut aux domaines éligibles.",
     howWeUseInfo: "2. Comment Nous Utilisons Vos Informations",
@@ -1722,30 +1722,30 @@ export const fr = {
     changesToPolicy: "7. Modifications de Cette Politique",
     changesToPolicyText: "Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. L'utilisation continue du service signifie que vous acceptez la version mise à jour.",
     contact: "8. Contact",
-    contactText: "Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous à hi@nameword.com."
+    contactText: "Si vous avez des questions sur cette Politique de Confidentialité, contactez-nous à {email}."
   },
   // Terms and Conditions
   terms: {
     title: "Conditions Générales",
-    intro: "Ces conditions régissent votre utilisation des services privés de domaines, DNS, hébergement, serveurs et e-mail de Nameword, opérés depuis une juridiction offshore qui privilégie la confidentialité. Elles sont écrites pour être lues : langage clair d'abord, précision juridique là où elle compte. En utilisant les services, vous les acceptez.",
+    intro: "Ces conditions régissent votre utilisation des services privés de domaines, DNS, hébergement, serveurs et e-mail de hosta.sh, opérés depuis une juridiction offshore qui privilégie la confidentialité. Elles sont écrites pour être lues : langage clair d'abord, précision juridique là où elle compte. En utilisant les services, vous les acceptez.",
     services: "1. Services",
-    servicesText: "Nameword propose l'enregistrement privé de domaines, la gestion DNS, l'hébergement cPanel offshore, des serveurs VPS et RDP, un e-mail privé et un portefeuille prépayé. L'infrastructure est située dans les juridictions respectueuses de la vie privée indiquées au moment de la commande. La disponibilité, les prix et les fonctionnalités peuvent changer ; les prix de renouvellement sont toujours affichés avant l'achat.",
+    servicesText: "hosta.sh propose l'enregistrement privé de domaines, la gestion DNS, l'hébergement cPanel offshore, des serveurs VPS et RDP, un e-mail privé et un portefeuille prépayé. L'infrastructure est située dans les juridictions respectueuses de la vie privée indiquées au moment de la commande. La disponibilité, les prix et les fonctionnalités peuvent changer ; les prix de renouvellement sont toujours affichés avant l'achat.",
     userResponsibilities: "2. Responsabilités de l'Utilisateur",
-    userResponsibilitiesText: "Vous êtes responsable de l'exactitude des informations que vous fournissez et de l'usage que vous faites de vos services. Vous ne pouvez pas utiliser Nameword pour du spam, du phishing, la distribution de logiciels malveillants ou toute activité qui met en danger notre réseau ou notre infrastructure. Au-delà de cela, nous respectons votre vie privée et ne surveillons pas le contenu licite.",
+    userResponsibilitiesText: "Vous êtes responsable de l'exactitude des informations que vous fournissez et de l'usage que vous faites de vos services. Vous ne pouvez pas utiliser hosta.sh pour du spam, du phishing, la distribution de logiciels malveillants ou toute activité qui met en danger notre réseau ou notre infrastructure. Au-delà de cela, nous respectons votre vie privée et ne surveillons pas le contenu licite.",
     paymentsAndBilling: "3. Paiements et Facturation",
     paymentsAndBillingText: "Les paiements se font uniquement en cryptomonnaie : nous n'acceptons ni carte de crédit, ni SEPA, ni virement bancaire. Les fonds sont ajoutés à votre portefeuille prépayé et dépensés pour les services ; les prix sont affichés avant l'achat. Une fois un domaine ou un service provisionné, il n'est pas remboursable, et tout solde restant demeure un crédit sur le portefeuille pour un usage futur.",
     domainRegistration: "4. Enregistrement de Domaine",
     domainRegistrationText: "La disponibilité du domaine n'est pas garantie tant que l'enregistrement n'est pas terminé. Nous ne sommes pas responsables des actions, restrictions ou politiques imposées par le registre de domaines concerné.",
     intellectualProperty: "5. Propriété Intellectuelle",
-    intellectualPropertyText: "Tout le contenu, la marque et les matériaux qui composent la plateforme Nameword sont la propriété de nous ou de nos concédants de licence et ne peuvent être réutilisés sans autorisation. Le contenu que vous hébergez reste le vôtre.",
+    intellectualPropertyText: "Tout le contenu, la marque et les matériaux qui composent la plateforme hosta.sh sont la propriété de nous ou de nos concédants de licence et ne peuvent être réutilisés sans autorisation. Le contenu que vous hébergez reste le vôtre.",
     limitationOfLiability: "6. Limitation de Responsabilité",
-    limitationOfLiabilityText: "Nameword est fourni \"tel quel\". Nous ne sommes pas responsables des dommages indirects, accessoires ou consécutifs résultant de l'utilisation de nos services.",
+    limitationOfLiabilityText: "hosta.sh est fourni \"tel quel\". Nous ne sommes pas responsables des dommages indirects, accessoires ou consécutifs résultant de l'utilisation de nos services.",
     termination: "7. Utilisation Acceptable et Résiliation",
     terminationText: "Nous hébergeons du contenu sans juger sa politique ni ses opinions et ne retirons pas de contenu licite sur la base d'avis DMCA ou d'autres demandes de retrait de tiers. Nous n'agissons qu'en cas d'abus manifeste de notre propre infrastructure — tel que spam, phishing, logiciels malveillants ou attaques menaçant le réseau — et pouvons suspendre les services dans ces cas ou en cas de non-respect de ces conditions.",
     changesToTerms: "8. Modifications des Conditions",
     changesToTermsText: "Nous pouvons mettre à jour ces Conditions de temps à autre. L'utilisation continue du service signifie que vous acceptez la version mise à jour.",
     contact: "9. Contact",
-    contactText: "Pour des questions sur ces Conditions, contactez-nous à hi@nameword.com."
+    contactText: "Pour des questions sur ces Conditions, contactez-nous à {email}."
   },
   // Auth
   auth: {
@@ -1926,7 +1926,7 @@ export const fr = {
       ],
       transferDomains: [
         {
-          question: "Comment transférer un domaine vers Nameword?",
+          question: "Comment transférer un domaine vers hosta.sh?",
           answer: "Allez dans \"Domaines\" → \"Transférer.\" Entrez le nom de votre domaine et le code d'autorisation (code EPP) de votre bureau d'enregistrement actuel. Les transferts se terminent généralement en 5-7 jours."
         },
         {
@@ -2163,7 +2163,7 @@ export const fr = {
       getStartedWithDomain: {
         imageAlt: "Commencer avec les Domaines",
         imageTitle: "Commencer avec les Domaines",
-        intro: "Choisir le bon domaine est la première étape pour construire votre présence en ligne — et avec NameWord, c'est rapide, simple et sécurisé.",
+        intro: "Choisir le bon domaine est la première étape pour construire votre présence en ligne — et avec hosta.sh, c'est rapide, simple et sécurisé.",
         searchTitle: "Recherchez Votre Nom Parfait",
         searchDescription: "Utilisez notre outil de recherche intelligent pour trouver des noms de domaine disponibles. Nous suggérerons des alternatives si votre nom idéal est pris — y compris des extensions tendance comme .io, .tech et .store.",
         manageTitle: "Gérez en Toute Confiance",

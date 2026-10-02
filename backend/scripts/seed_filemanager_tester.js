@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const User = require("../app/models/User");
 const Order = require("../app/models/Order");
 
-const EMAIL = "filemanager.tester@nameword.local";
+const EMAIL = "filemanager.tester@hosta.local";
 const PASSWORD = "FileMgr!Test123";
 const PROVIDER_USERNAME = "nbayftest";
 const DOMAIN = "testingbays.sbs";

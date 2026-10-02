@@ -1,5 +1,6 @@
 import MainLayout from '../layouts/MainLayout';
 import { useLanguage } from '../hooks/useLanguage';
+import { withSupportEmail } from '../config/brand';
 
 const TermsAndConditions = () => {
     const { t } = useLanguage();
@@ -8,12 +9,12 @@ const TermsAndConditions = () => {
             <div className='content-section max-w-4xl mx-auto'>
                 <h1>{t.terms.title || "Terms & Conditions"}</h1>
                 <p>
-                    {t.terms.intro || "By accessing or using NameWord, you agree to these Terms and Conditions. If you do not agree, please do not use our services."}
+                    {t.terms.intro || "By accessing or using hosta.sh, you agree to these Terms and Conditions. If you do not agree, please do not use our services."}
                 </p>
 
                 <h2>{t.terms.services || "1. Services"}</h2>
                 <p>
-                    {t.terms.servicesText || "NameWord provides domain name search, registration, and related digital services. Availability, pricing, and features may change at any time."}
+                    {t.terms.servicesText || "hosta.sh provides domain name search, registration, and related digital services. Availability, pricing, and features may change at any time."}
                 </p>
 
                 <h2>{t.terms.userResponsibilities || "2. User Responsibilities"}</h2>
@@ -26,15 +27,15 @@ const TermsAndConditions = () => {
 
                 <h2>{t.terms.domainRegistration || "4. Domain Registration"}</h2>
 
-                <p>{t.terms.domainRegistrationText || "Domain availability is not guaranteed until registration is completed. NameWord is not responsible for third-party registry actions or restrictions."}</p>
+                <p>{t.terms.domainRegistrationText || "Domain availability is not guaranteed until registration is completed. hosta.sh is not responsible for third-party registry actions or restrictions."}</p>
 
                 <h2>{t.terms.intellectualProperty || "5. Intellectual Property"}</h2>
 
-                <p>{t.terms.intellectualPropertyText || "All content, branding, and materials on NameWord are owned by us or our licensors and may not be used without permission."}</p>
+                <p>{t.terms.intellectualPropertyText || "All content, branding, and materials on hosta.sh are owned by us or our licensors and may not be used without permission."}</p>
 
                 <h2>{t.terms.limitationOfLiability || "6. Limitation of Liability"}</h2>
 
-                <p>{t.terms.limitationOfLiabilityText || "NameWord is provided \"as is\". We are not liable for indirect, incidental, or consequential damages arising from the use of our services."}</p>
+                <p>{t.terms.limitationOfLiabilityText || "hosta.sh is provided \"as is\". We are not liable for indirect, incidental, or consequential damages arising from the use of our services."}</p>
 
                 <h2>{t.terms.termination || "7. Termination"}</h2>
 
@@ -46,7 +47,7 @@ const TermsAndConditions = () => {
 
                 <h2>{t.terms.contact || "9. Contact"}</h2>
 
-                <p>{t.terms.contactText || "For questions about these Terms, contact us at support@nameword.com"}</p>
+                <p>{withSupportEmail(t.terms.contactText)}</p>
             </div>
         </MainLayout>
     )

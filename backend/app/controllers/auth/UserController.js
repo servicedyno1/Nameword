@@ -69,7 +69,7 @@ class UserController {
         const info = await transporter.sendMail({
             from: env.MAIL_FROM_ADDRESS,
             to: user.email, 
-            subject: "Reactivate your Nameword account", 
+            subject: "Reactivate your hosta.sh account", 
             html: html, // html body
         });
         return res.status(200).json({message:"We have emailed you a reactivate link!"});
@@ -138,7 +138,7 @@ class UserController {
 					await transporter.sendMail({
 						from: env.MAIL_FROM_ADDRESS,
 						to: userEmail,
-						subject: "Your Nameword account has been deleted",
+						subject: "Your hosta.sh account has been deleted",
 						html: html,
 					});
 				}

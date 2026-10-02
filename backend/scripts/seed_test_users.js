@@ -7,8 +7,8 @@ const Wallet = require("../app/models/Wallet");
 const Transaction = require("../app/models/Transaction");
 
 const ACCOUNTS = [
-  { name: "Demo User", email: "demo@nameword.local", password: "Demo@12345", walletUsd: null },
-  { name: "Test Buyer", email: "buyer@nameword.local", password: "Buyer@12345", walletUsd: 50 },
+  { name: "Demo User", email: "demo@hosta.local", password: "Demo@12345", walletUsd: null },
+  { name: "Test Buyer", email: "buyer@hosta.local", password: "Buyer@12345", walletUsd: 50 },
 ];
 
 (async () => {

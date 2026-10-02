@@ -36,7 +36,7 @@ class PasswordResetController {
 			const info = await transporter.sendMail({
 				from: env.MAIL_FROM_ADDRESS,                                                                                                                                                                                                                                                                                         
 				to: user.email,
-				subject: "Reset your Nameword password",
+				subject: "Reset your hosta.sh password",
 				html: html, // html body
 			});
 			console.log(`Password reset email sent to ${user.email}`);

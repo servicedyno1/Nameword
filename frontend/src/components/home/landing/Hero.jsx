@@ -47,22 +47,36 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-gray-950">
       {/* soft, warm gradient wash — media-rich but not crowding the search */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[26rem] bg-gradient-to-b from-brand-50 via-brand-50/40 to-transparent dark:from-brand-500/[0.10] dark:via-brand-500/[0.04] dark:to-transparent" />
-      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-indigo-400/20 blur-3xl dark:bg-indigo-500/10" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[26rem] bg-gradient-to-b from-brand-50 via-brand-50/40 to-transparent dark:from-brand-500/[0.07] dark:via-brand-500/[0.03] dark:to-transparent" />
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-neon/10 blur-3xl dark:bg-neon/10" />
       <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-brand-400/20 blur-3xl dark:bg-brand-500/10" />
 
       <div className="nw-container relative py-20 sm:py-24 lg:py-28">
-        <Motion.div variants={container} initial="initial" animate="animate" className="mx-auto max-w-3xl text-center">
+        <Motion.div variants={container} initial="initial" animate="animate" className="mx-auto max-w-4xl text-center">
           <Motion.div variants={fadeUp}>
-            <span className="nw-kicker">{s.eyebrow}</span>
+            {/* terminal prompt line — the brand is the prompt */}
+            <span
+              className="hs-prompt rounded-full border border-line bg-white/70 px-3.5 py-1.5 backdrop-blur dark:border-white/10 dark:bg-white/[0.04]"
+              data-testid="hero-prompt"
+            >
+              <span className="hs-prompt-sign">$</span>
+              <span>{s.eyebrow}</span>
+              <span className="hs-cursor" aria-hidden="true" />
+            </span>
           </Motion.div>
 
           <Motion.h1
             variants={fadeUp}
-            className="mt-5 text-[2.75rem] font-extrabold leading-[1.04] tracking-tight text-primary dark:text-white sm:text-6xl lg:text-[4.25rem]"
+            className="mt-6 font-mono text-[1.7rem] font-bold leading-[1.1] tracking-[-0.035em] text-primary dark:text-white sm:text-5xl lg:text-[3.5rem]"
             data-testid="hero-heading"
           >
-            {s.heading}
+            {String(s.heading)
+              .split(/(?<=\.)\s+/)
+              .map((line, i) => (
+                <span key={i} className="block">
+                  {line}
+                </span>
+              ))}
           </Motion.h1>
 
           <Motion.p variants={fadeUp} className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft dark:text-gray-400">

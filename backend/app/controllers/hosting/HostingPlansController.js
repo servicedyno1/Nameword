@@ -2973,7 +2973,7 @@ class HostingPlansController {
 				}
 			}
 
-			// Get Nameword wallet balance (not HostBay wallet)
+			// Get hosta.sh wallet balance (not HostBay wallet)
 			let wallet = await Wallet.findOne({ userId });
 			let walletBalance = 0;
 			if (wallet && wallet.balance && wallet.balance.has("USD")) {
@@ -3021,7 +3021,7 @@ class HostingPlansController {
 					});
 				}
 
-				// Replace HostBay wallet balance with Nameword wallet balance
+				// Replace HostBay wallet balance with hosta.sh wallet balance
 				renewalData.wallet_balance = walletBalance;
 
 				// Get current plan info from hosting order if available

@@ -2,8 +2,15 @@ import { useState } from "react";
 import { PALETTES, TYPE_PAIRS, LOGOS, META } from "../brandData";
 import { Cmd, Section, Window } from "./Term";
 import { useDecisions } from "../useDecisions";
+import { APPLIED_PICKS } from "../decisionsCtx";
 
 const nameOf = (list, id) => list.find((x) => x.id === id)?.name || null;
+
+const statusOf = (p) => {
+  if (!p.palette || !p.type || !p.logo) return "pending";
+  const same = Object.keys(APPLIED_PICKS).every((k) => p[k] === APPLIED_PICKS[k]);
+  return same ? "applied_in_phase_2" : "proposed_change";
+};
 
 export default function Decisions() {
   const { picks, reset } = useDecisions();
@@ -11,11 +18,11 @@ export default function Decisions() {
 
   const json = {
     brand: META.name,
-    phase: 1,
+    phase: 2,
     palette: picks.palette ? { id: picks.palette, name: nameOf(PALETTES, picks.palette) } : null,
     typography: picks.type ? { id: picks.type, name: nameOf(TYPE_PAIRS, picks.type) } : null,
     logo: picks.logo ? { id: picks.logo, name: nameOf(LOGOS, picks.logo) } : null,
-    status: picks.palette && picks.type && picks.logo ? "ready_for_phase_2" : "pending",
+    status: statusOf(picks),
   };
   const text = JSON.stringify(json, null, 2);
 
@@ -31,7 +38,7 @@ export default function Decisions() {
 
   return (
     <Section id="decisions">
-      <Cmd cmd="cat decisions.json" comment="your picks from the sections above · saved in this browser · paste the JSON back to me to start Phase 2" />
+      <Cmd cmd="cat decisions.json" comment="applied app-wide in phase 2 · change a pick above to propose an alternative · reset restores the live brand" />
       <Window title="decisions.json">
         <pre className="hb-mono overflow-x-auto p-5 text-xs leading-6" data-testid="decisions-json" style={{ color: "var(--hb-text)" }}>
           {text}

@@ -5,6 +5,7 @@ import { LuMail, LuMapPin, LuShieldCheck } from "react-icons/lu";
 import { NavLink, useNavigate, useLocation } from "react-router";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useAuth } from "../../hooks/useAuth";
+import { SUPPORT_EMAIL } from "../../config/brand";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -36,7 +37,7 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col items-start gap-6">
-            <NavLink to="/" aria-label="Nameword home">
+            <NavLink to="/" aria-label="hosta.sh home">
               <BrandLogo />
             </NavLink>
             <p className="max-w-sm text-15 text-ink-soft dark:text-gray-400">{s.footer.tagline}</p>
@@ -44,8 +45,8 @@ const Footer = () => {
               <span className="flex items-center gap-2 text-15 text-ink-soft dark:text-gray-400">
                 <LuMapPin className="h-4 w-4 text-brand-600 dark:text-brand-400" /> {s.footer.jurisdictionNote}
               </span>
-              <a href="mailto:hello@nameword.com" className="flex items-center gap-2 text-15 text-ink-soft hover:text-brand-700 dark:text-gray-400 dark:hover:text-brand-300">
-                <LuMail className="h-4 w-4 text-brand-600 dark:text-brand-400" /> hello@nameword.com
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="flex items-center gap-2 text-15 text-ink-soft hover:text-brand-700 dark:text-gray-400 dark:hover:text-brand-300" data-testid="footer-support-email">
+                <LuMail className="h-4 w-4 text-brand-600 dark:text-brand-400" /> {SUPPORT_EMAIL}
               </a>
             </div>
             <span
@@ -81,7 +82,7 @@ const Footer = () => {
             <p className={headCls}>{s.footer.support}</p>
             <NavLink to="/help-support" className={linkCls}>{s.footer.links.help}</NavLink>
             <NavLink to="/help-support#discover-domains" className={linkCls}>{s.footer.links.faq}</NavLink>
-            <a href="mailto:hello@nameword.com" className={linkCls}>{s.footer.links.contact}</a>
+            <a href={`mailto:${SUPPORT_EMAIL}`} className={linkCls}>{s.footer.links.contact}</a>
             <NavLink to="/privacy-policy" className={linkCls}>{s.footer.links.privacy}</NavLink>
             <NavLink to="/terms-and-conditions" className={linkCls}>{s.footer.links.terms}</NavLink>
           </div>

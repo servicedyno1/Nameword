@@ -1,6 +1,7 @@
 import { MdOutlineEmail } from "react-icons/md";
 import { IoChatboxOutline } from "react-icons/io5";
 import { useLanguage } from "../../../hooks/useLanguage";
+import { SUPPORT_EMAIL } from "../../../config/brand";
 
 const NeedHelp = () => {
     const { t } = useLanguage();
@@ -15,7 +16,7 @@ const NeedHelp = () => {
                     </div>
                     <div className="space-y-1 need-help">
                         <p className="desc">{t.helpSupport?.needHelp?.emailUs || "Email us"}</p>
-                        <a href="mailto:hello@nameword.com" className="main-text">hello@nameword.com</a>
+                        <a href={`mailto:${SUPPORT_EMAIL}`} className="main-text" data-testid="help-support-email">{SUPPORT_EMAIL}</a>
                         <p className="desc">{t.helpSupport?.needHelp?.emailResponse || "We usually respond within 24 hours."}</p>
                     </div>
                 </div>

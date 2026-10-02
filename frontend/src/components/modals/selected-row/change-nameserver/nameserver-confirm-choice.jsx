@@ -29,7 +29,7 @@ const NameserverConfirmChoice = ({
     // Get target nameservers based on selected plan
     const getTargetNameservers = () => {
         if (selectedPlan === 1) {
-            // For recommended (NameWord nameservers), we'll need to determine based on provider
+            // For recommended (hosta.sh nameservers), we'll need to determine based on provider
             // For now, return null to indicate we need to fetch per domain
             return null;
         } else {
@@ -106,10 +106,10 @@ const NameserverConfirmChoice = ({
                         // Check if domain has Cloudflare nameservers from the API response
                         const cloudflareNS = nameserversResponse?.responseData?.cloudflareNameservers;
                         if (cloudflareNS && Array.isArray(cloudflareNS) && cloudflareNS.length > 0) {
-                            // Use Cloudflare nameservers (NameWord nameservers)
+                            // Use Cloudflare nameservers (hosta.sh nameservers)
                             targetNameservers = cloudflareNS;
                         } else {
-                            // If no Cloudflare zone, domain cannot use NameWord nameservers
+                            // If no Cloudflare zone, domain cannot use hosta.sh nameservers
                             // Mark as needing change (backend will return error for this domain)
                             willBeAffected++;
                             continue;
@@ -165,7 +165,7 @@ const NameserverConfirmChoice = ({
                     nameServer4: nameServer4?.trim() || undefined,
                 };
             } else {
-                // For recommended (NameWord nameservers), use useNameWordNameservers flag
+                // For recommended (hosta.sh nameservers), use useNameWordNameservers flag
                 // Backend will fetch Cloudflare nameservers for each domain
                 nameservers = {
                     useNameWordNameservers: true

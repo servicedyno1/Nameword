@@ -140,7 +140,7 @@ function CodeBlock({ code, testid }) {
 
 export default function ApiDocs() {
   const { user } = useAuth();
-  usePageMeta("API Documentation", "Programmatic access to every Nameword service with a single API key.");
+  usePageMeta("API Documentation", "Programmatic access to every hosta.sh service with a single API key.");
 
   const keysTo = user ? "/account-setting?tab=api-key" : "/sign-in";
 

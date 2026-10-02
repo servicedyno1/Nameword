@@ -4,7 +4,7 @@
 // Avoid restrictive/corporate "compliance / takedown / abuse" framing on the landing page.
 export const siteEn = {
   meta: {
-    title: "Nameword — Offshore, private & DMCA-ignored hosting",
+    title: "hosta.sh — Private by default. Scriptable by design.",
     description:
       "Offshore domains and hosting built for privacy and freedom: private WHOIS, minimal logs, DMCA-ignored, and a prepaid crypto wallet. Your content stays up — yours to keep.",
   },
@@ -32,8 +32,8 @@ export const siteEn = {
   },
 
   home: {
-    eyebrow: "Offshore · Private · DMCA-Ignored",
-    heading: "Privacy and freedom, hosted offshore.",
+    eyebrow: "hosta up --offshore --private --no-kyc",
+    heading: "Private by default. Scriptable by design.",
     subheading:
       "Register domains and deploy servers and cPanel hosting from offshore, privacy-first jurisdictions. Private WHOIS, minimal logs, DMCA-ignored, and a prepaid crypto wallet — we don't take your content down.",
     tabs: { search: "Register", transfer: "Transfer in" },
@@ -62,7 +62,7 @@ export const siteEn = {
       { label: "Prepaid wallet", sub: "top up with crypto" },
     ],
     pillars: {
-      eyebrow: "Why Nameword",
+      eyebrow: "Why hosta.sh",
       title: "Built for privacy and freedom",
       lead: "For founders, publishers, developers and anyone who wants infrastructure that stays out of the way — and stays up.",
       items: [
@@ -196,7 +196,7 @@ export const siteEn = {
     testimonials: {
       eyebrow: "In their words",
       title: "Built for people who value staying online",
-      lead: "How privacy-minded founders, publishers and developers use Nameword.",
+      lead: "How privacy-minded founders, publishers and developers use hosta.sh.",
       items: [
         { quote: "I moved my publication offshore after one bad-faith takedown. Two years on, my site has never gone dark.", role: "Independent publisher" },
         { quote: "Signing up with just an email and paying in USDT is exactly how billing should work. No card, no KYC, no noise.", role: "Privacy-first developer" },
@@ -364,7 +364,15 @@ export const siteEn = {
     ctaLead: "Fund your wallet once, then register, deploy and renew without a card on file.",
   },
 
+  rebrand: {
+    badge: "new name",
+    text: "Nameword is now hosta.sh — same account, same wallet, same services.",
+    textApp: "Nameword is now hosta.sh. Your account, wallet, domains and servers are unchanged — nothing to do.",
+    dismiss: "Dismiss",
+  },
+
   auth: {
+    brandHeadline: "Private by default. Scriptable by design.",
     signInTitle: "Welcome back",
     signInSub: "Sign in to your private dashboard.",
     createTitle: "Create your account",
@@ -427,7 +435,7 @@ export const siteEn = {
   },
 
   footer: {
-    tagline: "Offshore hosting for privacy and freedom. Domains, DNS and servers from privacy-first jurisdictions — DMCA-ignored, paid from a prepaid crypto wallet.",
+    tagline: "Private by default. Scriptable by design. Offshore hosting for privacy and freedom. Domains, DNS and servers from privacy-first jurisdictions — DMCA-ignored, paid from a prepaid crypto wallet.",
     dmca: "DMCA Ignored",
     products: "Products",
     company: "Company",
@@ -450,15 +458,15 @@ export const siteEn = {
       privacy: "Privacy Policy",
     },
     payments: "We accept",
-    rights: "Nameword. All rights reserved.",
+    rights: "hosta.sh. All rights reserved.",
     jurisdictionNote: "Offshore infrastructure in privacy-first jurisdictions.",
   },
 
   legal: {
     privacyIntro:
-      "Nameword is built to run with as little of your personal data as possible. This policy explains what we collect to operate domains, DNS, hosting, servers and email for you, why we need it, and how you stay in control.",
+      "hosta.sh is built to run with as little of your personal data as possible. This policy explains what we collect to operate domains, DNS, hosting, servers and email for you, why we need it, and how you stay in control.",
     termsIntro:
-      "These terms govern your use of Nameword's domain, DNS, hosting, server and email services. They are written to be read: plain language first, legal precision where it matters.",
+      "These terms govern your use of hosta.sh's domain, DNS, hosting, server and email services. They are written to be read: plain language first, legal precision where it matters.",
   },
 
   common: {

@@ -69,7 +69,7 @@ const DNSrecords = ({ domainName }) => {
 
           // Set initial display based on selection
           if (isNameWordNameservers) {
-            // If using NameWord nameservers, show Cloudflare nameservers
+            // If using hosta.sh nameservers, show Cloudflare nameservers
             const cloudflareNS =
               response?.responseData?.cloudflareNameservers || [];
             setNameserver1(cloudflareNS[0] || "");
@@ -113,7 +113,7 @@ const DNSrecords = ({ domainName }) => {
       let params;
 
       if (selectedPlan === 1) {
-        // Use NameWord nameservers (Cloudflare nameservers)
+        // Use hosta.sh nameservers (Cloudflare nameservers)
         // Backend will fetch Cloudflare nameservers for this domain
         params = {
           domain: activeDomainName,
@@ -204,7 +204,7 @@ const DNSrecords = ({ domainName }) => {
                   checked={selectedPlan === 1}
                   onChange={() => {
                     setSelectedPlan(1);
-                    // When switching to "Use NameWord nameservers", show Cloudflare nameservers
+                    // When switching to "Use hosta.sh nameservers", show Cloudflare nameservers
                     if (cloudflareNameservers.length > 0) {
                       setNameserver1(cloudflareNameservers[0] || "");
                       setNameserver2(cloudflareNameservers[1] || "");

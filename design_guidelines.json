@@ -1,95 +1,133 @@
 {
-  "product_analysis": {
-    "product_name": "Nameword",
-    "product_type": "Privacy-focused offshore infrastructure reseller platform (Domains, Offshore cPanel Hosting, VPS, Windows RDP, Private Email, Developer API, Crypto Wallet)",
-    "benchmark": "Dynopay.com (editorial clarity, high-contrast light-first canvas, indigo accents, monospace metadata tags, generous whitespace, sandbox/test badges, multi-step card checkout)",
-    "target_audience": "Developers, offshore entrepreneurs, privacy enthusiasts, system admins, crypto-native founders",
-    "user_journey_flows": {
-      "domain_purchase_flow": "1. Search query on hero -> 2. Instant inline domain search table with TLD pills & price -> 3. Add to Cart / Configure WHOIS Privacy & Nameservers -> 4. Enter Multi-Step Checkout inside App Shell (Configure -> Review -> Wallet Pay -> Instant Activation Receipt)",
-      "vps_rdp_provision_flow": "1. Select Region (EU / Singapore) -> 2. Select Spec Tier (vCPU, RAM, SSD) & OS -> 3. Choose Billing Cycle (7-day test / Monthly / Annual) -> 4. Multi-Step Checkout Stepper -> 5. Instant credentials reveal modal + active server management card",
-      "wallet_topup_flow": "1. Check wallet balance chip in TopBar -> 2. Open Wallet modal or page -> 3. Select Preset Amount ($20, $50, $100, $250) -> 4. Choose Crypto (BTC, ETH, USDT, SOL) -> 5. Generate DynoPay payment link/QR -> 6. Real-time balance refresh on confirmation"
+  "project_name": "hosta.sh",
+  "app_type": "marketing_site",
+  "brand_identity": {
+    "tagline": "Private by default. Scriptable by design.",
+    "former_name": "Nameword (rebranded to hosta.sh)",
+    "logo": ">_ PromptMark",
+    "theme_preference": "dark-first with high-contrast terminal neon accents (cyan + magenta), supporting light theme toggle"
+  },
+  "typography": {
+    "font_family_body": "Geist, system-ui, sans-serif",
+    "font_family_headings": "Geist Mono, monospace",
+    "font_family_code": "Geist Mono, monospace",
+    "scale": {
+      "h1": "text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body": "text-base leading-relaxed",
+      "caption_mono": "text-xs sm:text-sm font-mono tracking-wide"
     }
   },
-  "design_tokens": {
-    "editorial_indigo": {
-      "id": "editorial_indigo",
-      "name": "Option 1: Editorial Indigo & Obsidian (Dynopay Benchmark Default)",
-      "concept": "Clean, light-first public canvas with deep obsidian dark mode. Features editorial display headlines, high contrast Indigo accents, crisp 1px borders, monospace technical metadata tags, and elevated single-card focus areas.",
-      "emotional_archetype": "Swiss High-Contrast & Editorial Trust",
-      "typography": {
-        "display_heading_font": "Outfit / Plus Jakarta Sans",
-        "body_font": "Plus Jakarta Sans / Inter",
-        "mono_font": "JetBrains Mono / Roboto Mono",
-        "google_fonts_import": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
-        "hierarchy": {
-          "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]",
-          "section_title": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary dark:text-white",
-          "card_title": "text-lg sm:text-xl font-semibold text-primary dark:text-white",
-          "mono_eyebrow": "font-mono text-xs uppercase tracking-[0.2em] font-medium text-brand dark:text-brand-300"
-        }
+  "colors": {
+    "archetype": "ELECTRIC & NEON / TERMINAL HIGH-CONTRAST",
+    "palette": {
+      "background_dark": "#0A0D14",
+      "surface_dark": "#111622",
+      "surface_border": "#1E2638",
+      "cyan_accent": "#22E6FF",
+      "magenta_accent": "#FF3DCB",
+      "text_primary": "#F1F5F9",
+      "text_secondary": "#94A3B8",
+      "text_muted": "#64748B",
+      "success_glow": "#10B981",
+      "warning_glow": "#F59E0B"
+    },
+    "gradients": {
+      "cyan_magenta_glow": "bg-gradient-to-r from-[#22E6FF]/20 via-[#FF3DCB]/20 to-transparent",
+      "border_beam": "linear-gradient(90deg, #22E6FF 0%, #FF3DCB 100%)",
+      "card_highlight": "radial-gradient(circle at top left, rgba(34,230,255,0.12), transparent 70%)"
+    }
+  },
+  "structure_blueprint_hostnet_inspired": {
+    "section_order": [
+      {
+        "id": "announcement_bar",
+        "description": "Rebrand pill notification + quick status ('Nameword is now hosta.sh | Offshore Privacy Engine Live')"
       },
-      "color_tokens": {
-        "light": {
-          "brand": "#4F46E5",
-          "brand-hover": "#4338CA",
-          "brand-soft": "#EEF2FF",
-          "ink": "#0F172A",
-          "ink-soft": "#475569",
-          "ink-muted": "#94A3B8",
-          "surface": "#FFFFFF",
-          "surface-2": "#F8FAFC",
-          "surface-3": "#F1F5F9",
-          "line": "#E2E8F0",
-          "line-strong": "#CBD5E1",
-          "accent": "#F59E0B",
-          "success": "#10B981",
-          "danger": "#EF4444"
-        },
-        "dark": {
-          "brand": "#6366F1",
-          "brand-hover": "#818CF8",
-          "brand-soft": "rgba(99, 102, 241, 0.12)",
-          "ink": "#F8FAFC",
-          "ink-soft": "#94A3B8",
-          "ink-muted": "#64748B",
-          "surface": "#0B0F19",
-          "surface-2": "#111827",
-          "surface-3": "#1F2937",
-          "line": "#1E293B",
-          "line-strong": "#334155",
-          "accent": "#FBBF24",
-          "success": "#34D399",
-          "danger": "#F87171"
-        }
+      {
+        "id": "hero_with_featured_tiles",
+        "description": "Inspired by Hostnet.nl Hero. Live domain search input bar + 3 big featured promo cards (Cloud VPS, Anti-Red Hosting, Anonymous Domains)."
       },
-      "geometry_and_styling": {
-        "border_radius": "rounded-xl for cards, rounded-lg for inputs/buttons, rounded-full for pills",
-        "shadows": "shadow-sm for flat cards, shadow-lg shadow-indigo-500/5 for interactive elements",
-        "borders": "1px solid var(--line) with hover:border-brand/40 transition-colors"
+      {
+        "id": "uniform_product_grid",
+        "description": "Row of 4 uniform product price cards matching Hostnet.nl card anatomy: Optional 'Deal' badge, product title, one-liner, 'from $X/mo', key feature pills, CTA 'Go to <Product>'."
+      },
+      {
+        "id": "domain_extension_picker",
+        "description": "'Register a domain: pick your favourite extension' row of TLD cards (.com, .sh, .is, .ky, .cc, .privacy) with instant 'Check' button and 'View all TLDs'."
+      },
+      {
+        "id": "mission_resilience_block",
+        "description": "Hostnet-style mission/video block translated to hosta.sh: 'Your Road to Resilient Infrastructure' showcasing zero-KYC, DMCA resilience, and API automation."
+      },
+      {
+        "id": "idea_to_deployment_showcase",
+        "description": "'From Idea to Online Infrastructure' 3-column product card showcase with visual preview blocks for Cloud VPS, Windows RDP, and cPanel Web Hosting."
+      },
+      {
+        "id": "service_values_trio",
+        "description": "3 core value pillars: 1) Offshore Resilient (DMCA-ignored datacenters), 2) No-KYC Crypto Prepaid (BTC/ETH/USDT), 3) Scriptable by Design (REST API & CLI)."
+      },
+      {
+        "id": "live_vps_rdp_hosting_plans",
+        "description": "Detailed live pricing cards for Cloud VPS, Windows RDP, and cPanel Hosting fetched from API."
+      },
+      {
+        "id": "support_and_telegram_block",
+        "description": "'Offshore Support & 24/7 Telegram Operations' + quick email contact & documentation links."
+      },
+      {
+        "id": "honest_social_proof_and_guarantees",
+        "description": "No fake names/ratings: honest technical uptime metric (99.98%), crypto wallet instant refill guarantee, zero log policy."
+      },
+      {
+        "id": "faq_section",
+        "description": "Accordion with instant answers on payment, KYC, DMCA policy, and API access."
+      },
+      {
+        "id": "final_cta",
+        "description": "Terminal-style prompt CTA: '$ hosta launch --privacy=max' + CTA button to register or order server."
       }
-    }
-  },
-  "audit_findings_summary": {
-    "total_pages_audited": 23,
-    "key_issues": [
-      "App shell navigation redundancy across AppRail.jsx, sidebar.jsx, and topbar.jsx consuming ~380px horizontal space.",
-      "Data tables displaying raw string noise ('test_mode', 'Invalid Date') without defensive fallback handling.",
-      "Button utility class fragmentation (btn-blue, btn-teal, add-to-cart) causing inconsistent border-radii.",
-      "Transparent overlay backgrounds in header/dropdown menus causing text bleed over underlying page content.",
-      "Missing data-testid attributes across interactive domain/hosting/wallet elements."
     ]
   },
-  "general_ui_ux_guidelines": {
-    "header_and_overlays": "DO NOT use complete transparent backgrounds in headers, dropdowns, or overlays. Always use glassmorphism (backdrop-blur-xl bg-white/80 dark:bg-gray-900/80) or solid backgrounds with subtle 1px borders.",
-    "testing_attributes": "All interactive and key informational elements MUST include a kebab-case data-testid attribute (e.g. data-testid='hero-domain-search-input', data-testid='checkout-pay-button').",
-    "typography": "Use Plus Jakarta Sans / Outfit (.js format components) for display headlines. Avoid Inter for main titles. Use JetBrains Mono for technical IDs, prices, and status tags.",
-    "colors_and_contrast": "Primary brand color is Indigo (#4F46E5 / #6366F1). Restrict Amber (#F59E0B) strictly to sandbox/test mode or warning states. Ensure all text meets WCAG AA 4.5:1 contrast standards.",
-    "defensive_rendering": "Never display raw unformatted strings like 'Invalid Date' or 'test_mode' in data tables. Fall back gracefully to '—' or styled status badges."
+  "component_card_anatomy": {
+    "uniform_product_card": {
+      "classes": "relative rounded-xl border border-[#1E2638] bg-[#111622] p-6 hover:border-[#22E6FF]/50 transition-all duration-300 group flex flex-col justify-between",
+      "elements": [
+        "Optional Badge: 'POPULAR' or 'OFFSHORE DEAL' in cyan or magenta pill",
+        "Header: Product Icon (Lucide/Phosphor) + Product Title (Geist Mono)",
+        "Description: Concise 1-2 sentence value proposition",
+        "Pricing block: 'from $X /mo' or '$X /yr' in large Geist Mono bold",
+        "Feature highlights: 3 bullet points with cyan checkmarks",
+        "CTA Button: Full width 'Go to <Product>' with hover glow"
+      ]
+    },
+    "promo_tile_card": {
+      "classes": "relative overflow-hidden rounded-2xl border border-[#1E2638] bg-[#111622] p-6 md:p-8 flex flex-col justify-end min-h-[260px] group",
+      "elements": [
+        "Background: Dark server datacenter photo with dark overlay (bg-black/50) + cyan/magenta gradient light bleed",
+        "Content: Bold headline, 1-line promise, hover arrow button ('Discover now ->')"
+      ]
+    }
+  },
+  "image_urls": {
+    "server_neon_datacenter_1": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "server_rack_dark_2": "https://images.unsplash.com/photo-1680992046626-418f7e910589?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "network_cables_neon_3": "https://images.unsplash.com/photo-1561233835-f937539b95b9?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "accessibility_and_testing": {
+    "data_testid_required": true,
+    "apca_contrast": "Ensure white/cyan text on dark surfaces meets minimum 4.5:1 ratio",
+    "mobile_responsive_cutoff": "390px viewport width without horizontal scrolling"
   },
   "instructions_to_main_agent": [
-    "Refer to /app/design_audit.md for page-by-page audit findings and specific recommended fixes.",
-    "When modifying React .js components in /app/frontend/src/, ensure all interactive elements retain or add kebab-case data-testid attributes.",
-    "Ensure headers and dropdown menus never use transparent backgrounds without backdrop blur and border separation.",
-    "Prioritize fixing data formatting in DomainList.jsx, Wallet.jsx, and OrderHistory.jsx."
+    "Follow the exact section blueprint structure defined in structure_blueprint_hostnet_inspired.",
+    "Do not invent fake reviews, fake customer numbers, or fabricated Trustpilot ratings.",
+    "Ensure all interactive components (domain search, plan buttons, tabs, accordions) have unique data-testid attributes.",
+    "Use Geist for body text and Geist Mono for headings, terminal blocks, code snippets, and pricing numbers.",
+    "Maintain high visual contrast using cyan (#22E6FF) and magenta (#FF3DCB) as deliberate glowing accents on dark surfaces (#0A0D14 / #111622).",
+    "Keep standard JS / JSX files in the React codebase without breaking syntax."
   ]
 }

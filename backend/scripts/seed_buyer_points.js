@@ -1,4 +1,4 @@
-// Add 1000 reward points to buyer@nameword.local
+// Add 1000 reward points to buyer@hosta.local
 require("dotenv").config();
 const mongoose = require("mongoose");
 const User = require("../app/models/User");
@@ -8,7 +8,7 @@ const RewardPointLog = require("../app/models/RewardPointLog");
   try {
     await mongoose.connect(process.env.DB_URI);
     
-    const buyer = await User.findOne({ email: "buyer@nameword.local" });
+    const buyer = await User.findOne({ email: "buyer@hosta.local" });
     if (!buyer) {
       console.error("Buyer not found");
       process.exit(1);

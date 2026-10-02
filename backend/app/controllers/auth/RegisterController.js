@@ -156,7 +156,7 @@ class RegisterController {
                                         await transporter.sendMail({
                                                 from: env.MAIL_FROM_ADDRESS,
                                                 to: user.email,
-                                                subject: "Verify your Nameword account",
+                                                subject: "Verify your hosta.sh account",
                                                 html: html, // html body
                                         });
                                         emailSent = true;

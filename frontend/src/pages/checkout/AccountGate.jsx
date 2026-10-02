@@ -126,7 +126,7 @@ export default function AccountGate() {
       <section className="max-w-xl">
         <span className="nw-eyebrow mb-4">Step 3 · Account</span>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-primary dark:text-white">Almost there — who is this order for?</h1>
-        <p className="mt-3 nw-lead">Sign in to your Nameword account or create one in seconds. Your cart is saved on this device.</p>
+        <p className="mt-3 nw-lead">Sign in to your hosta.sh account or create one in seconds. Your cart is saved on this device.</p>
 
         <div className="nw-card mt-8 !p-6 sm:!p-8">
           <div className="flex rounded-xl bg-surface-2 dark:bg-gray-800 p-1" role="tablist">

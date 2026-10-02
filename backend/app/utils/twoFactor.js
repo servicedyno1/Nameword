@@ -9,7 +9,7 @@ const qrcode = require('qrcode');
  */
 const generate2FASecret = async (email) => {
   const secret = speakeasy.generateSecret({
-    name: `Nameword (${email})`,
+    name: `hosta.sh (${email})`,
     length: 20
   });
 
@@ -29,7 +29,7 @@ const generate2FASecret = async (email) => {
  * @returns {Promise<{ qrCode: string, otpauth_url: string }>}
  */
 const generateQRFromSecret = async (email, base32Secret) => {
-  const otpauth_url = `otpauth://totp/Nameword%20(${email})?secret=${base32Secret}&issuer=Nameword`;
+  const otpauth_url = `otpauth://totp/hosta.sh%20(${email})?secret=${base32Secret}&issuer=hosta.sh`;
   
   const qrCode = await qrcode.toDataURL(otpauth_url);
   

@@ -36,7 +36,7 @@ function PillarVisual({ index }) {
   );
 }
 
-// Media-rich "Why Nameword": alternating text + visual rows, privacy checklist and
+// Media-rich "Why hosta.sh": alternating text + visual rows, privacy checklist and
 // a compact 3-step "how it works".
 export default function WhyNameword() {
   const { t } = useLanguage();

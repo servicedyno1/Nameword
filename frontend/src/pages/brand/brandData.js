@@ -3,9 +3,9 @@
 
 export const META = {
   name: "hosta.sh",
-  phase: "1 / 3",
-  status: "draft for review",
-  version: "0.1.0",
+  phase: "2 / 3",
+  status: "applied app-wide",
+  version: "1.0.0",
   updated: "2026-06",
   route: "/brand (admin-only)",
 };
@@ -274,7 +274,7 @@ export const TREE = [
 ];
 
 export const NEXT_STEPS = [
-  { phase: "Phase 1 · now", items: ["Review personas + market scan", "Pick 1 colour direction", "Pick 1 type pairing", "Pick 1 logo concept (or a hybrid)", "Approve voice rules + tagline"] },
-  { phase: "Phase 2 · apply", items: ["Global rename Nameword → hosta.sh (UI, emails, meta, 3 locales)", "Theme tokens from the chosen palette (dark + light)", "Swap logo/favicon/og-image set", "Email template re-skin", "Terminal-flavoured components (prompt headers, status chips)"] },
-  { phase: "Phase 3 · launch", items: ["Domain cut-over to hosta.sh + redirects", "Google OAuth redirect URIs", "Brevo sender domain hosta.sh", "Launch kit: social banners, Telegram pinned post, changelog"] },
+  { phase: "Phase 1 · discover", state: "done", items: ["Personas + market scan", "Colour: Neon Prompt", "Type: Geist Mono + Geist", "Logo: Prompt >_", "Voice rules + tagline"] },
+  { phase: "Phase 2 · apply", state: "done", items: ["Global rename Nameword → hosta.sh (UI, emails, meta, 3 locales)", "Neon Prompt tokens (dark + light)", "Logo / favicon / og-image set", "Email templates + invoice PDFs re-skinned", "Rebrand notice for existing customers"] },
+  { phase: "Phase 3 · launch", state: "next", items: ["Register hosta.sh (not registered yet)", "Domain cut-over to hosta.sh + redirects", "Google OAuth redirect URIs", "Brevo sender domain hosta.sh (hi@hosta.sh)", "Launch kit: social banners, Telegram pinned post, changelog"] },
 ];

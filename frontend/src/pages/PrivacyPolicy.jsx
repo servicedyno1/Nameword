@@ -1,5 +1,6 @@
 import MainLayout from '../layouts/MainLayout';
 import { useLanguage } from '../hooks/useLanguage';
+import { withSupportEmail } from '../config/brand';
 
 const PrivacyPolicy = () => {
     const { t } = useLanguage();
@@ -8,7 +9,7 @@ const PrivacyPolicy = () => {
             <div className='content-section max-w-4xl mx-auto'>
                 <h1>{t.privacy.title || "Privacy Policy"}</h1>
                 <p>
-                    {t.privacy.intro || "At NameWord, we respect your privacy and are committed to protecting your personal data."}
+                    {t.privacy.intro || "At hosta.sh, we respect your privacy and are committed to protecting your personal data."}
                 </p>
 
                 <h2>{t.privacy.infoWeCollect || "1. Information We Collect"}</h2>
@@ -55,7 +56,7 @@ const PrivacyPolicy = () => {
 
                 <h2>{t.privacy.contact || "8. Contact"}</h2>
 
-                <p>{t.privacy.contactText || "If you have questions about this Privacy Policy, contact us at support@nameword.com."}</p>
+                <p>{withSupportEmail(t.privacy.contactText)}</p>
 
             </div>
         </MainLayout>

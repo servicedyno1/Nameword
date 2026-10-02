@@ -1,5 +1,4 @@
 import logo from "../../assets/logo/logo.svg";
-import logoblue from "../../assets/logo/nameword-blue.svg";
 import USA from "../../assets/images/usa.svg";
 import ES from "../../assets/images/es.svg";
 import FR from "../../assets/images/fr.svg";
@@ -55,7 +54,6 @@ import AMEX from "../../assets/images/american-express.svg";
 
 export {
   logo,
-  logoblue,
   USA,
   ES,
   FR,

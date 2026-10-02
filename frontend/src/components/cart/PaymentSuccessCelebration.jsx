@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 // Brand-aligned confetti palette (indigo, emerald, amber, pink, cyan, violet).
-const COLORS = ["#6366f1", "#22c55e", "#f59e0b", "#ec4899", "#06b6d4", "#a855f7"];
+const COLORS = ["#22E6FF", "#22c55e", "#f59e0b", "#FF3DCB", "#0891B2", "#7C5CFF"];
 
 /**
  * ConfettiBurst

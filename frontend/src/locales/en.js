@@ -8,8 +8,8 @@ export const en = {
     faq: "FAQ",
     signIn: "Sign In",
     createAccount: "Create account",
-    logoAlt: "NameWord Logo",
-    logoTitle: "NameWord Logo",
+    logoAlt: "hosta.sh Logo",
+    logoTitle: "hosta.sh Logo",
     helpSupport: "Help & Support"
   },
   // Domain Search
@@ -60,7 +60,7 @@ export const en = {
     noDowntimes: "No Website Downtimes",
     quote: "Your domain name is the {foundation} of your online identity. Elevate your brand's visibility and credibility with the right one.",
     foundation: "foundation",
-    quoteAuthor: "– NameWord CEO, John Smith"
+    quoteAuthor: "– hosta.sh CEO, John Smith"
   },
   // Home / Landing
   home: {
@@ -101,7 +101,7 @@ export const en = {
       unbeatablePricingPlans: "Unbeatable pricing and plans",
       domainHeader: "Domain",
       competitorsHeader: "Competitors",
-      namewordHeader: "NameWord",
+      namewordHeader: "hosta.sh",
       ctaTitle: "Get started with honest prices",
       placeholder: "Domain, Company Name, Keyword...",
       button: "Search Now",
@@ -120,7 +120,7 @@ export const en = {
         "Built for beginners and pros",
         "Grow with confidence"
       ],
-      testimonial: "With NameWord, launching my brand felt effortless!",
+      testimonial: "With hosta.sh, launching my brand felt effortless!",
       testimonialAuthor: "– John Smith, Acme Founder"
     },
     security: {
@@ -154,7 +154,7 @@ export const en = {
       },
       design: {
         title: "Pro Website Designs",
-        description: "Our NameWord design team creates responsive, aesthetically pleasing websites that provide a superior user experience across all devices.",
+        description: "Our hosta.sh design team creates responsive, aesthetically pleasing websites that provide a superior user experience across all devices.",
         features: ["Mobile Optimized", "Fast Loading", "Clean Aesthetics"],
         cta: "See Templates"
       },
@@ -200,7 +200,7 @@ export const en = {
     },
     claim: {
       title: "Claim Your Space Online",
-      description: "From your domain to your live website — NameWord makes it fast, secure, and frustration-free.",
+      description: "From your domain to your live website — hosta.sh makes it fast, secure, and frustration-free.",
       highlight: "No upsells. No hidden fees.",
       placeholder: "Domain, Company Name, Keyword...",
       button: "Search Now",
@@ -927,9 +927,9 @@ export const en = {
     dnsRecordDeletedSuccess: "DNS record deleted successfully",
     failedToDeleteDnsRecord: "Failed to delete DNS record",
     failedToFetchDnsRecords: "Failed to fetch DNS records",
-    nameserversDescription: "Nameservers handle internet requests for your domain. You can use NameWord nameservers or use custom nameservers to point to other hosting provider.",
+    nameserversDescription: "Nameservers handle internet requests for your domain. You can use hosta.sh nameservers or use custom nameservers to point to other hosting provider.",
     loadingNameservers: "Loading nameservers...",
-    useNameWordNameservers: "Use NameWord nameservers (recommended)",
+    useNameWordNameservers: "Use hosta.sh nameservers (recommended)",
     changeNameservers: "Change nameservers",
     nameserver1: "Nameserver 1 *",
     nameserver2: "Nameserver 2 *",
@@ -940,7 +940,7 @@ export const en = {
     failedToFetchNameservers: "Failed to fetch nameservers",
     nameserver1And2Required: "Nameserver 1 and Nameserver 2 are required",
     changeNameserversTitle: "Change Nameservers",
-    chooseNameserversDescription: "Choose if you want to set default NameWord nameservers or enter different ones",
+    chooseNameserversDescription: "Choose if you want to set default hosta.sh nameservers or enter different ones",
     useDifferentNameservers: "Use different nameservers",
     continue: "Continue",
     noDomainsSelected: "No domains selected",
@@ -1167,7 +1167,7 @@ export const en = {
     twoFactorAuthenticationEnabled: "2FA authentication enabled.",
     twoFactorAuthenticationDisabled: "2FA authentication disabled.",
     failedToUpdate2FA: "Failed to update 2FA authentication",
-    mobileAppDescription: "Make sure your mobile authentication app works smoothly with your NameWord account. For the best security, we highly recommend using one of the following authentication apps:",
+    mobileAppDescription: "Make sure your mobile authentication app works smoothly with your hosta.sh account. For the best security, we highly recommend using one of the following authentication apps:",
     googleAuthenticator: "Google Authenticator",
     emailAuthenticationEnabled: "Email authentication enabled.",
     emailAuthenticationDisabled: "Email authentication disabled.",
@@ -1180,7 +1180,7 @@ export const en = {
     nameservers: "Nameservers",
     currentNameserver1: "Current nameserver 1:",
     currentNameserver2: "Current nameserver 2:",
-    namewordNameservers: "NameWord nameservers:",
+    namewordNameservers: "hosta.sh nameservers:",
     hostingDetails: "Hosting Details",
     renew: "Renew",
     upgrade: "Upgrade",
@@ -1290,7 +1290,7 @@ export const en = {
     deleteApiKeyDescription: "Deleting this API token will break any scripts or services that rely on it. This action is permanent and cannot be undone.",
     // Change Password Modal
     changePassword: "Change password",
-    changePasswordDescription: "This will only update your NameWord login password. If you want to change the password for your hosting account, please follow the instructions provided here.",
+    changePasswordDescription: "This will only update your hosta.sh login password. If you want to change the password for your hosting account, please follow the instructions provided here.",
     currentPassword: "Current Password *",
     newPassword: "New Password *",
     newPasswordAgain: "New Password Again *",
@@ -1710,7 +1710,7 @@ export const en = {
   // Privacy Policy
   privacy: {
     title: "Privacy Policy",
-    intro: "Nameword is built to run on as little of your personal data as possible. We operate from a privacy-first offshore jurisdiction, keep minimal activity logs, and never sell your data. This policy explains what we collect to run your domains, DNS, hosting, servers and email, why we need it, and how you stay in control.",
+    intro: "hosta.sh is built to run on as little of your personal data as possible. We operate from a privacy-first offshore jurisdiction, keep minimal activity logs, and never sell your data. This policy explains what we collect to run your domains, DNS, hosting, servers and email, why we need it, and how you stay in control.",
     infoWeCollect: "1. Information We Collect",
     infoWeCollectText: "We collect only what is needed to run your services: an email address and password for your account, the contact details that domain registries require, and the technical data needed to operate DNS, hosting and servers. Payments are made in cryptocurrency, so we do not store card numbers or bank details — only the on-chain reference for your wallet top-up. WHOIS privacy is applied to eligible domains by default.",
     howWeUseInfo: "2. How We Use Your Information",
@@ -1730,30 +1730,30 @@ export const en = {
     changesToPolicy: "7. Changes to This Policy",
     changesToPolicyText: "We may update this Privacy Policy from time to time. Continued use of the service means you accept the updated version.",
     contact: "8. Contact",
-    contactText: "If you have questions about this Privacy Policy, contact us at hi@nameword.com."
+    contactText: "If you have questions about this Privacy Policy, contact us at {email}."
   },
   // Terms and Conditions
   terms: {
     title: "Terms & Conditions",
-    intro: "These terms govern your use of Nameword's private domain, DNS, hosting, server and email services, operated from a privacy-first offshore jurisdiction. They are written to be read: plain language first, legal precision where it matters. By using the services you agree to them.",
+    intro: "These terms govern your use of hosta.sh's private domain, DNS, hosting, server and email services, operated from a privacy-first offshore jurisdiction. They are written to be read: plain language first, legal precision where it matters. By using the services you agree to them.",
     services: "1. Services",
-    servicesText: "Nameword provides private domain registration, DNS management, offshore cPanel hosting, VPS and RDP servers, private email and a prepaid wallet. Infrastructure is located in the privacy-first jurisdictions shown at order time. Availability, pricing and features may change; renewal prices are always shown before purchase.",
+    servicesText: "hosta.sh provides private domain registration, DNS management, offshore cPanel hosting, VPS and RDP servers, private email and a prepaid wallet. Infrastructure is located in the privacy-first jurisdictions shown at order time. Availability, pricing and features may change; renewal prices are always shown before purchase.",
     userResponsibilities: "2. User Responsibilities",
-    userResponsibilitiesText: "You are responsible for the accuracy of the information you provide and for how you use your services. You may not use Nameword for spam, phishing, malware distribution, or activity that endangers our network or infrastructure. Beyond that, we respect your privacy and do not police lawful content.",
+    userResponsibilitiesText: "You are responsible for the accuracy of the information you provide and for how you use your services. You may not use hosta.sh for spam, phishing, malware distribution, or activity that endangers our network or infrastructure. Beyond that, we respect your privacy and do not police lawful content.",
     paymentsAndBilling: "3. Payments and Billing",
     paymentsAndBillingText: "Payments are made in cryptocurrency only — we do not accept credit cards, SEPA or bank transfers. Funds are added to your prepaid wallet and spent on services; prices are shown before you buy. Once a domain or service has been provisioned it is non-refundable, and any leftover balance stays as wallet credit for future use.",
     domainRegistration: "4. Domain Registration",
     domainRegistrationText: "Domain availability is not guaranteed until registration is completed. We are not responsible for actions, restrictions or policies imposed by the relevant domain registry.",
     intellectualProperty: "5. Intellectual Property",
-    intellectualPropertyText: "All content, branding and materials that make up the Nameword platform are owned by us or our licensors and may not be reused without permission. Content that you host remains yours.",
+    intellectualPropertyText: "All content, branding and materials that make up the hosta.sh platform are owned by us or our licensors and may not be reused without permission. Content that you host remains yours.",
     limitationOfLiability: "6. Limitation of Liability",
-    limitationOfLiabilityText: "Nameword is provided \"as is\". We are not liable for indirect, incidental, or consequential damages arising from the use of our services.",
+    limitationOfLiabilityText: "hosta.sh is provided \"as is\". We are not liable for indirect, incidental, or consequential damages arising from the use of our services.",
     termination: "7. Acceptable Use & Termination",
     terminationText: "We host content without judging its politics or opinions, and we do not remove lawful content on the basis of DMCA notices or other third-party takedown demands. We act only on clear abuse of our own infrastructure — such as spam, phishing, malware or attacks that threaten the network — and may suspend services in those cases or where these terms are breached.",
     changesToTerms: "8. Changes to Terms",
     changesToTermsText: "We may update these Terms from time to time. Continued use of the service means you accept the updated version.",
     contact: "9. Contact",
-    contactText: "For questions about these Terms, contact us at hi@nameword.com."
+    contactText: "For questions about these Terms, contact us at {email}."
   },
   // Auth
   auth: {
@@ -1934,7 +1934,7 @@ export const en = {
       ],
       transferDomains: [
         {
-          question: "How do I transfer a domain to Nameword?",
+          question: "How do I transfer a domain to hosta.sh?",
           answer: "Go to \"Domains\" → \"Transfer.\" Enter your domain name and authorization code (EPP code) from your current registrar. Transfers typically complete within 5-7 days."
         },
         {
@@ -2171,7 +2171,7 @@ export const en = {
       getStartedWithDomain: {
         imageAlt: "Get started with Domains",
         imageTitle: "Get started with Domains",
-        intro: "Choosing the right domain is the first step to building your online presence — and with NameWord, it's fast, simple, and secure.",
+        intro: "Choosing the right domain is the first step to building your online presence — and with hosta.sh, it's fast, simple, and secure.",
         searchTitle: "Search for Your Perfect Name",
         searchDescription: "Use our smart search tool to find available domain names. We'll suggest alternatives if your ideal name is taken — including trending extensions like .io, .tech, and .store.",
         manageTitle: "Manage with Confidence",

@@ -28,7 +28,7 @@ function statusLabel(status) {
     case "test_mode":
       return { text: "Test mode", color: "#d97706" };
     case "pending":
-      return { text: "Provisioning", color: "#4f46e5" };
+      return { text: "Provisioning", color: "#087C9C" };
     case "failed":
       return { text: "Failed — refunded", color: "#dc2626" };
     default:
@@ -66,8 +66,8 @@ function buildHtml({ order, name }) {
 
   return `<!doctype html><html><body style="margin:0;background:#f1f5f9;padding:24px 0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
     <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0">
-      <div style="background:#4f46e5;padding:22px 28px">
-        <div style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:-0.3px">Nameword</div>
+      <div style="background:#12101F;padding:22px 28px">
+        <div style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:-0.5px;font-family:'Geist Mono',SFMono-Regular,Menlo,Consolas,monospace">hosta<span style="color:#22E6FF">.sh</span></div>
       </div>
       <div style="padding:28px">
         <h1 style="margin:0 0 6px;font-size:20px;color:#0f172a">Thanks${name ? `, ${esc(name)}` : ""} — we’ve got your order</h1>
@@ -88,9 +88,9 @@ function buildHtml({ order, name }) {
         </table>
         ${earnedLine}
         <div style="margin-top:24px">
-          <a href="${esc(process.env.FRONTEND_URL || "")}/orders" style="display:inline-block;background:#4f46e5;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600">View your orders</a>
+          <a href="${esc(process.env.FRONTEND_URL || "")}/orders" style="display:inline-block;background:#087C9C;color:#ffffff;text-decoration:none;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600">View your orders</a>
         </div>
-        <p style="margin:24px 0 0;color:#94a3b8;font-size:12px">You’re receiving this because a purchase was made with your Nameword account. If this wasn’t you, please contact support.</p>
+        <p style="margin:24px 0 0;color:#94a3b8;font-size:12px">You’re receiving this because a purchase was made with your hosta.sh account. If this wasn’t you, please contact support.</p>
       </div>
     </div>
   </body></html>`;
@@ -102,14 +102,14 @@ async function sendOrderConfirmation({ to, order, name }) {
   try {
     const { generateOrderReceiptPDF } = require("../utils/orderReceiptPdf");
     const pdf = await generateOrderReceiptPDF(order, { name, email: to });
-    if (pdf) attachments = [{ filename: `Nameword-${order.orderNumber || order._id}.pdf`, content: pdf.toString("base64") }];
+    if (pdf) attachments = [{ filename: `hosta.sh-${order.orderNumber || order._id}.pdf`, content: pdf.toString("base64") }];
   } catch (e) {
     console.error("[orderEmail] PDF generation failed (sending without attachment):", e?.message || e);
   }
   try {
     await mailer.sendMail({
       to,
-      subject: `Your Nameword order ${order.orderNumber || ""}`.trim(),
+      subject: `Your hosta.sh order ${order.orderNumber || ""}`.trim(),
       html: buildHtml({ order, name }),
       attachments,
     });

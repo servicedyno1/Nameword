@@ -33,7 +33,7 @@ async function sendReminder(user, it, days) {
   const subject = `Your ${it.type} ${label} ${when}`;
   const html = `
     <div style="font-family:Inter,Arial,sans-serif;max-width:560px;margin:0 auto;color:#0f172a">
-      <h2 style="color:#4f46e5;margin:0 0 8px">Renewal reminder</h2>
+      <h2 style="color:#087C9C;margin:0 0 8px">Renewal reminder</h2>
       <p>Your <strong>${it.type}</strong> <strong>${label}</strong> ${when}.</p>
       <p>Expiry date: <strong>${it.expires_at ? new Date(it.expires_at).toDateString() : "n/a"}</strong></p>
       <p>${it.auto_renew ? "Auto-renew is ON — we'll renew it automatically from your wallet." : "Sign in and renew it before it lapses to avoid any interruption."}</p>

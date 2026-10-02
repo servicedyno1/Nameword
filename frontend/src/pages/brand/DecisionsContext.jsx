@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { DecisionsContext, EMPTY_PICKS } from "./decisionsCtx";
+import { DecisionsContext, EMPTY_PICKS, APPLIED_PICKS } from "./decisionsCtx";
 
 const KEY = "hosta_brand_decisions";
 
 export function DecisionsProvider({ children }) {
   const [picks, setPicks] = useState(() => {
     try {
-      return { ...EMPTY_PICKS, ...JSON.parse(localStorage.getItem(KEY) || "{}") };
+      const saved = localStorage.getItem(KEY);
+      return saved ? { ...EMPTY_PICKS, ...JSON.parse(saved) } : APPLIED_PICKS;
     } catch {
-      return EMPTY_PICKS;
+      return APPLIED_PICKS;
     }
   });
 
@@ -19,7 +20,7 @@ export function DecisionsProvider({ children }) {
   }, [picks]);
 
   const pick = (kind, id) => setPicks((p) => ({ ...p, [kind]: p[kind] === id ? null : id }));
-  const reset = () => setPicks(EMPTY_PICKS);
+  const reset = () => setPicks(APPLIED_PICKS);
 
   return <DecisionsContext.Provider value={{ picks, pick, reset }}>{children}</DecisionsContext.Provider>;
 }

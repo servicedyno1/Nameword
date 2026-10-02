@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -6,46 +6,52 @@
 
 @theme {
   /* =====================================================================
-     "Editorial Indigo & Obsidian" design tokens (Option 1)
-     Light-first canvas · one indigo accent · mono metadata · obsidian dark
+     hosta.sh — "Neon Prompt" design tokens
+     Indigo-black canvas · cyan = action / links · magenta = highlights only
+     Light: deep cyan (AA on white) · Dark: neon cyan #22E6FF with ink text
      ===================================================================== */
 
   /* Text */
-  --color-primary: #0f172a;          /* ink */
-  --color-secondary: #64748b;        /* muted text */
-  --color-ink: #0f172a;
-  --color-ink-soft: #475569;
-  --color-ink-muted: #94a3b8;
-  --color-on-brand: #ffffff;         /* text on indigo fills */
+  --color-primary: #12101f;          /* ink */
+  --color-secondary: #6b6790;        /* muted text */
+  --color-ink: #12101f;
+  --color-ink-soft: #4a4668;
+  --color-ink-muted: #8e89b8;
+  --color-on-brand: #ffffff;         /* text on cyan fills (light) */
 
   /* Surfaces */
   --color-surface: #ffffff;
-  --color-surface-2: #f8fafc;
-  --color-surface-3: #f1f5f9;
-  --color-line: #e2e8f0;
-  --color-line-strong: #cbd5e1;
+  --color-surface-2: #f7f6fc;
+  --color-surface-3: #f0eef8;
+  --color-line: #e4e1f0;
+  --color-line-strong: #cfcbe3;
 
-  /* Accent — electric cobalt blue (Hostman-grade) */
-  --color-brand: #2f6bff;
-  --color-brand-50: #eef4ff;
-  --color-brand-100: #dbe7ff;
-  --color-brand-200: #bcd3ff;
-  --color-brand-300: #8fb6ff;
-  --color-brand-400: #6a97ff;
-  --color-brand-500: #4b81ff;
-  --color-brand-600: #2f6bff;
-  --color-brand-700: #1e54e6;
-  --color-brand-800: #1a44be;
-  --color-brand-900: #193a95;
+  /* Accent — Neon Prompt cyan (deepened in light mode for WCAG AA on white) */
+  --color-brand: #087c9c;
+  --color-brand-50: #ecfeff;
+  --color-brand-100: #cffafe;
+  --color-brand-200: #a5f3fc;
+  --color-brand-300: #67e8f9;
+  --color-brand-400: #22d3ee;
+  --color-brand-500: #0891b2;
+  --color-brand-600: #087c9c;
+  --color-brand-700: #0e6f8a;
+  --color-brand-800: #155e75;
+  --color-brand-900: #164e63;
 
-  /* Action colours (legacy aliases -> accent) */
-  --color-darkbtn: #2f6bff;
-  --color-darkbtn-hover: #1e54e6;
-  --color-darkbtn-active: #1a44be;
-  --color-darkbtn-100: #eef4ff;
-  --color-darkbtn-200: #8fb6ff;
+  /* Highlight — Neon Prompt magenta (highlights, rewards, "new" — never actions) */
+  --color-neon: #c0168f;
+  --color-neon-50: #fdf0f9;
+  --color-neon-300: #f08fd4;
 
-  /* Status */
+  /* Action colours (legacy aliases -> deep cyan, white text stays legible in both modes) */
+  --color-darkbtn: #087c9c;
+  --color-darkbtn-hover: #0e6f8a;
+  --color-darkbtn-active: #155e75;
+  --color-darkbtn-100: #ecfeff;
+  --color-darkbtn-200: #67e8f9;
+
+  /* Status (semantics unchanged: green = ok, amber = warning, red = error) */
   --color-success: #10b981;
   --color-success-50: #ecfdf5;
   --color-accent: #f59e0b;           /* amber — warnings / test mode only */
@@ -56,85 +62,86 @@
   --color-sucess-100: #a7f3d0;
   --color-sucess-400: #10b981;
 
-  /* Obsidian neutral scale. Overrides Tailwind's gray-* so every existing
-     dark:bg-gray-900 / dark:border-gray-800 / dark:text-gray-400 becomes obsidian. */
-  --color-gray-50: #f8fafc;
-  --color-gray-100: #f1f5f9;
-  --color-gray-200: #e2e8f0;
-  --color-gray-300: #cbd5e1;
-  --color-gray-400: #94a3b8;
-  --color-gray-500: #64748b;
-  --color-gray-600: #475569;
-  --color-gray-700: #334155;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  --color-gray-950: #0b0f19;
+  /* Indigo-tinted neutral scale (Neon light). Overrides Tailwind's gray-* so every
+     existing gray utility picks up the brand's lavender-ink neutrals. */
+  --color-gray-50: #f7f6fc;
+  --color-gray-100: #f0eef8;
+  --color-gray-200: #e4e1f0;
+  --color-gray-300: #cfcbe3;
+  --color-gray-400: #9c97bc;
+  --color-gray-500: #6b6790;
+  --color-gray-600: #4f4b70;
+  --color-gray-700: #38345a;
+  --color-gray-800: #24213d;
+  --color-gray-900: #16142a;
+  --color-gray-950: #0c0b18;
 
-  /* Retire teal/violet/cyan remnants by pointing them at the accent scale */
-  --color-teal-300: #8fb6ff;
-  --color-teal-400: #6a97ff;
-  --color-teal-500: #4b81ff;
-  --color-teal-600: #2f6bff;
-  --color-teal-700: #1e54e6;
-  --color-indigo-400: #6a97ff;
-  --color-indigo-500: #4b81ff;
-  --color-indigo-600: #2f6bff;
-  --color-indigo-800: #1a44be;
-  --color-violet-500: #4b81ff;
+  /* Retire teal / indigo remnants by pointing them at the accent scale; violet -> magenta */
+  --color-teal-300: #67e8f9;
+  --color-teal-400: #22d3ee;
+  --color-teal-500: #0891b2;
+  --color-teal-600: #087c9c;
+  --color-teal-700: #0e6f8a;
+  --color-indigo-400: #22d3ee;
+  --color-indigo-500: #0891b2;
+  --color-indigo-600: #087c9c;
+  --color-indigo-800: #155e75;
+  --color-violet-500: #c0168f;
   --color-cyan-500: #06b6d4;
 
   /* Legacy palette aliases (kept so untouched screens recolour in one shot) */
-  --color-lightgray: #f1f5f9;
-  --color-lightgray-100: #e2e8f0;
-  --color-lightgray-200: #f8fafc;
-  --color-lightgray-300: #cbd5e1;
-  --color-lightgray-500: #64748b;
-  --color-lightgray-600: #64748b;
-  --color-lightgray-700: #334155;
-  --color-active: #64748b;
-  --color-beige: #f8fafc;
-  --color-beige-100: #f1f5f9;
-  --color-beige-200: #eef4ff;
-  --color-beige-400: #cbd5e1;
-  --color-active-border: #cbd5e1;
-  --color-hover: #f8fafc;
-  --color-tealdark: #2f6bff;
-  --color-teallight: #eef4ff;
-  --color-teallight-50: #eef4ff;
-  --color-teallight-400: #94a3b8;
-  --color-teallight-500: #475569;
-  --color-teal-hover: #1e54e6;
-  --color-stokecolor: #e2e8f0;
-  --color-save-badge: #dbe7ff;
-  --color-skydark: #2f6bff;
-  --color-slatelight: #f8fafc;
-  --color-nodata: #94a3b8;
-  --color-disable: #a5b4fc;
-  --color-disable-stoke: #cbd5e1;
-  --color-menu-hover: #f1f5f9;
-  --color-mutebg: #f8fafc;
-  --color-lightbeige: #eef4ff;
-  --color-golder: #475569;
-  --color-golder-50: #f8fafc;
-  --color-golder-100: #f1f5f9;
-  --color-bodycolor: #f8fafc;
-  --color-light-purple: #dbe7ff;
-  --color-progressbar: #e2e8f0;
-  --color-purple-light: #1e54e6;
-  --color-bggray: #f8fafc;
-  --color-gray-border: #e2e8f0;
+  --color-lightgray: #f0eef8;
+  --color-lightgray-100: #e4e1f0;
+  --color-lightgray-200: #f7f6fc;
+  --color-lightgray-300: #cfcbe3;
+  --color-lightgray-500: #6b6790;
+  --color-lightgray-600: #6b6790;
+  --color-lightgray-700: #38345a;
+  --color-active: #6b6790;
+  --color-beige: #f7f6fc;
+  --color-beige-100: #f0eef8;
+  --color-beige-200: #ecfeff;
+  --color-beige-400: #cfcbe3;
+  --color-active-border: #cfcbe3;
+  --color-hover: #f7f6fc;
+  --color-tealdark: #087c9c;
+  --color-teallight: #ecfeff;
+  --color-teallight-50: #ecfeff;
+  --color-teallight-400: #9c97bc;
+  --color-teallight-500: #4a4668;
+  --color-teal-hover: #0e6f8a;
+  --color-stokecolor: #e4e1f0;
+  --color-save-badge: #cffafe;
+  --color-skydark: #087c9c;
+  --color-slatelight: #f7f6fc;
+  --color-nodata: #9c97bc;
+  --color-disable: #9fd3e0;
+  --color-disable-stoke: #cfcbe3;
+  --color-menu-hover: #f0eef8;
+  --color-mutebg: #f7f6fc;
+  --color-lightbeige: #ecfeff;
+  --color-golder: #4a4668;
+  --color-golder-50: #f7f6fc;
+  --color-golder-100: #f0eef8;
+  --color-bodycolor: #f7f6fc;
+  --color-light-purple: #cffafe;
+  --color-progressbar: #e4e1f0;
+  --color-purple-light: #0e6f8a;
+  --color-bggray: #f7f6fc;
+  --color-gray-border: #e4e1f0;
   --color-light-green: #d1fae5;
   --color-btn-greenlight: #a7f3d0;
-  --color-btn-purplelight: #dbe7ff;
+  --color-btn-purplelight: #cffafe;
 
   --shadow-alert: 0px 7px 20px 0px #0000000a;
   --shadow-alert-white: 0px 7px 20px 0px #ffffff0a;
-  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.22), 0 12px 40px -12px rgba(47, 107, 255, 0.38);
+  --shadow-glow: 0 0 0 1px rgba(8, 145, 178, 0.22), 0 12px 40px -12px rgba(8, 145, 178, 0.34);
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-poppins: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Geist Mono = brand voice (prompts, prices, labels) · Geist = reading */
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-poppins: "Geist", ui-sans-serif, system-ui, sans-serif;
 
   --text-15: 15px;
   --text-13: 13px;
@@ -152,70 +159,94 @@ html {
 html.dark {
   color-scheme: dark;
 
-  /* ---- Hostman-grade dark: deep navy-black layered surfaces ---- */
-  --color-gray-950: #060a14;   /* app background */
-  --color-gray-900: #0d1526;   /* cards / panels / dropdowns */
-  --color-gray-800: #17203a;   /* elevated surface / hairline border */
-  --color-gray-700: #223052;   /* stronger border / hover */
-  --color-gray-600: #2c3a5e;
+  /* ---- Neon Prompt dark: indigo-black layered surfaces ---- */
+  --color-gray-950: #07060f;   /* app background */
+  --color-gray-900: #0f0d1c;   /* cards / panels / dropdowns */
+  --color-gray-800: #1a1730;   /* elevated surface / hairline border */
+  --color-gray-700: #262140;   /* stronger border / hover */
+  --color-gray-600: #342d55;
 
-  /* Muted TEXT / number colour, LIFTED for dark-mode legibility.
-     gray-500 is used almost exclusively as a text/icon colour (not as a
-     surface or border), so raising it here makes dim numbers, amounts and
-     secondary labels clearly readable across the whole app in dark mode —
-     without affecting light mode (this override is scoped to html.dark). */
-  --color-gray-500: #93a1c0;
+  /* Muted TEXT / number colours, lifted for dark-mode legibility (gray-500/400
+     are used almost exclusively as text/icon colours, never as surfaces). */
+  --color-gray-500: #9893c2;
+  --color-gray-400: #aea9d3;
+  --color-gray-300: #cfcce8;
+  --color-gray-200: #dfddf5;
+  --color-gray-100: #e8e6ff;
+  --color-gray-50: #f4f3ff;
+
+  /* Brand in dark: neon cyan fills carry INK text (never white-on-cyan) */
+  --color-brand: #22e6ff;
+  --color-on-brand: #05101a;
+  --color-brand-50: #0a1c27;
+  --color-brand-100: #0d2836;
+  --color-brand-200: #a5f6ff;
+  --color-brand-300: #67f0ff;
+  --color-brand-400: #3feaff;
+  --color-brand-500: #22e6ff;
+  --color-brand-600: #22e6ff;
+  --color-brand-700: #12cfea;
+  --color-brand-800: #0fb5cf;
+  --color-brand-900: #0b8fa6;
+  --color-neon: #ff3dcb;
+  --color-neon-50: #2a0b24;
+  --color-neon-300: #ff8ae2;
 
   /* Surfaces + lines (also catch stray non-dark-variant utilities) */
-  --color-surface: #0d1526;
-  --color-surface-2: #131c31;
-  --color-surface-3: #17203a;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.16);
-  --color-stokecolor: rgba(255, 255, 255, 0.08);
-  --color-gray-border: rgba(255, 255, 255, 0.08);
+  --color-surface: #0f0d1c;
+  --color-surface-2: #141127;
+  --color-surface-3: #1a1730;
+  --color-line: rgba(232, 230, 255, 0.08);
+  --color-line-strong: rgba(232, 230, 255, 0.16);
+  --color-stokecolor: rgba(232, 230, 255, 0.08);
+  --color-gray-border: rgba(232, 230, 255, 0.08);
 
   /* Text fallbacks so any stray text-primary/ink stays legible on dark */
-  --color-primary: #eceef6;
-  --color-ink: #eceef6;
-  --color-ink-soft: #b7bccb;
-  --color-secondary: #9aa0b5;
-  --color-ink-muted: #8f95aa;
+  --color-primary: #e8e6ff;
+  --color-ink: #e8e6ff;
+  --color-ink-soft: #bdb9dd;
+  --color-secondary: #a09bc8;
+  --color-ink-muted: #8e89b8;
 
-  /* Stray light-tint blocks -> dark navy tints (legacy aliases recolour in one shot) */
-  --color-brand-50: #0f1c3d;
-  --color-brand-100: #12245a;
-  --color-beige: #0d1526;
-  --color-beige-100: #131c31;
-  --color-beige-200: #0f1c3d;
-  --color-teallight: #0f1c3d;
-  --color-teallight-50: #0f1c3d;
-  --color-mutebg: #0d1526;
-  --color-bggray: #0d1526;
-  --color-bodycolor: #060a14;
-  --color-slatelight: #131c31;
-  --color-hover: #131c31;
-  --color-menu-hover: #17203a;
-  --color-lightbeige: #0f1c3d;
-  --color-light-purple: #12245a;
-  --color-save-badge: #12245a;
-  --color-progressbar: #223052;
+  /* Stray light-tint blocks -> indigo-black / cyan-ink tints */
+  --color-beige: #0f0d1c;
+  --color-beige-100: #141127;
+  --color-beige-200: #0a1c27;
+  --color-teallight: #0a1c27;
+  --color-teallight-50: #0a1c27;
+  --color-mutebg: #0f0d1c;
+  --color-bggray: #0f0d1c;
+  --color-bodycolor: #07060f;
+  --color-slatelight: #141127;
+  --color-hover: #141127;
+  --color-menu-hover: #1a1730;
+  --color-lightbeige: #0a1c27;
+  --color-light-purple: #0d2836;
+  --color-save-badge: #0d2836;
+  --color-progressbar: #262140;
 
-  /* Legacy muted-text tokens that were left at their dark light-mode values
-     (dim/invisible on dark). These are used only as TEXT (never as surfaces),
-     so lift them to a legible muted tone for dark mode. */
-  --color-lightgray-500: #93a1c0;
-  --color-lightgray-600: #93a1c0;
-  --color-teallight-500: #93a1c0;
+  /* Legacy muted-text tokens (used only as TEXT) lifted to a legible tone */
+  --color-lightgray-500: #9893c2;
+  --color-lightgray-600: #9893c2;
+  --color-teallight-500: #9893c2;
 
-  /* Elevation + signature brand glow */
-  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.32), 0 22px 70px -22px rgba(47, 107, 255, 0.5);
+  /* Elevation + signature neon glow */
+  --shadow-glow: 0 0 0 1px rgba(34, 230, 255, 0.28), 0 22px 70px -22px rgba(34, 230, 255, 0.4);
+}
+
+/* Neon fills are bright in dark mode -> ink text on them (never white-on-cyan).
+   Elements that switch to a dark surface in dark mode (dark:bg-*) are excluded. */
+html.dark :is(.bg-brand, .bg-brand-400, .bg-brand-500, .bg-brand-600, .bg-brand-700):not([class*="dark:bg-"]),
+html.dark :is(.dark\:bg-brand, .dark\:bg-brand-400, .dark\:bg-brand-500, .dark\:bg-brand-600),
+html.dark :is(.nw-btn-primary, .btn-blue, .add-to-cart, .btn-sky):not(.disable):not(:disabled),
+html.dark :is(.hover\:bg-brand, .hover\:bg-brand-600, .hover\:bg-brand-700):not([class*="dark:hover:bg-"]):hover {
+  color: var(--color-on-brand);
 }
 
 /* Dark-mode legibility safety net: any `hover:text-black` (e.g. modal close
    buttons) would turn invisible on a dark panel — keep it light instead. */
 html.dark .hover\:text-black:hover {
-  color: #e6e8f2;
+  color: #e8e6ff;
 }
 
 /* Floating form labels use gray-600 for their active / focused state, which is
@@ -224,12 +255,12 @@ html.dark .hover\:text-black:hover {
    overlays, borders) are separate utilities and stay untouched. */
 html.dark .text-gray-600,
 html.dark .peer:focus ~ .peer-focus\:text-gray-600 {
-  color: #aab1c6;
+  color: #b4b0d6;
 }
 
 /* `golder` is used as a surface in one place, so lift only its TEXT usage. */
 html.dark .text-golder {
-  color: #aab1c6;
+  color: #b4b0d6;
 }
 
 body {
@@ -238,20 +269,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Ambient signature glow behind everything (indigo -> fuchsia -> warm whisper) */
+/* Ambient signature glow behind everything (neon cyan + magenta whisper on indigo-black) */
 html.dark body {
-  background-color: #060a14;
+  background-color: #07060f;
   background-image:
-    radial-gradient(72% 55% at 10% -6%, rgba(47, 107, 255, 0.20), transparent 60%),
-    radial-gradient(55% 45% at 102% -2%, rgba(56, 189, 248, 0.12), transparent 60%),
-    radial-gradient(50% 45% at 60% 110%, rgba(47, 107, 255, 0.08), transparent 60%);
+    radial-gradient(72% 55% at 10% -6%, rgba(34, 230, 255, 0.09), transparent 60%),
+    radial-gradient(55% 45% at 102% -2%, rgba(255, 61, 203, 0.06), transparent 60%),
+    radial-gradient(50% 45% at 60% 110%, rgba(124, 92, 255, 0.07), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 html:not(.dark) body {
   background-image:
-    radial-gradient(60% 50% at 100% -12%, rgba(47, 107, 255, 0.06), transparent 60%),
-    radial-gradient(50% 45% at 0% -8%, rgba(56, 189, 248, 0.045), transparent 60%);
+    radial-gradient(60% 50% at 100% -12%, rgba(8, 145, 178, 0.06), transparent 60%),
+    radial-gradient(50% 45% at 0% -8%, rgba(192, 22, 143, 0.03), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -260,9 +291,14 @@ h1, h2, h3, .nw-h2, .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.021em;
 }
+/* Display headings that opt into the mono brand voice (hero tagline, auth panel) */
+:is(h1, h2, h3).font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.035em;
+}
 
 ::selection {
-  background: rgba(47, 107, 255, 0.2);
+  background: rgba(34, 230, 255, 0.25);
 }
 
 /*------------------------ start css --------------------*/
@@ -722,7 +758,7 @@ select {
 /*---------- Modal Dialog ----------*/
 .modal-dialog {
   @apply bg-white dark:bg-gray-900 rounded-2xl border border-line dark:border-white/[0.08] max-w-2xl w-full relative md:p-9 p-5;
-  box-shadow: 0px 24px 60px -20px rgba(15, 23, 42, 0.35);
+  box-shadow: 0px 24px 60px -20px rgba(18, 16, 31, 0.35);
 }
 
 .modal-title {
@@ -805,7 +841,7 @@ select {
   @apply -translate-y-0.5 border-brand/40;
 }
 html.dark .admin-card:hover {
-  box-shadow: 0 18px 50px -24px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 18px 50px -24px rgba(34, 230, 255, 0.35);
 }
 
 .admin-btn .add-to-cart,
@@ -832,10 +868,10 @@ html.dark .admin-card:hover {
 
 .table-thead tr th {
   @apply font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-ink-soft dark:text-gray-400 px-5 py-3 text-left bg-surface-2/70 dark:bg-white/[0.03] whitespace-nowrap;
-  background-image: linear-gradient(180deg, rgba(99, 102, 241, 0.05), rgba(99, 102, 241, 0));
+  background-image: linear-gradient(180deg, rgba(8, 145, 178, 0.05), rgba(8, 145, 178, 0));
 }
 html.dark .table-thead tr th {
-  background-image: linear-gradient(180deg, rgba(124, 58, 237, 0.10), rgba(124, 58, 237, 0));
+  background-image: linear-gradient(180deg, rgba(34, 230, 255, 0.06), rgba(34, 230, 255, 0));
 }
 
 .table-body tr {
@@ -1163,17 +1199,22 @@ input[type="checkbox"]:checked {
   .nw-eyebrow {
     @apply inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-brand-700 dark:text-brand-300;
   }
+  /* Terminal prompt label: "$ DOMAINS" */
   .nw-eyebrow::before {
-    content: "[";
-    @apply text-brand-300 dark:text-brand-500;
+    content: "$";
+    @apply text-brand-500 dark:text-brand-400;
   }
   .nw-eyebrow::after {
-    content: "]";
-    @apply text-brand-300 dark:text-brand-500;
+    content: none;
   }
   /* Calmer landing label — quiet uppercase kicker, no brackets (redesign) */
   .nw-kicker {
     @apply inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-300;
+  }
+  /* Shell-comment marker on calm section kickers: "# WHY HOSTA.SH" */
+  .nw-kicker::before {
+    content: "#";
+    @apply text-ink-muted dark:text-gray-500;
   }
   .nw-h2 {
     @apply text-3xl sm:text-4xl font-bold tracking-tight text-primary dark:text-white;
@@ -1202,7 +1243,7 @@ input[type="checkbox"]:checked {
     @apply rounded-xl border border-line bg-white p-6 shadow-sm transition-all duration-200 dark:border-white/[0.07] dark:bg-gray-900 dark:shadow-none;
   }
   .nw-card-hover {
-    @apply hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 dark:hover:border-brand/40 dark:hover:shadow-[0_18px_50px_-20px_rgba(99,102,241,0.35)];
+    @apply hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 dark:hover:border-brand/40 dark:hover:shadow-[0_18px_50px_-20px_rgba(34,230,255,0.28)];
   }
 
   .nw-input {
@@ -1234,17 +1275,17 @@ input[type="checkbox"]:checked {
     background:
       linear-gradient(to right, var(--nw-scroll-bg, #ffffff) 30%, rgba(255, 255, 255, 0)),
       linear-gradient(to right, rgba(255, 255, 255, 0), var(--nw-scroll-bg, #ffffff) 70%) 100% 0,
-      radial-gradient(farthest-side at 0 50%, rgba(15, 23, 42, 0.16), rgba(15, 23, 42, 0)),
-      radial-gradient(farthest-side at 100% 50%, rgba(15, 23, 42, 0.16), rgba(15, 23, 42, 0)) 100% 0;
+      radial-gradient(farthest-side at 0 50%, rgba(18, 16, 31, 0.16), rgba(18, 16, 31, 0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(18, 16, 31, 0.16), rgba(18, 16, 31, 0)) 100% 0;
     background-repeat: no-repeat;
     background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
     background-attachment: local, local, scroll, scroll;
   }
   .dark .nw-scroll-x {
-    --nw-scroll-bg: #111827;
+    --nw-scroll-bg: #0f0d1c;
     background:
-      linear-gradient(to right, var(--nw-scroll-bg) 30%, rgba(17, 24, 39, 0)),
-      linear-gradient(to right, rgba(17, 24, 39, 0), var(--nw-scroll-bg) 70%) 100% 0,
+      linear-gradient(to right, var(--nw-scroll-bg) 30%, rgba(15, 13, 28, 0)),
+      linear-gradient(to right, rgba(15, 13, 28, 0), var(--nw-scroll-bg) 70%) 100% 0,
       radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0)),
       radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0)) 100% 0;
     background-repeat: no-repeat;
@@ -1278,8 +1319,8 @@ input[type="checkbox"]:checked {
     @apply pointer-events-none absolute rounded-full blur-3xl bg-brand-200/50 dark:bg-brand/10;
   }
   .nw-grid-bg {
-    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(8, 145, 178, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(8, 145, 178, 0.08) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
   }
@@ -1315,9 +1356,9 @@ input[type="checkbox"]:checked {
 
 /* Rewards deep-link highlight (used by /wallet#rewards) */
 @keyframes nw-flash-kf {
-  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
-  20% { box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.35); }
-  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0); }
+  20% { box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.38); }
+  100% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0); }
 }
 .nw-flash {
   animation: nw-flash-kf 1.6s ease-out;
@@ -1370,9 +1411,9 @@ input[type="checkbox"]:checked {
 
 /* Gentle one-time header cart pulse (first add nudge for new buyers) */
 @keyframes nw-cart-pulse-kf {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.45); }
-  50% { transform: scale(1.14); box-shadow: 0 0 0 7px rgba(99, 102, 241, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(8, 145, 178, 0.45); }
+  50% { transform: scale(1.14); box-shadow: 0 0 0 7px rgba(8, 145, 178, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(8, 145, 178, 0); }
 }
 .nw-cart-pulse { animation: nw-cart-pulse-kf 1s ease-out 3; }
 
@@ -1396,13 +1437,13 @@ input[type="checkbox"]:checked {
 .nw-rise-4 { animation-delay: 0.24s; }
 .nw-rise-5 { animation-delay: 0.32s; }
 
-/* Branded auth split-screen showcase panel (vivid in both light + dark) */
+/* Branded auth split-screen showcase panel — terminal night (same in both modes) */
 .auth-brand-panel {
   background:
-    radial-gradient(55% 55% at 18% 8%, rgba(255, 255, 255, 0.16), transparent 60%),
-    radial-gradient(55% 55% at 100% 100%, rgba(34, 211, 238, 0.28), transparent 60%),
-    radial-gradient(45% 45% at 90% 15%, rgba(56, 189, 248, 0.22), transparent 60%),
-    linear-gradient(150deg, #1e54e6 0%, #2f6bff 46%, #0ea5e9 100%);
+    radial-gradient(60% 55% at 100% 100%, rgba(34, 230, 255, 0.22), transparent 60%),
+    radial-gradient(45% 45% at 92% 8%, rgba(255, 61, 203, 0.16), transparent 60%),
+    radial-gradient(55% 55% at 0% 0%, rgba(124, 92, 255, 0.20), transparent 60%),
+    linear-gradient(150deg, #16133a 0%, #0f0d1c 48%, #07060f 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1410,9 +1451,35 @@ input[type="checkbox"]:checked {
 }
 
 /* =========================================================================
-   BRILLIANT DARK THEME — glass, glow, gradients, hero stat cards, table polish
-   All rules are scoped to html.dark OR are opt-in utility classes, so light
-   mode and existing screens are never regressed.
+   hosta.sh terminal touches — prompt lines, blinking block cursor
+   ========================================================================= */
+@layer components {
+  .hs-prompt {
+    @apply inline-flex items-center gap-2 font-mono text-[12px] font-medium tracking-normal text-ink-soft sm:text-[13px] dark:text-gray-300;
+  }
+  .hs-prompt-sign {
+    @apply font-semibold text-brand-600 dark:text-brand-400;
+  }
+}
+.hs-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.15em;
+  border-radius: 1px;
+  background: var(--color-brand);
+  vertical-align: -0.18em;
+  animation: hs-blink 1.06s steps(1, end) infinite;
+}
+@keyframes hs-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs-cursor { animation: none; }
+}
+
+/* =========================================================================
+   NEON DARK THEME — glass, glow, gradients, hero stat cards, table polish
+   All rules are scoped to html.dark OR are opt-in utility classes.
    ========================================================================= */
 
 @layer components {
@@ -1429,7 +1496,7 @@ input[type="checkbox"]:checked {
   .nw-stat:hover {
     @apply -translate-y-0.5;
   }
-  /* Soft coloured glow bloom in a card corner */
+  /* Soft coloured glow bloom in a card corner (cyan = money, magenta = rewards) */
   .nw-stat-glow::after {
     content: "";
     position: absolute;
@@ -1440,25 +1507,25 @@ input[type="checkbox"]:checked {
     border-radius: 9999px;
     filter: blur(48px);
     pointer-events: none;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.38), transparent 70%);
+    background: radial-gradient(circle, rgba(34, 230, 255, 0.28), transparent 70%);
   }
   .nw-stat-glow-warm::after {
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.34), transparent 70%);
+    background: radial-gradient(circle, rgba(255, 61, 203, 0.28), transparent 70%);
   }
 
-  /* Gradient fills (opt-in) */
-  .nw-grad-brand { background-image: linear-gradient(135deg, #2f6bff 0%, #3b82f6 45%, #22d3ee 100%); }
-  .nw-grad-warm  { background-image: linear-gradient(135deg, #f59e0b 0%, #fb7185 55%, #e879f9 100%); }
+  /* Gradient fills (opt-in) — deep enough for white icons/text in both modes */
+  .nw-grad-brand { background-image: linear-gradient(135deg, #087c9c 0%, #0891b2 45%, #6d3fd9 100%); }
+  .nw-grad-warm  { background-image: linear-gradient(135deg, #c0168f 0%, #9b2bd6 55%, #6d3fd9 100%); }
 
   /* Gradient text (headline numbers) — readable in both modes */
   .nw-grad-text {
-    background-image: linear-gradient(135deg, #2f6bff, #0ea5e9);
+    background-image: linear-gradient(135deg, #087c9c, #6d3fd9);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .nw-grad-text-warm {
-    background-image: linear-gradient(135deg, #d97706, #db2777);
+    background-image: linear-gradient(135deg, #c0168f, #8b2bd6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1469,32 +1536,32 @@ input[type="checkbox"]:checked {
   }
 }
 html.dark .nw-grad-text {
-  background-image: linear-gradient(135deg, #8fb6ff, #67e8f9);
+  background-image: linear-gradient(135deg, #22e6ff, #a5f6ff);
 }
 html.dark .nw-grad-text-warm {
-  background-image: linear-gradient(135deg, #fbbf24, #fb7185);
+  background-image: linear-gradient(135deg, #ff3dcb, #ff9ae6);
 }
 
-/* Primary actions: gradient + glow in dark (covers nw + legacy button classes) */
+/* Primary actions: neon cyan + glow in dark, ink text (covers nw + legacy button classes) */
 html.dark .nw-btn-primary,
 html.dark .btn-blue,
-html.dark .add-to-cart,
+html.dark .add-to-cart:not(.disable),
 html.dark .btn-sky {
-  background-image: linear-gradient(135deg, #2f6bff 0%, #3b82f6 55%, #4b9dff 100%);
-  box-shadow: 0 10px 34px -12px rgba(47, 107, 255, 0.7);
+  background-image: linear-gradient(135deg, #22e6ff 0%, #3feaff 55%, #7ef1ff 100%);
+  box-shadow: 0 10px 34px -14px rgba(34, 230, 255, 0.55);
   border-color: transparent;
 }
 html.dark .nw-btn-primary:hover,
 html.dark .btn-blue:hover,
-html.dark .add-to-cart:hover,
+html.dark .add-to-cart:not(.disable):hover,
 html.dark .btn-sky:hover {
-  background-image: linear-gradient(135deg, #4b81ff 0%, #2f6bff 55%, #38bdf8 100%);
-  box-shadow: 0 16px 44px -10px rgba(47, 107, 255, 0.9);
+  background-image: linear-gradient(135deg, #5cefff 0%, #22e6ff 60%, #12cfea 100%);
+  box-shadow: 0 16px 44px -12px rgba(34, 230, 255, 0.7);
 }
 
 /* Base card gets subtle inner highlight + deep drop in dark */
 html.dark .nw-card {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 24px 60px -34px rgba(0, 0, 0, 0.85);
+  box-shadow: inset 0 1px 0 rgba(232, 230, 255, 0.04), 0 24px 60px -34px rgba(0, 0, 0, 0.85);
 }
 
 /* Table row hover + softer header rule in dark */
@@ -1502,119 +1569,112 @@ html.dark table tbody tr {
   transition: background-color 0.15s ease;
 }
 html.dark table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.035);
+  background-color: rgba(232, 230, 255, 0.035);
 }
 
 /* Scrollbar polish in dark */
 html.dark ::-webkit-scrollbar { width: 10px; height: 10px; }
 html.dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(232, 230, 255, 0.12);
   border-radius: 9999px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
-html.dark ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); background-clip: content-box; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: rgba(232, 230, 255, 0.2); background-clip: content-box; }
 html.dark ::-webkit-scrollbar-track { background: transparent; }
 
-/* Authed app-shell ambient canvas (signature coloured glow) */
-.nw-app-bg { background-color: #f6f7fb; }
-html:not(.dark) .nw-app-bg {
-  background-image:
-    radial-gradient(58% 50% at 100% -10%, rgba(99, 102, 241, 0.07), transparent 60%),
-    radial-gradient(46% 42% at 0% -6%, rgba(168, 85, 247, 0.05), transparent 60%);
-}
+/* Authed app-shell ambient canvas (signature neon glow) */
+.nw-app-bg { background-color: #f4f3fb; }
 html.dark .nw-app-bg {
-  background-color: #060a14;
+  background-color: #07060f;
   background-image:
-    radial-gradient(66% 55% at 6% -8%, rgba(47, 107, 255, 0.22), transparent 58%),
-    radial-gradient(58% 50% at 106% -6%, rgba(56, 189, 248, 0.14), transparent 58%),
-    radial-gradient(62% 55% at 52% 118%, rgba(47, 107, 255, 0.08), transparent 60%);
+    radial-gradient(66% 55% at 6% -8%, rgba(34, 230, 255, 0.10), transparent 58%),
+    radial-gradient(58% 50% at 106% -6%, rgba(255, 61, 203, 0.06), transparent 58%),
+    radial-gradient(62% 55% at 52% 118%, rgba(124, 92, 255, 0.07), transparent 60%);
 }
 
-/* Richer coloured glow on every marketing/product hero (Domains, DNS, VPS, RDP, Pricing, SSL) */
+/* Coloured glow on every marketing/product hero (Domains, DNS, VPS, RDP, Pricing, SSL) */
 html.dark .nw-hero {
-  background-color: #060a14;
+  background-color: #07060f;
   background-image:
-    radial-gradient(60% 92% at 88% -22%, rgba(47, 107, 255, 0.26), transparent 60%),
-    radial-gradient(48% 82% at -6% -4%, rgba(56, 189, 248, 0.16), transparent 60%),
-    radial-gradient(42% 72% at 62% 122%, rgba(47, 107, 255, 0.09), transparent 62%);
+    radial-gradient(60% 92% at 88% -22%, rgba(34, 230, 255, 0.14), transparent 60%),
+    radial-gradient(48% 82% at -6% -4%, rgba(124, 92, 255, 0.12), transparent 60%),
+    radial-gradient(42% 72% at 62% 122%, rgba(255, 61, 203, 0.06), transparent 62%);
 }
 html.dark .nw-hero-glow {
-  background-color: rgba(47, 107, 255, 0.2);
+  background-color: rgba(34, 230, 255, 0.12);
 }
 html:not(.dark) .nw-hero-glow {
-  background-color: rgba(147, 182, 255, 0.55);
+  background-color: rgba(103, 232, 249, 0.35);
 }
 
 /* =====================================================================
-   PHASE 6 — LIGHT-MODE PREMIUM POLISH
-   Soft coloured tints + hero glow + gradient CTAs so light mode feels as
-   crafted as dark. Every rule is scoped to html:not(.dark) — dark is untouched.
+   LIGHT-MODE POLISH (Neon light) — every rule is scoped to html:not(.dark)
    ===================================================================== */
 
-/* Authed app-shell ambient canvas — a touch more colour + a warm whisper */
+/* Authed app-shell ambient canvas — lavender-white with a cyan + magenta whisper */
 html:not(.dark) .nw-app-bg {
-  background-color: #f7f8fc;
+  background-color: #f4f3fb;
   background-image:
-    radial-gradient(60% 52% at 100% -10%, rgba(47, 107, 255, 0.10), transparent 60%),
-    radial-gradient(48% 44% at 0% -6%, rgba(56, 189, 248, 0.07), transparent 60%),
-    radial-gradient(52% 46% at 52% 116%, rgba(47, 107, 255, 0.045), transparent 62%);
+    radial-gradient(60% 52% at 100% -10%, rgba(8, 145, 178, 0.08), transparent 60%),
+    radial-gradient(48% 44% at 0% -6%, rgba(124, 92, 255, 0.05), transparent 60%),
+    radial-gradient(52% 46% at 52% 116%, rgba(192, 22, 143, 0.03), transparent 62%);
 }
 
 /* Public body gets the same gentle wash so marketing pages feel premium too */
 html:not(.dark) body {
   background-image:
-    radial-gradient(60% 50% at 100% -12%, rgba(47, 107, 255, 0.08), transparent 60%),
-    radial-gradient(50% 45% at 0% -8%, rgba(56, 189, 248, 0.05), transparent 60%),
-    radial-gradient(46% 42% at 55% 118%, rgba(47, 107, 255, 0.04), transparent 62%);
+    radial-gradient(60% 50% at 100% -12%, rgba(8, 145, 178, 0.07), transparent 60%),
+    radial-gradient(50% 45% at 0% -8%, rgba(124, 92, 255, 0.04), transparent 60%),
+    radial-gradient(46% 42% at 55% 118%, rgba(192, 22, 143, 0.03), transparent 62%);
 }
 
-/* Marketing / product heroes get a soft indigo -> violet -> warm bloom */
+/* Marketing / product heroes get a soft cyan -> violet bloom */
 html:not(.dark) .nw-hero {
   background-color: #ffffff;
   background-image:
-    radial-gradient(58% 90% at 86% -20%, rgba(47, 107, 255, 0.10), transparent 60%),
-    radial-gradient(48% 80% at -4% -6%, rgba(56, 189, 248, 0.09), transparent 60%),
-    radial-gradient(44% 74% at 60% 122%, rgba(47, 107, 255, 0.05), transparent 62%),
-    linear-gradient(to bottom, rgba(238, 244, 255, 0.66), #ffffff 44%);
+    radial-gradient(58% 90% at 86% -20%, rgba(8, 145, 178, 0.09), transparent 60%),
+    radial-gradient(48% 80% at -4% -6%, rgba(124, 92, 255, 0.06), transparent 60%),
+    radial-gradient(44% 74% at 60% 122%, rgba(192, 22, 143, 0.04), transparent 62%),
+    linear-gradient(to bottom, rgba(236, 254, 255, 0.6), #ffffff 44%);
 }
 
 /* Hero stat cards: subtle gradient tint + soft brand-tinted elevation */
 html:not(.dark) .nw-stat {
-  background-image: linear-gradient(160deg, #ffffff 0%, #f2f6ff 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -18px rgba(47, 107, 255, 0.30);
+  background-image: linear-gradient(160deg, #ffffff 0%, #f2fbfd 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -18px rgba(8, 145, 178, 0.28);
 }
 html:not(.dark) .nw-stat:hover {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 20px 46px -18px rgba(47, 107, 255, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 20px 46px -18px rgba(8, 145, 178, 0.38);
 }
 /* Soften the coloured corner bloom on white so it reads as a tasteful tint */
 html:not(.dark) .nw-stat-glow::after {
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.16), transparent 70%);
 }
 html:not(.dark) .nw-stat-glow-warm::after {
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(192, 22, 143, 0.14), transparent 70%);
 }
 
-/* Primary actions: gradient + soft colour glow in light (mirror of dark, softer) */
+/* Primary actions: deep-cyan gradient + soft glow in light (white text, AA) */
 html:not(.dark) .nw-btn-primary,
 html:not(.dark) .btn-blue,
-html:not(.dark) .add-to-cart,
+html:not(.dark) .add-to-cart:not(.disable),
 html:not(.dark) .btn-sky {
-  background-image: linear-gradient(135deg, #2f6bff 0%, #2f6bff 55%, #3b82f6 100%);
-  box-shadow: 0 10px 26px -12px rgba(47, 107, 255, 0.55);
+  background-image: linear-gradient(135deg, #087c9c 0%, #087c9c 55%, #0a86a8 100%);
+  box-shadow: 0 10px 26px -12px rgba(8, 145, 178, 0.5);
   border-color: transparent;
 }
 html:not(.dark) .nw-btn-primary:hover,
 html:not(.dark) .btn-blue:hover,
-html:not(.dark) .add-to-cart:hover,
+html:not(.dark) .add-to-cart:not(.disable):hover,
 html:not(.dark) .btn-sky:hover {
-  background-image: linear-gradient(135deg, #1e54e6 0%, #2f6bff 55%, #3b82f6 100%);
-  box-shadow: 0 16px 38px -12px rgba(47, 107, 255, 0.72);
+  background-image: linear-gradient(135deg, #0e6f8a 0%, #087c9c 55%, #0a86a8 100%);
+  box-shadow: 0 16px 38px -12px rgba(8, 145, 178, 0.65);
 }
 
 /* Card hover: a hint of brand glow in light */
 html:not(.dark) .nw-card-hover:hover {
-  box-shadow: 0 20px 46px -24px rgba(47, 107, 255, 0.34);
+  box-shadow: 0 20px 46px -24px rgba(8, 145, 178, 0.3);
 }
 
 /* Gentle float for illustrated empty-state icons (reduced-motion aware) */

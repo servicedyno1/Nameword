@@ -7,7 +7,7 @@ const SELLER = {
   name: "Dynotech Innovations, LDA",
   address: ["Rua Luís de Camões 1017, 7° Dt°", "Montijo 2870-154", "Portugal"],
   nif: "PT518713130",
-  email: "support@nameword.com",
+  email: process.env.SUPPORT_EMAIL || process.env.MAIL_FROM_ADDRESS,
 };
 
 const money = (n) => `$${(Number(n) || 0).toFixed(2)}`;
@@ -32,7 +32,7 @@ async function generateOrderReceiptPDF(order, buyer = {}) {
   const doc = new jsPDF.jsPDF();
   const ink = [15, 23, 42];
   const light = [128, 128, 128];
-  const brand = [79, 70, 229];
+  const brand = [8, 124, 156];
   const green = [22, 163, 74];
 
   doc.setTextColor(...ink);

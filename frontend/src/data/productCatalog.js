@@ -5,7 +5,7 @@ import {
 
 // Single source of truth for the product taxonomy — powers the nav mega-menu,
 // the home catalog section, the /products index and the /products/:slug pages.
-// Hostman-style grouping; Nameword's live products folded in, new cloud
+// Hostman-style grouping; hosta.sh's live products folded in, new cloud
 // categories added as "coming soon" (real waitlist, no fake provisioning).
 export const PRODUCT_GROUPS = [
   {

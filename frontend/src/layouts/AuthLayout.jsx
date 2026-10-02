@@ -2,6 +2,7 @@ import { Outlet } from 'react-router';
 import { LuShieldCheck, LuGlobe, LuWallet } from 'react-icons/lu';
 import AuthNavbar from '../components/layout/AuthNavbar';
 import AuthFooter from '../components/layout/AuthFooter';
+import BrandLogo from '../components/common/BrandLogo';
 import { useLanguage } from '../hooks/useLanguage';
 
 const AuthLayout = () => {
@@ -24,16 +25,17 @@ const AuthLayout = () => {
         <div className="absolute inset-0 nw-grid-bg opacity-[0.12]" />
 
         <div className="relative z-10 flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-lg font-extrabold text-white backdrop-blur">N</span>
-          <span className="text-lg font-semibold tracking-tight text-white">Nameword</span>
+          <BrandLogo tone="onDark" markClassName="h-9 w-9" textClassName="text-[1.35rem]" />
         </div>
 
         <div className="relative z-10 max-w-md">
-          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.28em] text-white/75">
-            {a.brandEyebrow || 'Offshore · Private · DMCA-ignored'}
+          <p className="hs-prompt text-white/75 dark:text-white/75">
+            <span className="hs-prompt-sign text-[#22E6FF] dark:text-[#22E6FF]">$</span>
+            <span>hosta up --offshore --private --no-kyc</span>
+            <span className="hs-cursor" aria-hidden="true" />
           </p>
-          <h2 className="mt-5 font-display text-4xl font-bold leading-[1.08] tracking-tight text-white xl:text-5xl">
-            {a.brandHeadline || 'Privacy and freedom, hosted offshore.'}
+          <h2 className="mt-5 font-mono text-4xl font-bold leading-[1.1] tracking-[-0.035em] text-white xl:text-[2.75rem]">
+            {a.brandHeadline || 'Private by default. Scriptable by design.'}
           </h2>
           <p className="mt-5 max-w-sm text-white/80">
             {a.brandSub || 'Domains, DNS, cPanel hosting, VPS & RDP from privacy-first jurisdictions — paid from a prepaid crypto wallet. No card stored, minimal logs.'}

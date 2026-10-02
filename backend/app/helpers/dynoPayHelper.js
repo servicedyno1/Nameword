@@ -157,7 +157,7 @@ const getSupportedCurrencies = async () => {
   return response.data;
 };
 
-// Coins Nameword accepts come from Dynopay's live "configured currencies" list
+// Coins hosta.sh accepts come from Dynopay's live "configured currencies" list
 // (getSupportedCurrency -> data.currencies). The env var CRYPTO_TOPUP_COINS is an
 // OPTIONAL allow-list to narrow that further; when unset (default) we offer every
 // coin the merchant has configured.

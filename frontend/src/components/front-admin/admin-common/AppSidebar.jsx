@@ -68,7 +68,7 @@ export default function AppSidebar({ collapsed = false, onToggle, onClose, foote
       data-testid="app-sidebar"
     >
       <div className={`mb-6 flex items-center px-1 ${collapsed ? "justify-center" : "justify-between"}`}>
-        <NavLink to="/dashboard" aria-label="Nameword" data-testid="sidebar-brand">
+        <NavLink to="/dashboard" aria-label="hosta.sh" data-testid="sidebar-brand">
           <BrandLogo markClassName="h-8 w-8" showText={!collapsed} textClassName="text-[1.35rem]" />
         </NavLink>
         {onClose && (

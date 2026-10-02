@@ -21,7 +21,7 @@ const apiHeaders = (walletToken) => {
 };
 const headers = apiHeaders();
 
-// To fetch supported currencies — return the coins the Nameword merchant has
+// To fetch supported currencies — return the coins the hosta.sh merchant has
 // CONFIGURED in Dynopay (getSupportedCurrency -> data.currencies). An optional
 // CRYPTO_TOPUP_COINS env allow-list can narrow this further; by default we show
 // every configured coin. We never expose Dynopay's raw global `all_supported`.

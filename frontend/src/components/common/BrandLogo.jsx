@@ -1,40 +1,69 @@
-// Nameword "Keyhole N" brand logo.
-// The mark is a self-contained indigo badge (stays indigo in BOTH themes) with a
-// white "N" carrying a keyhole cut in negative space. The wordmark is real HTML
-// text in Outfit so it is crisp and theme-correct (slate in light, near-white in
-// dark) without relying on the .dark-mode brightness hack.
+// hosta.sh "Prompt" brand logo — Neon Prompt palette (brand guide Phase 2).
+// Mark: rounded tile + ">" chevron + "_" block cursor. Theme-aware exactly like the
+// brand guide lockups (tile = text colour of the mode, glyph = background colour):
+//   light mode → ink tile #12101F, white chevron, neon-cyan cursor #22E6FF
+//   dark mode  → lavender tile #E8E6FF, ink chevron, deep-cyan cursor #0891B2
+// The wordmark is real HTML text in Geist Mono — "hosta" in ink + ".sh" in the accent.
 
-export const NamewordMark = ({ className = "h-8 w-8" }) => (
-  <svg viewBox="0 0 512 512" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect width="512" height="512" rx="116" fill="#4F46E5" />
-    <g fill="#FFFFFF">
-      <rect x="150" y="150" width="58" height="212" rx="10" />
-      <rect x="304" y="150" width="58" height="212" rx="10" />
-      <path d="M155 150 H208 L357 362 H304 Z" />
-    </g>
-    <g fill="#4F46E5">
-      <circle cx="238" cy="230" r="21" />
-      <path d="M242 249 L261 249 L305 307 L281 307 Z" />
-    </g>
-  </svg>
-);
+const TONES = {
+  // follows the html.dark class
+  auto: {
+    tile: "fill-[#12101F] dark:fill-[#E8E6FF]",
+    glyph: "stroke-white dark:stroke-[#07060F]",
+    cursor: "fill-[#22E6FF] dark:fill-[#0891B2]",
+    word: "text-[#12101F] dark:text-[#E8E6FF]",
+    sh: "text-[#087C9C] dark:text-[#22E6FF]",
+  },
+  // always-dark surfaces (auth showcase panel, dark banners)
+  onDark: {
+    tile: "fill-[#E8E6FF]",
+    glyph: "stroke-[#07060F]",
+    cursor: "fill-[#0891B2]",
+    word: "text-[#E8E6FF]",
+    sh: "text-[#22E6FF]",
+  },
+};
+
+export const HostaMark = ({ className = "h-8 w-8", tone = "auto", blink = false }) => {
+  const c = TONES[tone] || TONES.auto;
+  return (
+    <svg viewBox="0 0 64 64" className={className} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="64" height="64" rx="14" className={c.tile} />
+      <path
+        d="M17 20 L31 32 L17 44"
+        className={c.glyph}
+        strokeWidth="6.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <rect x="35" y="39.5" width="15" height="6.5" rx="2" className={`${c.cursor} ${blink ? "hs-mark-cursor" : ""}`} />
+    </svg>
+  );
+};
+
+// Back-compat alias (older imports referenced the previous mark by name)
+export const NamewordMark = HostaMark;
+
+export const Wordmark = ({ className = "text-[1.45rem]", tone = "auto" }) => {
+  const c = TONES[tone] || TONES.auto;
+  return (
+    <span className={`font-mono font-semibold leading-none tracking-[-0.03em] ${c.word} ${className}`} translate="no">
+      hosta<span className={c.sh}>.sh</span>
+    </span>
+  );
+};
 
 const BrandLogo = ({
   markClassName = "h-8 w-8",
-  textClassName = "text-[1.6rem]",
+  textClassName = "text-[1.45rem]",
   showText = true,
   className = "",
+  tone = "auto",
 }) => (
-  <span className={`inline-flex items-center gap-2.5 ${className}`} data-testid="brand-logo">
-    <NamewordMark className={markClassName} />
-    {showText && (
-      <span
-        className={`font-display font-bold tracking-tight leading-none text-[#0F172A] dark:text-white ${textClassName}`}
-        style={{ fontFamily: "Outfit, 'Plus Jakarta Sans', sans-serif" }}
-      >
-        nameword
-      </span>
-    )}
+  <span className={`inline-flex items-center gap-2.5 ${className}`} data-testid="brand-logo" aria-label="hosta.sh">
+    <HostaMark className={markClassName} tone={tone} />
+    {showText && <Wordmark className={textClassName} tone={tone} />}
   </span>
 );
 

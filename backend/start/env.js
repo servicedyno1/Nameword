@@ -27,20 +27,21 @@ const env = cleanEnv(process.env, {
 	BREVO_API_KEY: str(),
 	BREVO_EMAIL: str(),
 	MAIL_NAME: str(),
-	TELEGRAM_BOT_TOKEN: str(),
+	TELEGRAM_BOT_TOKEN: str({ default: "" }),
 	ADMIN_REGISTER_TOKEN: str(),
 	// Twilio configuration (commented out - replaced with Telnyx)
 	// TWILIO_ACCOUNT_SID: str(),
 	// TWILIO_AUTH_TOKEN: str(),
 	// TWILIO_VERIFY_SID: str(),
-	// Telnyx configuration
-	TELNYX_ACCESS_TOKEN: str(),
-	TELNYX_PROFILE_ID: str(),
-	TELNYX_PHONE_NUMBER: str(),
-	GCLOUD_STORAGE_BUCKET_NAME: str(),
+	// Telnyx configuration (optional; SMS OTP is disabled until set)
+	TELNYX_ACCESS_TOKEN: str({ default: "" }),
+	TELNYX_PROFILE_ID: str({ default: "" }),
+	TELNYX_PHONE_NUMBER: str({ default: "" }),
+	GCLOUD_STORAGE_BUCKET_NAME: str({ default: "" }),
 	// Sentry configuration (optional, only used in production)
 	SENTRY_DSN: str({ default: "" }),
 	BRAND_ADMIN_EMAILS: str({ default: "" }),
+	SUPPORT_EMAIL: str({ default: "" }),
 	SENTRY_ENVIRONMENT: str({ default: "development" }),
 	SENTRY_TRACES_SAMPLE_RATE: num({ default: 0.1 }),
 	SENTRY_PROFILES_SAMPLE_RATE: num({ default: 0.1 }),

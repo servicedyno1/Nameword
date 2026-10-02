@@ -1,7 +1,7 @@
 // Textes de marque et marketing — « Hébergement offshore, privé par défaut. »
 export const siteFr = {
   meta: {
-    title: "Nameword — Hébergement offshore, privé par défaut",
+    title: "hosta.sh — Privé par défaut. Scriptable par conception.",
     description:
       "Enregistrez des domaines privés, gérez votre DNS et déployez VPS, RDP et hébergement cPanel offshore depuis des juridictions respectueuses de la vie privée.",
   },
@@ -29,8 +29,8 @@ export const siteFr = {
   },
 
   home: {
-    eyebrow: "Offshore · Privé · À vous",
-    heading: "Hébergement offshore, privé par défaut.",
+    eyebrow: "hosta up --offshore --private --no-kyc",
+    heading: "Privé par défaut. Scriptable par conception.",
     subheading:
       "Enregistrez des domaines, gérez votre DNS et déployez serveurs et hébergement cPanel depuis des juridictions respectueuses de la vie privée — collecte de données minimale, confidentialité WHOIS incluse et un portefeuille prépayé qui ne vous suit pas partout.",
     tabs: { search: "Enregistrer", transfer: "Transférer" },
@@ -59,7 +59,7 @@ export const siteFr = {
       { label: "API complète", sub: "tout le tableau de bord" },
     ],
     pillars: {
-      eyebrow: "Pourquoi Nameword",
+      eyebrow: "Pourquoi hosta.sh",
       title: "Conçu pour ceux qui tiennent à la discrétion",
       lead: "Fondateurs, journalistes, agences, expatriés, développeurs — toute personne qui veut une infrastructure qui reste à sa place.",
       items: [
@@ -181,7 +181,7 @@ export const siteFr = {
     testimonials: {
       eyebrow: "En leurs mots",
       title: "Conçu pour ceux qui tiennent à rester en ligne",
-      lead: "Comment des fondateurs, éditeurs et développeurs soucieux de leur vie privée utilisent Nameword.",
+      lead: "Comment des fondateurs, éditeurs et développeurs soucieux de leur vie privée utilisent hosta.sh.",
       items: [
         { quote: "J'ai déplacé ma publication offshore après un retrait de mauvaise foi. Deux ans plus tard, mon site n'a jamais été hors ligne.", role: "Éditeur indépendant" },
         { quote: "S'inscrire avec une simple adresse e-mail et payer en USDT, c'est exactement comme la facturation devrait être. Sans carte, sans KYC, sans bruit.", role: "Développeur soucieux de la confidentialité" },
@@ -349,7 +349,15 @@ export const siteFr = {
     ctaLead: "Rechargez votre portefeuille une fois, puis enregistrez, déployez et renouvelez sans carte conservée.",
   },
 
+  rebrand: {
+    badge: "nouveau nom",
+    text: "Nameword devient hosta.sh — même compte, même portefeuille, mêmes services.",
+    textApp: "Nameword devient hosta.sh. Votre compte, votre portefeuille, vos domaines et vos serveurs restent inchangés — rien à faire.",
+    dismiss: "Masquer",
+  },
+
   auth: {
+    brandHeadline: "Privé par défaut. Scriptable par conception.",
     signInTitle: "Bon retour",
     signInSub: "Connectez-vous à votre tableau de bord privé.",
     createTitle: "Créez votre compte",
@@ -412,7 +420,7 @@ export const siteFr = {
   },
 
   footer: {
-    tagline: "Hébergement offshore, privé par défaut. Domaines, DNS et serveurs depuis des juridictions respectueuses de la vie privée — payés depuis un portefeuille prépayé.",
+    tagline: "Privé par défaut. Scriptable par conception. Hébergement offshore, privé par défaut. Domaines, DNS et serveurs depuis des juridictions respectueuses de la vie privée — payés depuis un portefeuille prépayé.",
     dmca: "DMCA Ignoré",
     products: "Produits",
     company: "Entreprise",
@@ -435,15 +443,15 @@ export const siteFr = {
       privacy: "Politique de confidentialité",
     },
     payments: "Nous acceptons",
-    rights: "Nameword. Tous droits réservés.",
+    rights: "hosta.sh. Tous droits réservés.",
     jurisdictionNote: "Infrastructure dans des juridictions respectueuses de la vie privée.",
   },
 
   legal: {
     privacyIntro:
-      "Nameword est conçu pour fonctionner avec le moins possible de vos données personnelles. Cette politique explique ce que nous collectons pour opérer domaines, DNS, hébergement, serveurs et e-mail, pourquoi nous en avons besoin et comment vous gardez le contrôle.",
+      "hosta.sh est conçu pour fonctionner avec le moins possible de vos données personnelles. Cette politique explique ce que nous collectons pour opérer domaines, DNS, hébergement, serveurs et e-mail, pourquoi nous en avons besoin et comment vous gardez le contrôle.",
     termsIntro:
-      "Ces conditions régissent votre utilisation des services de domaines, DNS, hébergement, serveurs et e-mail de Nameword. Elles sont écrites pour être lues : langage clair d'abord, précision juridique là où elle compte.",
+      "Ces conditions régissent votre utilisation des services de domaines, DNS, hébergement, serveurs et e-mail de hosta.sh. Elles sont écrites pour être lues : langage clair d'abord, précision juridique là où elle compte.",
   },
 
   common: {

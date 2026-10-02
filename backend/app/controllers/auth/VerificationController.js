@@ -35,7 +35,7 @@ class VerificationController {
         const info = await transporter.sendMail({
           from: env.MAIL_FROM_ADDRESS,
           to: user.email,
-          subject: "New verification code for Nameword",
+          subject: "New verification code for hosta.sh",
           html: html,
         });
         console.log("Email verification resend OTP sent successfully:", info);
@@ -83,7 +83,7 @@ class VerificationController {
         await transporter.sendMail({
           from: env.MAIL_FROM_ADDRESS,
           to: user.email,
-          subject: `Welcome to Nameword — your $${(points * pv).toFixed(0)} is ready`,
+          subject: `Welcome to hosta.sh — your $${(points * pv).toFixed(0)} is ready`,
           html,
         });
       } catch (e) {

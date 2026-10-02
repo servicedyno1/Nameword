@@ -55,7 +55,7 @@ export default function EmptyState({
           className={`absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-tr ${badgeGlow} opacity-70 blur-2xl`}
           aria-hidden="true"
         />
-        <div className="relative flex h-24 w-24 items-center justify-center rounded-[1.6rem] border border-line bg-white shadow-[0_18px_40px_-20px_rgba(79,70,229,0.5)] dark:border-white/[0.1] dark:bg-gray-900 dark:shadow-[0_24px_60px_-24px_rgba(124,58,237,0.7)]">
+        <div className="relative flex h-24 w-24 items-center justify-center rounded-[1.6rem] border border-line bg-white shadow-[0_18px_40px_-20px_rgba(8,145,178,0.5)] dark:border-white/[0.1] dark:bg-gray-900 dark:shadow-[0_24px_60px_-24px_rgba(34,230,255,0.7)]">
           <div className="absolute inset-[3px] rounded-[1.35rem] bg-gradient-to-br from-brand-50 to-white dark:from-white/[0.06] dark:to-transparent" aria-hidden="true" />
           {Icon ? <Icon className={`relative h-10 w-10 ${iconColor}`} aria-hidden="true" /> : null}
         </div>

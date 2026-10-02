@@ -12,7 +12,7 @@ export default function Readme() {
         </div>
         <div className="flex flex-wrap items-center gap-2" data-testid="brand-status-tags">
           <Tag tone="info">phase {META.phase}</Tag>
-          <Tag tone="warn">{META.status}</Tag>
+          <Tag tone="ok">{META.status}</Tag>
           <Tag>v{META.version}</Tag>
           <Tag>{META.route}</Tag>
         </div>
@@ -22,7 +22,7 @@ export default function Readme() {
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-7 md:text-lg" style={{ color: "var(--hb-muted)" }}>
           Brand discovery &amp; identity. Who we serve, where we sit in the market, how we sound, and three
-          directions each for colour and logo. Nothing here touches the live product yet — Phase 2 applies it.
+          directions each for colour and logo. Phase 2 applied the picks app-wide; Phase 3 is the hosta.sh domain launch.
         </p>
         <div className="mt-8 max-w-xl">
           <Kv
@@ -31,7 +31,8 @@ export default function Readme() {
               { k: "to", v: "hosta.sh — host from the shell" },
               { k: "updated", v: META.updated },
               { k: "owner", v: "founder + design" },
-              { k: "decide", v: "1 colour · 1 type pairing · 1 logo (see decisions.json)" },
+              { k: "applied", v: "Neon Prompt · Geist Mono + Geist · Prompt >_" },
+              { k: "next", v: "phase 3 — launch on hosta.sh" },
             ]}
           />
         </div>

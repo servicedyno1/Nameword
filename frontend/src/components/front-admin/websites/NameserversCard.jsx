@@ -64,7 +64,7 @@ const NameserversCard = ({ domain, domainData, hostingOrder }) => {
   const nameserver1 = nameservers[0] || "N/A";
   const nameserver2 = nameservers[1] || "N/A";
 
-  // Default NameWord nameservers (can be moved to config)
+  // Default hosta.sh nameservers (can be moved to config)
   const defaultNS1 = "ns1.dns-parking.com";
   const defaultNS2 = "ns2.dns-parking.com";
   const defaultNS1IP = "162.159.24.201";

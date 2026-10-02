@@ -178,7 +178,7 @@ const fundWallet = async (req, res) => {
                                         await transporter.sendMail({
                                                 from: process.env.MAIL_FROM_ADDRESS,
                                                 to: user.email,
-                                                subject: 'Credit added to your Nameword account',
+                                                subject: 'Credit added to your hosta.sh account',
                                                 html: html,
                                         });
                                         
@@ -253,7 +253,7 @@ const fundWallet = async (req, res) => {
                                         await transporter.sendMail({
                                                 from: process.env.MAIL_FROM_ADDRESS,
                                                 to: user.email,
-                                                subject: `Invoice ${invoice.invoiceNumber} from Nameword`,
+                                                subject: `Invoice ${invoice.invoiceNumber} from hosta.sh`,
                                                 html: html,
                                         });
                                         
@@ -758,7 +758,7 @@ const handleDynoPaymentWebhook = async (req, res) => {
                                                 await transporter.sendMail({
                                                         from: process.env.MAIL_FROM_ADDRESS,
                                                         to: user.email,
-                                                        subject: 'Credit added to your Nameword account',
+                                                        subject: 'Credit added to your hosta.sh account',
                                                         html: html,
                                                 });
 

@@ -42,7 +42,7 @@ router.post(
     (async () => {
       try {
         const label = productName || product;
-        const brand = env.MAIL_NAME || "Nameword";
+        const brand = env.MAIL_NAME || "hosta.sh";
         await transporter.sendMail({
           to: email,
           subject: `You're on the waitlist \u2014 ${label}`,

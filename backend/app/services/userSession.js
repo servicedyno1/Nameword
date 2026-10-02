@@ -97,7 +97,7 @@ async function saveUserSession({ req, userId, loginType }) {
             await transporter.sendMail({
               from: env.MAIL_FROM_ADDRESS,
               to: user.email,
-              subject: "New login to your Nameword account",
+              subject: "New login to your hosta.sh account",
               html: html,
             });
             

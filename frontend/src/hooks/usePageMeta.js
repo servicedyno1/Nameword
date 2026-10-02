@@ -2,12 +2,12 @@ import { useEffect } from "react";
 
 /**
  * Sets document.title and the meta description for a page.
- * Title format: "<page> · Nameword" (or the brand default when no page title is given).
+ * Title format: "<page> · hosta.sh" (or the brand default when no page title is given).
  */
 export function usePageMeta(title, description) {
   useEffect(() => {
-    const brand = "Nameword";
-    document.title = title ? `${title} · ${brand}` : `${brand} — Offshore hosting, private by default`;
+    const brand = "hosta.sh";
+    document.title = title ? `${title} · ${brand}` : `${brand} — Private by default. Scriptable by design.`;
     if (description) {
       let el = document.querySelector('meta[name="description"]');
       if (!el) {

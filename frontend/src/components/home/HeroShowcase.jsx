@@ -301,7 +301,7 @@ export default function HeroShowcase({ onDark = false }) {
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
           </span>
           <span className="mx-auto flex items-center gap-1.5 rounded-md bg-surface-2 px-3 py-1 text-[11px] font-medium text-ink-soft dark:bg-white/[0.04] dark:text-gray-400">
-            <LuLock className="h-3 w-3 text-emerald-500" /> app.nameword.com
+            <LuLock className="h-3 w-3 text-emerald-500" /> hosta.sh
           </span>
           <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-300">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-500" /> {sc.live}

@@ -6,7 +6,7 @@ import { usePageMeta } from "../../hooks/usePageMeta";
 
 const ProductsIndex = () => {
   usePageMeta(
-    "Products \u2014 Nameword",
+    "Products \u2014 hosta.sh",
     "The full offshore cloud: domains, servers, hosting, storage and more \u2014 privacy-first, no-KYC, pay with crypto."
   );
 
@@ -20,7 +20,7 @@ const ProductsIndex = () => {
             Everything you need to build, privately
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft dark:text-gray-400">
-            A full cloud platform with the Nameword promise — offshore, DMCA-ignored, no-KYC and pay with crypto. Live products today, with more landing soon.
+            A full cloud platform with the hosta.sh promise — offshore, DMCA-ignored, no-KYC and pay with crypto. Live products today, with more landing soon.
           </p>
         </div>
       </section>

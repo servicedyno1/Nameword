@@ -1,6 +1,7 @@
 import AppSidebar from "../components/front-admin/admin-common/AppSidebar";
 import CommandPalette from "../components/common/CommandPalette";
 import VerifyEmailBanner from "../components/common/VerifyEmailBanner";
+import RebrandNotice from "../components/common/RebrandNotice";
 import { Outlet, NavLink, useLocation } from "react-router";
 import { useState, useEffect, useCallback } from "react";
 import { CgMenu } from "react-icons/cg";
@@ -116,7 +117,7 @@ const FrontLayout = ({ children, fluid = false }) => {
           <button className="header-icon-btn lg:hidden" aria-label="Open menu" onClick={() => setMobileOpen(true)} data-testid="mobile-menu-button">
             <CgMenu size={22} />
           </button>
-          <NavLink to="/dashboard" className="lg:hidden"><img src={favicon} alt="Nameword" className="h-8 w-8" /></NavLink>
+          <NavLink to="/dashboard" className="lg:hidden"><img src={favicon} alt="hosta.sh" className="h-8 w-8" /></NavLink>
 
           <button
             onClick={() => setPaletteOpen(true)}
@@ -186,6 +187,7 @@ const FrontLayout = ({ children, fluid = false }) => {
 
         <main className="flex-1 overflow-y-auto pb-24 lg:pb-8">
           <VerifyEmailBanner />
+          <RebrandNotice />
           {fluid ? (children ?? <Outlet />) : <div className="main-content">{children ?? <Outlet />}</div>}
           <div className="mt-8 flex flex-col gap-3 px-4 pb-6 text-13 font-medium text-ink-soft lg:px-10">
             <div className="flex gap-4">

@@ -1,6 +1,6 @@
 /**
  * Telegram Login Widget - custom button on top (pointer-events-none), widget hidden behind for clicks.
- * If you see "Bot domain invalid": message @BotFather → /setdomain → enter your app domain (e.g. app.nameword.com).
+ * If you see "Bot domain invalid": message @BotFather → /setdomain → enter your app domain (e.g. hosta.sh).
  */
 import { useEffect, useRef } from 'react';
 import { telegram } from './icons'

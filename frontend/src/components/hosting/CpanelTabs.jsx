@@ -407,7 +407,7 @@ const DomainsTab = ({ user, domain, addonAllowance }) => {
               </p>
             ) : (
               <p className="mt-1.5 text-xs text-secondary dark:text-gray-400">
-                Point a domain you own at this account. Nameword-registered domains connect automatically; others get nameservers to set at your registrar.
+                Point a domain you own at this account. hosta.sh-registered domains connect automatically; others get nameservers to set at your registrar.
               </p>
             )}
             {connect && (
@@ -1240,7 +1240,7 @@ export default function CpanelTabs({ user, domain, isGold, onUpgrade, addonAllow
             data-testid={`cpanel-tabbtn-${t.id}`}
             className={`shrink-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
               active === t.id
-                ? "nw-grad-brand text-white shadow-[0_8px_20px_-8px_rgba(124,58,237,0.75)]"
+                ? "nw-grad-brand text-white shadow-[0_8px_20px_-8px_rgba(8,145,178,0.7)]"
                 : "text-secondary dark:text-gray-400 hover:bg-lightgray dark:hover:bg-gray-800"
             }`}
           >

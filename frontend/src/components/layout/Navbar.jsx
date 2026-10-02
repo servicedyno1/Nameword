@@ -44,7 +44,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 w-full border-b border-line/80 bg-white/85 backdrop-blur-md dark:border-white/[0.06] dark:bg-gray-950/80">
       <div className="nw-container flex h-16 lg:h-[4.5rem] items-center justify-between gap-4">
         {/* Brand */}
-        <NavLink to={user ? "/dashboard" : "/"} className="flex items-center gap-2 shrink-0" aria-label="Nameword home">
+        <NavLink to={user ? "/dashboard" : "/"} className="flex items-center gap-2 shrink-0" aria-label="hosta.sh home">
           <BrandLogo markClassName="h-8 w-8" />
         </NavLink>
 

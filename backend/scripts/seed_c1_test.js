@@ -11,8 +11,8 @@ const Wallet = require("../app/models/Wallet");
 const Order = require("../app/models/Order");
 
 const USERS = [
-  { key: "a", name: "C1 Owner A", email: "c1-owner-a@nameword.local", password: "Owner@12345", domain: "c1-owner-a.com" },
-  { key: "b", name: "C1 Owner B", email: "c1-owner-b@nameword.local", password: "Owner@12345", domain: "c1-owner-b.com" },
+  { key: "a", name: "C1 Owner A", email: "c1-owner-a@hosta.local", password: "Owner@12345", domain: "c1-owner-a.com" },
+  { key: "b", name: "C1 Owner B", email: "c1-owner-b@hosta.local", password: "Owner@12345", domain: "c1-owner-b.com" },
 ];
 
 function orderItems(u) {

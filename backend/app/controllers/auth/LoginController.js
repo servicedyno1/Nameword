@@ -76,7 +76,7 @@ class LoginController {
 					const info = await transporter.sendMail({
 						from: env.MAIL_FROM_ADDRESS,
 						to: user.email,
-						subject: "Your Nameword login code",
+						subject: "Your hosta.sh login code",
 						html: html,
 					});
 					console.log("Login OTP email sent successfully:", info);

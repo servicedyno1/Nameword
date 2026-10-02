@@ -28,8 +28,8 @@ njkEnv.addGlobal("appUrl", EMAIL_BASE_URL);
 njkEnv.addGlobal("frontendUrl", String(process.env.FRONTEND_URL || EMAIL_BASE_URL).replace(/\/+$/, ""));
 njkEnv.addGlobal("logoUrl", `${EMAIL_BASE_URL}/email-logo.png`);
 njkEnv.addGlobal("markUrl", `${EMAIL_BASE_URL}/email-mark.png`);
-njkEnv.addGlobal("brandName", process.env.MAIL_NAME || "Nameword");
-njkEnv.addGlobal("brandTagline", "Own your name. Power your site.");
+njkEnv.addGlobal("brandName", process.env.MAIL_NAME || "hosta.sh");
+njkEnv.addGlobal("brandTagline", "Private by default. Scriptable by design.");
 njkEnv.addGlobal("supportEmail", process.env.MAIL_FROM_ADDRESS || "hello@nameword.local");
 njkEnv.addGlobal("year", new Date().getFullYear());
 njkEnv.addGlobal("social", {

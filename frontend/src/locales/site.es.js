@@ -1,7 +1,7 @@
 // Copy de marca y marketing — "Alojamiento offshore, privado por defecto."
 export const siteEs = {
   meta: {
-    title: "Nameword — Alojamiento offshore, privado por defecto",
+    title: "hosta.sh — Privado por defecto. Programable por diseño.",
     description:
       "Registra dominios privados, gestiona tu DNS y despliega VPS, RDP y hosting cPanel offshore desde jurisdicciones que respetan la privacidad.",
   },
@@ -29,8 +29,8 @@ export const siteEs = {
   },
 
   home: {
-    eyebrow: "Offshore · Privado · Tuyo",
-    heading: "Alojamiento offshore, privado por defecto.",
+    eyebrow: "hosta up --offshore --private --no-kyc",
+    heading: "Privado por defecto. Programable por diseño.",
     subheading:
       "Registra dominios, gestiona tu DNS y despliega servidores y hosting cPanel desde jurisdicciones que respetan la privacidad: mínima recogida de datos, privacidad WHOIS incluida y un monedero prepago que no te sigue a todas partes.",
     tabs: { search: "Registrar", transfer: "Transferir" },
@@ -59,7 +59,7 @@ export const siteEs = {
       { label: "API completa", sub: "todo lo del panel" },
     ],
     pillars: {
-      eyebrow: "Por qué Nameword",
+      eyebrow: "Por qué hosta.sh",
       title: "Hecho para quienes valoran la discreción",
       lead: "Fundadores, periodistas, agencias, expatriados, desarrolladores: cualquiera que quiera una infraestructura que no llame la atención.",
       items: [
@@ -181,7 +181,7 @@ export const siteEs = {
     testimonials: {
       eyebrow: "En sus palabras",
       title: "Hecho para quienes valoran seguir en línea",
-      lead: "Cómo usan Nameword fundadores, editores y desarrolladores que cuidan su privacidad.",
+      lead: "Cómo usan hosta.sh fundadores, editores y desarrolladores que cuidan su privacidad.",
       items: [
         { quote: "Trasladé mi publicación offshore tras una retirada de mala fe. Dos años después, mi sitio nunca se ha caído.", role: "Editor independiente" },
         { quote: "Registrarme solo con un correo y pagar en USDT es exactamente como debería ser la facturación. Sin tarjeta, sin KYC, sin ruido.", role: "Desarrollador que prioriza la privacidad" },
@@ -349,7 +349,15 @@ export const siteEs = {
     ctaLead: "Recarga tu monedero una vez y luego registra, despliega y renueva sin tarjeta guardada.",
   },
 
+  rebrand: {
+    badge: "nuevo nombre",
+    text: "Nameword ahora es hosta.sh — la misma cuenta, el mismo monedero, los mismos servicios.",
+    textApp: "Nameword ahora es hosta.sh. Tu cuenta, monedero, dominios y servidores no cambian — no tienes que hacer nada.",
+    dismiss: "Descartar",
+  },
+
   auth: {
+    brandHeadline: "Privado por defecto. Programable por diseño.",
     signInTitle: "Bienvenido de nuevo",
     signInSub: "Accede a tu panel privado.",
     createTitle: "Crea tu cuenta",
@@ -412,7 +420,7 @@ export const siteEs = {
   },
 
   footer: {
-    tagline: "Alojamiento offshore, privado por defecto. Dominios, DNS y servidores desde jurisdicciones que respetan la privacidad, pagados desde un monedero prepago.",
+    tagline: "Privado por defecto. Programable por diseño. Alojamiento offshore, privado por defecto. Dominios, DNS y servidores desde jurisdicciones que respetan la privacidad, pagados desde un monedero prepago.",
     dmca: "DMCA Ignorado",
     products: "Productos",
     company: "Empresa",
@@ -435,15 +443,15 @@ export const siteEs = {
       privacy: "Política de privacidad",
     },
     payments: "Aceptamos",
-    rights: "Nameword. Todos los derechos reservados.",
+    rights: "hosta.sh. Todos los derechos reservados.",
     jurisdictionNote: "Infraestructura en jurisdicciones que respetan la privacidad.",
   },
 
   legal: {
     privacyIntro:
-      "Nameword está diseñado para funcionar con la menor cantidad posible de tus datos personales. Esta política explica qué recogemos para operar dominios, DNS, hosting, servidores y correo, por qué lo necesitamos y cómo mantienes el control.",
+      "hosta.sh está diseñado para funcionar con la menor cantidad posible de tus datos personales. Esta política explica qué recogemos para operar dominios, DNS, hosting, servidores y correo, por qué lo necesitamos y cómo mantienes el control.",
     termsIntro:
-      "Estos términos regulan tu uso de los servicios de dominios, DNS, hosting, servidores y correo de Nameword. Están escritos para leerse: lenguaje claro primero, precisión legal donde importa.",
+      "Estos términos regulan tu uso de los servicios de dominios, DNS, hosting, servidores y correo de hosta.sh. Están escritos para leerse: lenguaje claro primero, precisión legal donde importa.",
   },
 
   common: {

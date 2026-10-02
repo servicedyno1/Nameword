@@ -7,7 +7,7 @@ const SELLER = {
 	name: "Dynotech Innovations, LDA",
 	address: ["Rua Luís de Camões 1017, 7° Dt°", "Montijo 2870-154", "Portugal"],
 	nif: "PT518713130",
-	email: "support@nameword.com",
+	email: process.env.SUPPORT_EMAIL || process.env.MAIL_FROM_ADDRESS,
 };
 
 const generateInvoicePDF = async (paymentOrId, userId, paymentInvoice = null) => {

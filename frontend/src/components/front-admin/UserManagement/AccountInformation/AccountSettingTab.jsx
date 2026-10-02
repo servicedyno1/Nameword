@@ -21,7 +21,7 @@ const AccountSettingTab = () => {
 
     const initialValues = {
         email: user?.email || '',
-        password: user?.hasPassword ? "Nameword@123" : ''
+        password: user?.hasPassword ? "••••••••••" : ''
     };
 
     const handleSubmit = async (values, { setSubmitting }) => {

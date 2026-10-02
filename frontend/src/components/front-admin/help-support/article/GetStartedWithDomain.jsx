@@ -17,7 +17,7 @@ const GetStartedWithDomain = () => {
                     />
                 </div>
 
-                <p>{t.helpSupport?.articles?.getStartedWithDomain?.intro || "Choosing the right domain is the first step to building your online presence — and with NameWord, it's fast, simple, and secure."}</p>
+                <p>{t.helpSupport?.articles?.getStartedWithDomain?.intro || "Choosing the right domain is the first step to building your online presence — and with hosta.sh, it's fast, simple, and secure."}</p>
 
                 <div className="space-y-2">
                     <p className="title">{t.helpSupport?.articles?.getStartedWithDomain?.searchTitle || "Search for Your Perfect Name"}</p>
