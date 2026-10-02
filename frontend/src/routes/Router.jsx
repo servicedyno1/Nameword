@@ -159,6 +159,7 @@ function Router() {
         <Route path="/subscriptions" element={<Navigate to="/services" replace />} />
         <Route path="/wallet" element={<Wallet />} />
       </Route>
+      <Route path="/brand-guide" element={<Navigate to="/brand" replace />} />
       <Route path="/help-support" element={<HelpSupport />} />
       {/* Private, unlinked hosta.sh brand guide (Phase 1). Admin allowlist enforced by BrandGate. */}
       <Route
