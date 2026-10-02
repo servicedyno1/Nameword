@@ -45,6 +45,7 @@ import ProductsIndex from "../pages/products/ProductsIndex";
 import ComingSoonPage from "../pages/products/ComingSoonPage";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import BrandGuide from "../pages/brand/BrandGuide";
 
 const IsEmailVerified = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -159,6 +160,15 @@ function Router() {
         <Route path="/wallet" element={<Wallet />} />
       </Route>
       <Route path="/help-support" element={<HelpSupport />} />
+      {/* Private, unlinked hosta.sh brand guide (Phase 1). Admin allowlist enforced by BrandGate. */}
+      <Route
+        path="/brand"
+        element={
+          <ProtectedRoute>
+            <BrandGuide />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="*" element={<Navigate to={"/"} replace />} />

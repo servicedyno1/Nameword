@@ -31,5 +31,6 @@ APIRouter.use(require("./api-keys"));
 APIRouter.use("/tax", require("./tax"));
 APIRouter.use("/promo", require("./promo"));
 APIRouter.use("/waitlist", require("./waitlist"));
+APIRouter.use("/brand", require("./brand"));
 
 module.exports = APIRouter;

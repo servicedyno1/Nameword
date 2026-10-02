@@ -40,6 +40,7 @@ const env = cleanEnv(process.env, {
 	GCLOUD_STORAGE_BUCKET_NAME: str(),
 	// Sentry configuration (optional, only used in production)
 	SENTRY_DSN: str({ default: "" }),
+	BRAND_ADMIN_EMAILS: str({ default: "" }),
 	SENTRY_ENVIRONMENT: str({ default: "development" }),
 	SENTRY_TRACES_SAMPLE_RATE: num({ default: 0.1 }),
 	SENTRY_PROFILES_SAMPLE_RATE: num({ default: 0.1 }),
