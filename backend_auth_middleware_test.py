@@ -9,7 +9,7 @@ import json
 import sys
 
 # Backend URL from frontend/.env
-BASE_URL = "https://nameword-dev-10.preview.emergentagent.com"
+BASE_URL = "https://nameword-staging-3.preview.emergentagent.com"
 API_BASE = f"{BASE_URL}/api/v1"
 
 # Test credentials from /app/memory/test_credentials.md

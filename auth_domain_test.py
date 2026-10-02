@@ -13,7 +13,7 @@ import random
 from typing import Dict, Any, Tuple
 
 # Base URL from frontend/.env
-BASE_URL = "https://nameword-dev-10.preview.emergentagent.com"
+BASE_URL = "https://nameword-staging-3.preview.emergentagent.com"
 
 # Generous timeout for external API proxy (30 seconds)
 TIMEOUT = 30

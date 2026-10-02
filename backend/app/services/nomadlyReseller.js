@@ -1,10 +1,10 @@
 const axios = require("axios");
 
 // Nomadly Reseller API — unified provider for domains / dns / vps / rdp / hosting.
-// Docs: https://1.speechcue.com/apidoc  (base: /reseller/v1)
+// Docs: https://2.speechcue.com/apidoc  (base: /reseller/v1)
 // The service runs in dry_run or live mode server-side (see GET /health `mode`).
 const BASE_URL =
-  process.env.NOMADLY_API_BASE_URL || "https://1.speechcue.com/reseller/v1";
+  process.env.NOMADLY_API_BASE_URL || "https://2.speechcue.com/reseller/v1";
 const API_KEY = process.env.NOMADLY_API_KEY || "";
 
 const nomadly = axios.create({
