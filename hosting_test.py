@@ -10,7 +10,7 @@ import sys
 from typing import Dict, Any, Tuple
 
 # Base URL from frontend/.env
-BASE_URL = "https://nameword-preview-3.preview.emergentagent.com/api/v1/reseller"
+BASE_URL = "https://hosting-control-13.preview.emergentagent.com/api/v1/reseller"
 
 # Generous timeout for external API proxy (30 seconds)
 TIMEOUT = 30

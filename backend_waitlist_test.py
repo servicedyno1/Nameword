@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Backend test for NEW Waitlist endpoint (Node/Express)
-Base URL: https://nameword-preview-3.preview.emergentagent.com/api/v1
+Base URL: https://hosting-control-13.preview.emergentagent.com/api/v1
 No authentication required for these routes.
 
 Test cases:
@@ -18,7 +18,7 @@ import json
 import sys
 
 # Backend base URL (external preview)
-BASE_URL = "https://nameword-preview-3.preview.emergentagent.com/api/v1"
+BASE_URL = "https://hosting-control-13.preview.emergentagent.com/api/v1"
 
 # ANSI color codes for output
 GREEN = "\033[92m"
